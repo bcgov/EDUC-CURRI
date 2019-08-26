@@ -528,7 +528,7 @@ a.bef-toggle:link,a.bef-toggle:visited,a.bef-toggle:hover,a.bef-toggle:active,a.
 }
 
 .page-curriculum-search .view-grouping-header {
-    background-color: #CCC;bloc
+    background-color: #CCC;
     font-size: 2em;
     padding: 20px;
     color: black;
@@ -3035,7 +3035,7 @@ div.area-of-learning ul li a:hover {
 	width: 100%;
 	color: black;
     font-size: 0.85em;
-	position;relative;
+	position:relative;
 	top:-50px;
 }
 .fast-links .custom_search-popup{
@@ -6226,7 +6226,7 @@ div.sf-megamenu-column{
 	width: 100%;
 	float:left;
 	border-bottom: 1pt dotted #CCC;
-	font-size 30px;
+	font-size: 30px;
 }
 .curriculum-directory{
 
@@ -7042,10 +7042,9 @@ ul.quicktabs-tabs.quicktabs-style-basic a{
 
 .page-curriculm-competency .field-name-body ul > li {
     list-style: disc outside;
-    
-     margin-left: 1em;
+    margin-left: 1em;
     padding-right: 10px;
-    width:95%;
+    /*width:95%;*/
 }
 
 .page-curriculm-competency .field-name-body ul > li li {
