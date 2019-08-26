@@ -115,6 +115,7 @@ ul.quicktabs-tabs.quicktabs-style-basic li.active{
 }
 .sample-odd td, .sample-even td{
 	border: none !important;
+
 	padding-left:20px
 }
 .sample-odd{
@@ -196,14 +197,6 @@ body[class*="-goals-and-rationale"] #curriculum_download{
 body[class*="-goals-and-ratioanle"] .grade-picker-view-attachment{
 	margin-top:-40px;
 }
-.page-curriculum-fral-courses.page-curriculum-fral-11 .view-grouping-header{
-	display:none;
-}
-.page-curriculum-english-language-arts-12.page-curriculum-english-language-arts-courses #block-system-main > div > div > div.view-content::before{
-    content: "*One of the following courses is required for all students: English Studies 12 -or- English First Peoples 12. All other course offerings are available as electives.";
-}
-
-/* Hide grade 12A and B group headers */
 
 
 /* Hide second languages front-matter*/
@@ -2196,6 +2189,7 @@ div.vertical-tabs .vertical-tabs-panes fieldset.vertical-tabs-pane {
 }
 .search-form .container-inline{
 	padding-top:20px;
+
 }
 .form-type-checkboxes{
 	display:none;
@@ -5975,18 +5969,6 @@ input:checked + .slider:before {
 	right: 3%;
 	top: 30px;
 }
-.download-competency{
-	
-	color: white;
-	background: #006fba;
-	width: 167px;
-	padding: 10px;
-	border-radius: 10px;
-	float: right;
-	position: absolute;
-	right: 3%;
-	top: 30px;
-}
 
 /***** Styles for superfish megamenu *******/
 a.dropped.menu-attach-block-drop-link ~ .menu-attach-block-wrapper{
@@ -6815,6 +6797,7 @@ File / Audio Icons
 	text-align:center;
 	padding-top:15px;
 
+
 }
 .group-media.field-group-div .illustration-audio a, .group-media.field-group-div .illustration-file a{
 	padding-bottom: 200px;
@@ -6833,6 +6816,7 @@ File / Audio Icons
 
 /* Illustration Elements*/
 .node-illustration .group-illustration-elements{
+
 	float: left;
 	border: 1px solid #ccc;
 	width: 100%;
@@ -6841,6 +6825,7 @@ File / Audio Icons
 }
 .node-illustration .group-illustration-elements h3{
 	height: 20px;
+
 }
 
 .node-illustration .field-name-body img{
@@ -6853,6 +6838,7 @@ File / Audio Icons
 .node-illustration .field-name-body{
 	float: left;
 	width: 100%;
+
 }
 
 
@@ -6873,6 +6859,7 @@ Video Play button overlay
 	position:relative;
 }
 .illustration-video a span.play-button{
+
 	height:250px;
 	width:250px;
 	background: url('/sites/curriculum.gov.bc.ca/files/images/play_button_60x60.png') center center no-repeat;
@@ -6892,6 +6879,7 @@ Video Play button overlay
 
 .page-taxonomy h2.profile-analysis-header, .page-taxonomy .profiles{
 	display:none;
+
 }
 .page-taxonomy h1{
 	padding: 2% 2% !important;
@@ -6909,6 +6897,7 @@ Video Play button overlay
 }
 #edit-submit-illustrations{
 	width: 260px;
+
 }
 
 #views-exposed-form-illustrations-page #edit-field-illustration-competencies-tid-wrapper > label,
@@ -6981,6 +6970,7 @@ ul.bef-tree{
 	background: white !important;
 }
 .view-illustrations tr td div{
+
 	margin-bottom:5px;
 }
 .view-illustrations tr.odd td,.view-illustrations tr.even td{
@@ -7016,6 +7006,7 @@ ul.bef-tree{
 }
 .image-group .illustration-image{
 	float:left;
+
 }
 .image-group .illustration-image + .illustration-image{
 	margin-left: 20px;
@@ -7117,7 +7108,7 @@ ul.quicktabs-tabs.quicktabs-style-basic a{
     /*margin: 5px 0;*/
   }
   
-  .active, .accordion:hover {
+  /*.active,*/ .accordion:hover {
     background-color: #ccc;
   }
   
@@ -7129,9 +7120,9 @@ ul.quicktabs-tabs.quicktabs-style-basic a{
     margin-left: 5px;
   }
   
-  .active:after {
+ /* .active:after {
     content: "\2212";
-  }
+  }*/
   
   .panel {
     padding: 0 18px;
