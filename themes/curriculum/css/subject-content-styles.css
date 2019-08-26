@@ -1,0 +1,928 @@
+/* CSs for subject specific content */
+.page-curriculum #content{
+	background: none;	
+}
+.overview{
+    clear:both;
+    padding: 10px 0px 10px 0px;
+	background-color: #626366;
+    background-position: 20px;
+    border-top: 1pt solid #CCC;
+ }
+
+.overview a + a{
+    border-left: 1pt solid;
+
+}
+.overview a{
+  padding: 5px 10px 5px 10px;
+}
+
+.overview a{
+  color: #CCC;
+  }
+
+
+.edit_curriculum{
+	position:absolute;
+	top: 0;
+	color:#FFF !important;
+}
+.edit_curriculum a{
+	color:#FFF !important;
+}
+
+.page-curriculum #content .subject-select{
+	background: #4D4F54;	
+	color:white;
+	padding:2%;
+	width: 96%;
+}
+.page-curriculum #content .subject-select a{
+	color:white;	
+}
+
+.page-curriculum .view-curriculum-one-pager .area-of-learning h3 a{
+	font-size: 2em !important;	
+}
+.megamenu .view-curriculum-one-pager .area-of-learning h3 a{
+	font-size: 1.2em !important;
+	color: #666 !important;		
+}
+div#subject_sub {
+    float:left;
+    width:94%;
+	padding:0 3% 10px 3%;
+    font-family:"Century Gothic",Helvetica,Arial,sans-serif;
+    margin-top:-1em
+}
+.page-curriculum-goals-rationale .views-row-2{
+	display:none;
+}
+.page-curriculum page-curriculum-search #content{
+	background-color:white;	
+}
+div#subject_menu {
+    float:right;
+    clear:both
+}
+
+div#subject_menu ul {
+    list-style-type:none;
+    margin-top:-10px;
+    padding:0
+}
+
+div#subject_menu ul li {
+    float:left;
+    list-style-type:none;
+    font-size:1em;
+    margin:0;
+    padding:0;
+    margin-right:.075em;
+    width:100%
+}
+
+div#subject_menu ul li a {
+    color:#dad7d3;
+    text-decoration:none;
+    display:block;
+    line-height:1.7em;
+    padding-left:.75em;
+    padding-right:.75em
+/*background-color:#867f73;*/
+}
+
+div#subject_menu ul li a:hover {
+    color:#fff;
+    text-decoration:none
+}
+
+div#subject_menu ul li.active a {
+    color:#333;
+    text-decoration:none;
+    display:block;
+    line-height:2.5em;
+    padding-left:.75em;
+    padding-right:.75em;
+    background:none;
+    background-color:#fff
+}
+span.download_label{
+  float: left;
+  line-height:2.5em;
+
+}
+.download_curriculum li ul {
+    display:none
+}
+
+.download_curriculum li:hover > ul {
+    position:absolute;
+    display:block!important
+}
+
+.download_curriculum li:hover > ul li {
+    clear:both;
+    width:80px;
+}
+
+div#curriculum_download {
+	float: right;
+}
+div#curriculum_download span.label {
+    float:left;
+    line-height:2.5em;
+    margin:0;
+    color:#fff
+}
+
+div#curriculum_download ul {
+    list-style-type:none;
+    margin:0;
+    float:right;
+}
+
+div#curriculum_download ul li {
+    float:left;
+    list-style-type:none;
+    font-size:1em;
+    margin:0;
+    padding:0;
+    margin-left:.075em
+}
+
+div#curriculum_download ul li ul li a {
+    color:#3B3B3B
+}
+
+div#curriculum_download ul li a {
+    color:#dad7d3;
+    text-decoration:none;
+    display:block;
+    line-height:2.5em;
+    padding-left:.75em;
+    padding-right:.75em;
+    background:url(/sites/curriculum.gov.bc.ca/files/pdf/bg_grey_50.png) repeat left top
+}
+
+div#curriculum_download ul li a:hover {
+    color:#fff;
+    text-decoration:none
+}
+.page-curriculum h1.curric_subject{
+	width: 98%;
+	float:left;
+	display:inline; /*overide h1 as a display:block*/
+	font-size:3em;
+	color:white;
+	
+
+}
+.page-curriculum .subject{
+	float: left;
+	width: 100%;
+	color: #fff;
+	position: absolute;
+	top: 70px;
+	text-align:center;
+
+}
+.page-curriculum .subject a{
+	color: #f2f2f2;
+
+
+}
+h3.introduction_goals {
+    font-size:15px;
+    width:400px;
+    clear:none!important;
+    height:0;
+    padding-left:10px
+}
+
+.introduction_goals a {
+    color:#fff
+}
+div#core_competency_subject {
+    float:left;
+    clear:both;
+    border-bottom:.25em solid #fff;
+	background: #3A3D43;
+    padding: 20px 0px 20px 0px;
+    margin-top:.25em;
+    padding-left:0;
+	color: white;
+}
+
+div#core_competency_subject h2 {
+    width:12em;
+    float:left;
+    padding-left:2.1em;
+    margin-left:0;
+    margin-top:.8em;
+    background:url(/sites/curriculum.gov.bc.ca/files/pdf/core_comp_icon_white_100.png) no-repeat .6em center;
+	color:white;
+}
+
+div#core_competency_subject ul {
+    list-style-type:none;
+    margin:0;
+    padding:0;
+    float:right;
+    margin-left:.625em
+}
+
+div#core_competency_subject ul li {
+    float:left;
+    list-style-type:none;
+    font-size:1em;
+    margin:0;
+    padding:0;
+	width:33%;
+}
+
+div#core_competency_subject ul li a {
+    color:#dad7d3;
+    text-decoration:none;
+    display:block;
+    line-height:.95em;
+/*padding-left:1.25em;*/
+    width:9em;
+    height:1em;
+    padding-top:5.3em;
+    text-align:center
+}
+
+div#core_competency_subject ul li.t a {
+    background:url(/sites/curriculum.gov.bc.ca/files/pdf/core_comp_t.png) no-repeat center top
+}
+
+.i18n-fr div#core_competency_subject ul li.t a {
+    background:url(/sites/curriculum.gov.bc.ca/files/pdf/core_comp_r.png) no-repeat center top
+}
+
+div#core_competency_subject ul li.critical_t a {
+    background:url(/sites/curriculum.gov.bc.ca/files/pdf/core_comp_ct_blue.png) no-repeat center top
+}
+
+.i18n-fr div#core_competency_subject ul li.critical_t a {
+    background:url(/sites/curriculum.gov.bc.ca/files/pdf/core_comp_r.png) no-repeat center top
+}
+
+div#core_competency_subject ul li.c a {
+    background:url(/sites/curriculum.gov.bc.ca/files/pdf/core_comp_c.png) no-repeat center top
+}
+
+div#core_competency_subject ul li.ps a {
+    background:url(/sites/curriculum.gov.bc.ca/files/pdf/core_comp_ps.png) no-repeat center top
+}
+
+div#core_competency_subject ul li a:hover {
+    color:#fff;
+    text-decoration:none
+}
+
+div#core_competency_subject ul li.c a:hover {
+    background:url(/sites/curriculum.gov.bc.ca/files/pdf/core_comp_c_orange.png) no-repeat center top
+}
+
+div#core_competency_subject ul li.t a:hover {
+    background:url(/sites/curriculum.gov.bc.ca/files/pdf/core_comp_t_blue.png) no-repeat center top
+}
+
+.i18n-fr div#core_competency_subject ul li.t a:hover {
+    background:url(/sites/curriculum.gov.bc.ca/files/pdf/core_comp_r_blue.png) no-repeat center top
+}
+
+div#core_competency_subject ul li.ps a:hover {
+    background:url(/sites/curriculum.gov.bc.ca/files/pdf/core_comp_ps_green.png) no-repeat center top
+}
+
+.page-curriculum .view-header {
+    color:white;
+    float:left;
+    clear:both;
+    width:100%
+}
+
+.page-curriculum .view-header h2 {
+    color:#fff
+}
+
+.page-curriculum .view-header h2 span.subhead {
+    font-size:.75em
+}
+
+.page-curriculum div.view-content {
+    float:left
+}
+
+.big-ideas-attachment .view-header {
+    float:left!important
+}
+
+.big-ideas-attachment .view-content h3.big-ideas {
+    display:none;
+    font-size:2em;
+    margin-left:0;
+    color:#fff;
+    background:url(/sites/curriculum.gov.bc.ca/files/pdf/big_i_icon_white_100.png) no-repeat .6em center;
+    padding-left:2.1em
+
+}
+
+.i18n-fr .big-ideas-attachment .view-content h3.big-ideas {
+    font-size:2em;
+    width:900px!important;
+    clear:both;
+    height:2em;
+    line-height:1.4em!important;
+	margin-top: 1.5em;
+    background:url(/sites/curriculum.gov.bc.ca/files/pdf/big_i_icon_white_100.png) no-repeat .6em top
+}
+
+.i18n-en .big-ideas-attachment .view-content h3.big-ideas.en,.i18n-fr .big-ideas-attachment .view-content h3.big-ideas.fr {
+    display:block
+}
+
+.big-ideas-attachment .view-footer {
+    background:url(/sites/curriculum.gov.bc.ca/files/pdf/bg_grey_50.png) repeat left top;
+    float:left;
+    margin:0;
+    padding-bottom:10px;
+    width:100%;
+    margin-top:1em;
+	border-top:3px solid white;
+	
+}
+
+h2#learning-standards-head {
+    float:left!important;
+    font-size:2em;
+    width:auto;
+    height:auto;
+    line-height:1.5em!important;
+    display:block;
+    color:#fff;
+    background:url(/sites/curriculum.gov.bc.ca/files/pdf/l_s_icon_white_100.png) no-repeat 3%;
+    padding-left: 70px;
+}
+.big-ideas-attachment .view-footer{
+	width: 96%;	
+}
+
+
+.big-idea-item{
+	   float:left;
+	background:none;
+	background-color: #D2D3D4;
+	width:94%;	
+	height: auto;
+	padding: 3%;
+	text-align:left;
+	border-bottom: 1pt solid #ccc;
+	margin:0px !important;
+	font-size: 100%;
+}	
+.big-idea-item div{
+	display:table;
+	width: 90%;
+	height: 20px;	
+}
+
+
+.big-idea-item div div {
+    position:static;
+    display:table-cell;
+    vertical-align:middle;
+    text-align:left;
+    font-size:1em;
+    line-height:1.3em;
+    height:70px;
+    width:13.5em;
+    padding:0 25px 0 80px;
+	background:url(/sites/curriculum.gov.bc.ca/themes/curriculum/images/circle-outline.png) no-repeat left center;
+}
+.curriculum_content{
+	width:100%;
+	float:left;
+	padding-bottom:10px;
+	background-color: rgb(77,79,84);	
+	
+}
+.page-curriculum .view-display-id-attachment_1 .view-content{
+    float:left;
+	width:100% !important;
+	padding:20px 0;
+}
+
+.page-curriculum .view-display-id-attachment_2 {
+    float:left;
+    padding-left:1.25em;
+    padding-right:1.25em;
+    width:37.5em;
+    border-top:.0125em dashed #fff
+}
+
+
+.page-curriculum .view-display-id-attachment_2 .view-content {
+    float:left;
+    width:34.5em;
+    background:url(/sites/curriculum.gov.bc.ca/files/pdf/bg_white_75.png) repeat left top;
+    padding:1.25em
+}
+/*
+.page-curriculum .view-display-id-attachment_2 .view-content em {
+    margin-bottom:1.25em;
+    display:block
+}*/
+
+.page-curriculum .view-display-id-attachment_2 .view-header h2 {
+    padding-top:.25em;
+    padding-bottom:.25em;
+    border-bottom:.0125em dashed #fff;
+	margin-left: 1%;
+}
+
+.page-curriculum .view-display-id-attachment_2 .view-header {
+    padding-top:.5em;
+    padding-bottom:.6125em;
+    padding-left:50px;
+    background:url(/sites/curriculum.gov.bc.ca/files/pdf/cur_comp_icon_black_75.png) no-repeat left top;
+    margin-top:.5em;
+}
+
+
+
+
+.page-curriculum .view-display-id-attachment_2 .view-content h3{
+	padding-bottom: 20px;	
+}
+.page-curriculum .view-display-id-attachment_2 .curric-comp {
+    margin-bottom:1em;
+    margin-left:0;
+    padding-left:2em;
+    background:url(/sites/curriculum.gov.bc.ca/files/pdf/cur_comp_bullet_black_75.png) no-repeat left top
+}
+
+.page-curriculum .view-display-id-attachment_2 .view-content .curric-comp:first-child {
+    background:none;
+    padding-left:0
+}
+
+.page-curriculum .view-display-id-attachment_3 {
+    float:left;
+    padding-left:0;
+    padding-right:1.25em;
+    border-top:.0125em dashed #fff
+}
+
+
+.page-curriculum .view-display-id-attachment_3 .view-content {
+    float:left;
+    width:16.25em;
+    background:url(/sites/curriculum.gov.bc.ca/files/pdf/bg_white_75.png) repeat left top;
+    padding:1.25em
+}
+.page-curriculum .view-display-id-attachment_3 .view-content .views-field-field-concept-content-stem em {
+
+    margin-bottom:1.25em;
+    display:block
+	position: relative;
+	left: -30px;
+	
+}
+
+.page-curriculum .view-display-id-attachment_3 .view-header {
+    padding-top:.5em;
+    padding-bottom:.6125em;
+    color: #e2e2e2;
+    padding-left:50px;
+    background:url(/sites/curriculum.gov.bc.ca/files/pdf/c_and_c_icon_black_75.png) no-repeat left top;
+    margin-top:.5em;
+    margin-bottom:.25em
+	margin-left: 1%;
+}
+
+.page-curriculum .view-display-id-attachment_3 .view-content h3 {
+    padding-bottom:1em
+}
+
+
+.page-curriculum .view-display-id-attachment_3 .conc-cont {
+    margin-bottom:1em;
+    padding-left:2em;
+    background:url(/sites/curriculum.gov.bc.ca/files/pdf/c_and_c_bullet_black_75.png) no-repeat left top;
+}
+
+.page-curriculum .view-display-id-attachment_3 .conc-cont ul {
+/*margin-left: 20px;*/
+    padding:0 0 0 20px;
+    font-size:1em
+}
+
+
+
+.page-curriculum .view-display-id-attachment_3 .view-content > :first-child {
+    background:none repeat scroll 0 0 transparent!important
+}
+
+.page-curriculum .view-display-id-attachment_3 .view-content div:first-child {
+	background: none repeat scroll 0% 0% transparent;
+    padding-left:0 !important;
+}
+
+.tabs {
+	margin-bottom: 0px;       
+	background-color:white;
+}
+
+.page-curriculum-social-studies-k #learning-standards-head:after {
+	content: " - Identity and Families" !important;
+}
+.fr .page-curriculum-social-studies-k #learning-standards-head:after{
+  content: " - Identité et famille" !important;
+}
+.page-curriculum-social-studies-1 #learning-standards-head:after{
+  content: " - Local Communities" !important;
+}
+.fr .page-curriculum-social-studies-1 #learning-standards-head:after{
+  content: " - Communautés locales" !important;
+}
+.page-curriculum-social-studies-2 #learning-standards-head:after{
+  content: " - Regional and Global Communities" !important;
+}
+.fr .page-curriculum-social-studies-2 #learning-standards-head:after{
+  content: " - Communautés régionales et mondiales" !important;
+}
+.page-curriculum-social-studies-3 #learning-standards-head:after{
+  content: " - Global Indigenous Peoples" !important;
+}
+.fr .page-curriculum-social-studies-3 #learning-standards-head:after{
+  content: " - Peuples autochtones du monde" !important;
+}
+.page-curriculum-social-studies-4 #learning-standards-head:after{
+  content: " - First Peoples and European Contact" !important;
+}
+.fr .page-curriculum-social-studies-4 #learning-standards-head:after{
+  content: " - Contacts entre les peuples autochtones et européens" !important;
+}
+.page-curriculum-social-studies-5 #learning-standards-head:after{
+  content: " - Canadian Issues and Governance" !important;
+}
+.fr .page-curriculum-social-studies-5 #learning-standards-head:after{
+  content: " - Enjeux canadiens et gouvernance" !important;
+}
+.page-curriculum-social-studies-6 #learning-standards-head:after{
+  content: " - Global Issues and Governance" !important;
+}
+.fr .page-curriculum-social-studies-6 #learning-standards-head:after{
+  content: " - Enjeux mondiaux et gouvernance" !important;
+}
+.page-curriculum-social-studies-7 #learning-standards-head:after{
+  content: "- The Ancient World to the 7th Century" !important;
+}
+.fr .page-curriculum-social-studies-7 #learning-standards-head:after{
+  content: " - De l’Antiquité au VIIe siècle" !important;
+}
+.page-curriculum-social-studies-8 #learning-standards-head:after{
+  content: " - 7th Century to 1750" !important;
+}
+.fr .page-curriculum-social-studies-8 #learning-standards-head:after{
+  content: " - Du VIIe siècle à 1750" !important;
+}
+.page-curriculum-social-studies-9 #learning-standards-head:after{
+  content: " - 1750 to 1919" !important;
+}
+.fr .page-curriculum-social-studies-9 #learning-standards-head:after{
+  content: " - 1750 à 1919" !important;
+}
+.page-curriculum-social-studies-10 #learning-standards-head:after{
+	content: " - Canada and the World: 1914 to the Present" !important;	
+}
+.fr .page-curriculum-social-studies-10 #learning-standards-head:after{
+	content: " - Le Canada et le monde : de 1914 à aujourd’hui" !important;	
+}
+
+.fr body[class*="page-curriculum-social-studies-"] #learning-standards-head {
+    height: initial;
+}
+
+.page-curriculum-goals-rationale-fral-1012 .views-row-2{
+	display:block;
+}
+.page-curriculum-goals-rationale-fral-1012 .views-row-1{
+	display:none;
+}
+/* FRAL and FRALP gradepicker styles on english site*/
+
+.page-curriculum-fral-12 li.grade_K,
+.page-curriculum-fral-12 li.grade_1,
+.page-curriculum-fral-12 li.grade_2,
+.page-curriculum-fral-12 li.grade_3,
+.page-curriculum-fral-12 li.grade_4,
+.page-curriculum-fral-12 li.grade_5,
+.page-curriculum-fral-12 li.grade_6,
+.page-curriculum-fral-12 li.grade_7,
+.page-curriculum-fral-12 li.grade_6T,
+.page-curriculum-fral-12 li.grade_7T,
+.page-curriculum-fral-12 li.grade_8,
+.page-curriculum-fral-12 li.grade_9
+{
+	display:none;
+}
+.page-curriculum-fral-11 li.grade_K,
+.page-curriculum-fral-11 li.grade_1,
+.page-curriculum-fral-11 li.grade_2,
+.page-curriculum-fral-11 li.grade_3,
+.page-curriculum-fral-11 li.grade_4,
+.page-curriculum-fral-11 li.grade_5,
+.page-curriculum-fral-11 li.grade_6,
+.page-curriculum-fral-11 li.grade_7,
+.page-curriculum-fral-11 li.grade_6T,
+.page-curriculum-fral-11 li.grade_7T,
+.page-curriculum-fral-11 li.grade_8,
+.page-curriculum-fral-11 li.grade_9
+{
+	display:none;
+}
+.page-curriculum-fral-10 li.grade_K,
+.page-curriculum-fral-10 li.grade_1,
+.page-curriculum-fral-10 li.grade_2,
+.page-curriculum-fral-10 li.grade_3,
+.page-curriculum-fral-10 li.grade_4,
+.page-curriculum-fral-10 li.grade_5,
+.page-curriculum-fral-10 li.grade_6,
+.page-curriculum-fral-10 li.grade_7,
+.page-curriculum-fral-10 li.grade_6T,
+.page-curriculum-fral-10 li.grade_7T,
+.page-curriculum-fral-10 li.grade_8,
+.page-curriculum-fral-10 li.grade_9
+{
+	display:none;
+}
+
+.page-curriculum-francais-langue-premiere-12 li.grade_K,
+.page-curriculum-francais-langue-premiere-12 li.grade_1,
+.page-curriculum-francais-langue-premiere-12 li.grade_2,
+.page-curriculum-francais-langue-premiere-12 li.grade_3,
+.page-curriculum-francais-langue-premiere-12 li.grade_4,
+.page-curriculum-francais-langue-premiere-12 li.grade_5,
+.page-curriculum-francais-langue-premiere-12 li.grade_6,
+.page-curriculum-francais-langue-premiere-12 li.grade_7,
+.page-curriculum-francais-langue-premiere-12 li.grade_6T,
+.page-curriculum-francais-langue-premiere-12 li.grade_7T,
+.page-curriculum-francais-langue-premiere-12 li.grade_8,
+.page-curriculum-francais-langue-premiere-12 li.grade_9
+{
+	display:none;
+}
+.page-curriculum-francais-langue-premiere-11 li.grade_K,
+.page-curriculum-francais-langue-premiere-11 li.grade_1,
+.page-curriculum-francais-langue-premiere-11 li.grade_2,
+.page-curriculum-francais-langue-premiere-11 li.grade_3,
+.page-curriculum-francais-langue-premiere-11 li.grade_4,
+.page-curriculum-francais-langue-premiere-11 li.grade_5,
+.page-curriculum-francais-langue-premiere-11 li.grade_6,
+.page-curriculum-francais-langue-premiere-11 li.grade_7,
+.page-curriculum-francais-langue-premiere-11 li.grade_6T,
+.page-curriculum-francais-langue-premiere-11 li.grade_7T,
+.page-curriculum-francais-langue-premiere-11 li.grade_8,
+.page-curriculum-francais-langue-premiere-11 li.grade_9
+{
+	display:none;
+}
+.page-curriculum-francais-langue-premiere-10 li.grade_K,
+.page-curriculum-francais-langue-premiere-10 li.grade_1,
+.page-curriculum-francais-langue-premiere-10 li.grade_2,
+.page-curriculum-francais-langue-premiere-10 li.grade_3,
+.page-curriculum-francais-langue-premiere-10 li.grade_4,
+.page-curriculum-francais-langue-premiere-10 li.grade_5,
+.page-curriculum-francais-langue-premiere-10 li.grade_6,
+.page-curriculum-francais-langue-premiere-10 li.grade_7,
+.page-curriculum-francais-langue-premiere-10 li.grade_6T,
+.page-curriculum-francais-langue-premiere-10 li.grade_7T,
+.page-curriculum-francais-langue-premiere-10 li.grade_8,
+.page-curriculum-francais-langue-premiere-10 li.grade_9
+{
+	display:none;
+}
+
+.page-curriculum .grade_6T, .page-curriculum .grade_7T {
+    display: none;
+}
+.page-curriculum-fral .grade_6T, .page-curriculum-fral .grade_7T {
+    display: list-item;
+}
+
+.page-curriculum-fral-10 #curriculum_download .gr1012,
+.page-curriculum-fral-11 #curriculum_download .gr1012,
+.page-curriculum-fral-12 #curriculum_download .gr1012{
+    display:block;
+}
+.page-curriculum-fral-10 #curriculum_download .grk9,
+.page-curriculum-fral-11 #curriculum_download .grk9,
+.page-curriculum-fral-12 #curriculum_download .grk9{
+    display:none;
+}
+
+/* FRALP */
+.page-curriculum-francais-langue-premiere-10 #curriculum_download .gr1012,
+.page-curriculum-francais-langue-premiere-11 #curriculum_download .gr1012,
+.page-curriculum-francais-langue-premiere-12 #curriculum_download .gr1012{
+    display:block;
+}
+.page-curriculum-francais-langue-premiere-10 #curriculum_download .grk9,
+.page-curriculum-francais-langue-premiere-11 #curriculum_download .grk9,
+.page-curriculum-francais-langue-premiere-12 #curriculum_download .grk9{
+    display:none;
+}
+
+
+/* PHE */
+
+/*special case for elaborations*/
+
+
+
+.page-curriculum-physical-health-education  .view-display-id-attachment_2 h3{
+ display:none;
+}
+.page-curriculum-physical-health-education  .view-display-id-attachment_2 #curricular-competencies-head{
+ display:block!important;
+
+}
+.page-curriculum-physical-health-education-10  .view-display-id-attachment_2 h3,
+.page-curriculum-physical-health-education-11  .view-display-id-attachment_2 h3,
+.page-curriculum-physical-health-education-12  .view-display-id-attachment_2 h3{
+ display:block !important;
+}
+.page-curriculum-physical-health-education  .view-display-id-attachment_2 h3 + div h3 {
+	display:block;
+	margin-left:-30px;
+	padding-bottom:0px !important;
+}
+
+.page-curriculum-physical-health-education  .view-display-id-attachment_2 h3 + div {
+
+    margin-left:0 !important;
+    padding-left:2em !important;
+    background:none !important;
+}
+.page-curriculum-physical-health-education-10  .view-display-id-attachment_2 h3 + div,
+.page-curriculum-physical-health-education-11  .view-display-id-attachment_2 h3 + div,
+.page-curriculum-physical-health-education-12  .view-display-id-attachment_2 h3 + div {
+
+    margin-left:0 !important;
+    padding-left:2em !important;
+	background: url(/sites/curriculum.gov.bc.ca/files/pdf/cur_comp_bullet_black_75.png) no-repeat left top !important;
+}
+
+
+/* Science */
+/* Special header case for elaborations*/
+
+.page-curriculum-science h3 + div h3 {
+    display:block;
+    margin-left:-30px;
+	padding-bottom:0px !important;
+	
+}
+
+/*PHE */
+.page-curriculum-physical-health-education .view-display-id-attachment_2 #ccg-id-93686 .curric-comp:nth-child(2) {
+    margin-left:0;
+    padding-left:2em;
+    background:none !important;
+}
+
+.page-curriculum-physical-health-education-12 .view-display-id-attachment_2 #ccg-id-93686 .curric-comp:nth-child(2) {
+	   background: url(/sites/curriculum.gov.bc.ca/files/pdf/cur_comp_bullet_black_75.png) no-repeat left top !important;
+}
+.page-curriculum-physical-health-education-fitness-and-conditioning .view-display-id-attachment_2 #ccg-id-93686 .curric-comp:nth-child(2) {
+	   background: url(/sites/curriculum.gov.bc.ca/files/pdf/cur_comp_bullet_black_75.png) no-repeat left top !important;
+}
+
+/* Human anatomy and Physiology */
+.page-curriculum-physical-health-education-11 .view-display-id-attachment_2 #ccg-id-93684 .curric-comp:nth-child(2) {
+	   background:none !important;
+}
+
+.page-curriculum-physical-health-education-12 .view-display-id-attachment_2 #ccg-id-93684 .curric-comp:nth-child(2) { 
+	background:none !important;
+}
+
+
+
+
+/**** ADST ****/
+
+
+.page-node-18734 .content table tr.subject-10-12 td{
+  width: 33%;
+  padding: 0px;
+  border: none;
+  padding-left: 20px;
+  vertical-align: top;
+}
+tbody .subject-10-12:first-child{
+	background-color:white;
+}
+.subject-10-12 h2 {
+	margin: .5em 0  0 0!important;	
+}
+
+
+/* English Language arts*/
+
+/** Temporaray fixes**/
+.page-curriculum-english-language-arts #subject_menu ul li:first-child,.page-curriculum-goals-rationale-english-language-arts #subject_menu ul li:first-child {
+    display:none
+}
+.page-curriculum-whats-new-arts-education .grade_9 {
+    visibility:hidden;
+    display:none
+}
+
+
+/* styles for long curriculum subject headers */
+
+
+.page-curriculum-arts-education-9 .grade_9_arts_education_submenu {
+    display:block!important
+}
+
+/** Overview links **/
+.gr1012_overview{
+	display:none;
+}
+/** overview for fral 10-12**/
+.page-curriculum-fral-10 .gr1012_overview,
+.page-curriculum-fral-11 .gr1012_overview,
+.page-curriculum-fral-12 .gr1012_overview{
+	display:block;
+}
+.page-curriculum-fral-10 .grk9_overview,
+.page-curriculum-fral-11 .grk9_overview,
+.page-curriculum-fral-12 .grk9_overview{
+	display:none;
+}
+
+.page-curriculum .view-display-id-attachment_1{
+	width: 100%;	
+}
+
+.page-curriculum .view-display-id-attachment_2{
+	width: 97%;
+	padding-left: 1.5%;
+	padding-right: 1.5%;
+	 
+}
+.page-curriculum .view-display-id-attachment_2 .view-content{
+	width: 94%;	
+	padding: 3%;
+}
+
+.page-curriculum .view-display-id-attachment_3{
+	width: 97%;
+	padding-left: 1.5%;
+	padding-right: 1.5%;
+}
+.page-curriculum .view-display-id-attachment_3 .view-content{
+	width: 94%;	
+	padding: 3%;
+}
+.page-curriculum .view-display-id-attachment_4 .view-content{
+	display:none;
+}
+.page-curriculum .view-display-id-attachment_4 .view-footer{
+	height: 25px;	
+}
+.page-curriculum .view-display-id-attachment_4 .view-footer .curriculum-info-links{
+	background-color: #626366;
+	float: left;
+	width:96%;
+	padding: 10px 2.025%;
+	min-height:40px;
+	margin-top: 10px;
+	
+}
+.page-curriculum .view-display-id-attachment_4 .view-footer .curriculum-info-links a:hover{
+	text-decoration: underline;
+}
+
+.page-curriculum .view-display-id-attachment_4 .view-footer .curriculum-info-links a{
+	display: inline;
+	padding: 10px 10px 0px 10px;		
+	float:left;
+	color: white;
+	float:left;
+
+}
+.i18n-fr .curriculum-info-links a{
+	width:130px !important; 
+}
+.page-curriculum .view-display-id-attachment_4 .view-footer .curriculum-info-links a:hover{
+	text-decoration:underline;	
+}

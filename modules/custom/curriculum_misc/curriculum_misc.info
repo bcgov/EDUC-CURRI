@@ -1,0 +1,7 @@
+name = Curriculum Misc
+description = Provides custom variables and functionality to other custom modules for the curriculum.gov.bc.ca site.
+core = 7.x
+version = 7.x-0.1-dev
+configure = admin/config/curriculum
+package = Curriculum
+# dependencies[] = googleanalytics

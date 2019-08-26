@@ -1,0 +1,19 @@
+<?php
+//adds elaborations to the view
+function curriculum_elaborations_page_alter(&$page) {
+// Add a new behavior for the elaboration buttons
+drupal_add_js(drupal_get_path('module', 'curriculum_elaborations').'/curriculum_elaborations.js');
+//Settings for beautytips JS						
+$options['keyword_elaborations'] = array(
+      'cssSelect' => '.keyword_w_elaboration',
+      'contentSelector' => "$(this).next('.elaboration')",
+      'width' => 350,
+	  'keepOpenWhenHovering' => true,
+	 
+);
+
+beautytips_add_beautytips($options);
+drupal_add_js(drupal_get_path('module', 'beautytips'). '/other_libs/jquery.hoverIntent.minified.js');
+}
+
+?>

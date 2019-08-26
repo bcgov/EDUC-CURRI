@@ -1,0 +1,7 @@
+name = Curriculum Elaborations
+description = Adds Functionallity to the curriculum elaborations
+package = Curriculum
+version = VERSION
+core = 7.x
+# configure = admin/settings/curriculum_elaborations
+files[] = curriculm_elaborations.module

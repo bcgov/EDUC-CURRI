@@ -1,0 +1,26 @@
+<?php
+
+/**
+ * Implements hook_install()
+ */
+function curriculum_misc_install() {
+
+  // t() may be unavailable at install
+  $t = get_t();
+
+  // init vars (defaults)
+  variable_set('curriculum_misc_prodURL', 'curriculum.gov.bc.ca');
+
+  // give user feedback at install
+  drupal_set_message($t('Curriculum Misc variables set.'));
+
+} // curriculum_misc_install()
+
+/**
+ * Implements hook_uninstall()
+ */
+function curriculum_misc_uninstall() {
+
+  variable_del('curriculum_misc_prodURL');
+
+} // curriculum_misc_uninstall()

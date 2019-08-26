@@ -1,0 +1,451 @@
+<?php
+
+//Config menu item
+/*
+function curriculum_data_entry_menu() {
+
+  $items = array();
+  return $items;
+}
+*/
+//Config form
+/*
+function curriculum_data_entry_admin() {
+  $form = array();
+  return system_settings_form($form);
+}
+*/
+
+function curriculum_data_entry_node_presave($node) {
+    // Reset votes when node is updated:
+	if($node->field_status['und'][0]['value'] == "Do Not Regenerate Nodes"){
+		drupal_set_message("Node Saved, but nodes NOT Regenerate ");	
+	}else{
+			if($node->type == "curriculum_data"){
+				drupal_set_message("Node Saved and Regenerate Nodes");
+						//dpm($node);	
+				delete_nodes($node->field_subject['und'][0]['target_id'], $node->field_grade['und'][0]['target_id']);
+				create_curricular_competencies_nodes($node->field_competencies['en'][0]['value'],$node->field_competencies_elaboration['en'][0]['value'],$node->field_subject['und'][0]['target_id'], $node->field_grade['und'][0]['target_id']);		
+				create_content_and_concepts_nodes($node->field_content['en'][0]['value'],$node->field_content_elaborations['en'][0]['value'],$node->field_subject['und'][0]['target_id'], $node->field_grade['und'][0]['target_id'] );		
+				create_big_ideas_nodes($node->field_big_ideas['en'][0]['value'],$node->field_big_ideas_elaborations['en'][0]['value'],$node->field_subject['und'][0]['target_id'], $node->field_grade['und'][0]['target_id']);		
+				get_ccg_ids();
+			
+			}		
+		
+	}
+		
+}
+//delete all nodes of subject and grade(){}
+function delete_nodes($subject, $grade){
+	$query = new EntityFieldQuery();
+	$query->entityCondition('entity_type', 'node');
+	$query->entityCondition('bundle', array('big_idea','concept_content','curricular_competency'), 'IN');
+	$query->propertyCondition('status', NODE_PUBLISHED);
+	$query->fieldCondition('field_subject', 'target_id', $subject, "=");	
+	$query->fieldCondition('field_grade', 'target_id', $grade, "=");
+
+	$result = $query->execute();  
+	
+	if (isset($result['node'])) {
+	  $nodes = array_keys($result['node']);
+		foreach($nodes as $n){
+			node_delete($n);
+			drupal_set_message("deleting $n");
+		}
+
+	}//else return "error with delete";
+}
+function get_elaborations_keywords($elaborations){
+	if($elaborations != ""){
+		$dom2 = new DOMDocument;
+		$dom2->loadHTML(strip_tags($elaborations,'<ul><li><br><span><em><sup>'));
+		
+		$keywords = "";
+		foreach($dom2->getElementsByTagName('ul')->item(0)->childNodes as $elaboration_li_node){
+			
+			$inner_html = get_inner_html($elaboration_li_node);
+			
+			if($inner_html){
+				if (strpos($inner_html, ':') !== FALSE){
+					
+
+					list($k, $e) = explode(":", $inner_html,2);
+					//handle exception for elaborations with two semi colons. Normally there should be one as a delimiter
+					if($k != "" || $e != ""){
+						$keywords[trim(strtolower($k))] = $e;
+						drupal_set_message("<strong>Key</strong> " . trim(strtolower($k)) . "<br/><strong>Elaboration</strong> "  . $keywords[trim(strtolower($k))] );
+					}
+				}else{
+					drupal_set_message("<font color='red'> ERROR -- Elaboration <strong>" . $inner_html . "</strong> may be missing a colon to delimit the keyword and elaboration</font>");	
+				}
+			}
+		}
+		return $keywords;	
+	}else return;
+
+}
+//passes in text to be parsed and separated into curricular competency content types
+function create_curricular_competencies_nodes($curricular_competencies, $elaborations, $curriculum_subject, $curriculum_grade){
+	//dpm($elaborations);
+	//print parameters 
+	drupal_set_message($curricular_competencies . "\n" .  $elaborations . "\n" .  $curriculum_subject  . "\n" .  $curriculum_grade);
+	//dpm($curricular_competencies);
+	//drupal_set_message($curricular_competencies['und'][0]['value']);
+;
+	//parse the list items
+	$dom = new DOMDocument;
+	
+	$dom->loadHTML(clean_str($curricular_competencies));
+
+	$keywords = get_elaborations_keywords($elaborations);
+	drupal_set_message("curricular_competency elaborations");
+	foreach($dom->getElementsByTagName('ul') as $node){
+		
+		$ccg = get_ccg_id("ccg-" . get_subject_name($curriculum_subject) . "-" . $node->previousSibling->nodeValue);
+		foreach( $node->getElementsByTagName('li') as $li_node){
+			drupal_set_message($li_node->nodeValue . "created");
+			$li_node_html =  trim(get_inner_html($li_node));
+			//Create a curricualr competency node
+			$node = new stdClass();
+			$node->type = 'curricular_competency';
+			$node->language = 'en';
+			$node->body['en'][0]['format']  = 'full_html';
+			$node->status = 1;
+			$node->promote = 0;
+			$node->comment = 0;
+			$node->sticky = 0;
+			$node->moderate = 0;
+			$node->title = 'cc';
+			$node->body['en'][0]['value'] = $li_node->nodeValue;
+			$node->field_curricular_competency[$node->language][0]['format']  = 'filtered_html';
+			$node->field_curricular_competency[$node->language][0]['value'] = $li_node_html;
+			$node->field_subject['und'][0]['target_id'] = $curriculum_subject;
+			$node->field_grade['und'][0]['target_id'] = $curriculum_grade;	
+			drupal_set_message($ccg);
+			if($ccg != "_none"){
+				$node->field_curricular_competency_grou['und'][0]['target_id'] = $ccg; 
+			}
+			//add elaborations
+				
+				$li_node_keywords = getTextBetweenTags("strong", $li_node_html);
+					
+					if($li_node_keywords){
+						$i = 0;
+						foreach($li_node_keywords as $keyword){
+							
+							$keyword= trim($keyword,chr(0xC2).chr(0xA0));
+							//drupal_set_message("KEYWORDS");
+							//dpm($keywords);
+							
+							if($keywords[trim($keyword)] == ""){
+							drupal_set_message("<font color='red'>cant find elaboration:". $keyword ." in keywords array</font>");	
+
+							}
+							
+							$node->field_keywords['en'][$i]['format']  = 'filtered_html';
+							$node->field_keywords['en'][$i]['value'] = trim($keyword);		
+							$node->field_elaboration['en'][$i]['format']  = 'filtered_html';
+							$node->field_elaboration['en'][$i]['value'] = $keywords[trim(strtolower($keyword))];			
+						
+							$i++;
+							
+						}
+					}
+			
+			node_object_prepare($node);
+			$node = node_submit($node);
+			node_save($node);
+		}
+	}		
+
+
+}
+//function to clean up strings from word input
+function clean_str($str){
+	//$str = str_replace(" </strong>", "</strong> ",$str);
+	return $str;
+	
+}
+function get_subject_name($subject_id){
+	$query = new EntityFieldQuery();
+	$query->entityCondition('entity_type', 'node');
+	$query->entityCondition('bundle', 'subject');
+	$query->propertyCondition('nid', $subject_id, "=");	
+	$result = $query->execute();  
+	
+	if (isset($result['node'])) {
+	  $nodes = array_keys($result['node']);
+	  $node = entity_load('node', $nodes);
+		//drupal_set_message($node[$subject_id]->field_subject_range['und'][0]['value']);
+		drupal_set_message("subject ". $node[$subject_id]->field_subject_range['und'][0]['value']);
+		drupal_set_message("subject ". str_replace('immerson', 'immersion',$node[$subject_id]->field_subject_range['und'][0]['value']));
+		drupal_set_message($node->title);
+	  return str_replace('Français langue Seconde - immerson', 'Français langue Seconde - immersion',$node[$subject_id]->field_subject_range['und'][0]['value']);
+
+	}else return "subject not found";
+}
+//Return id of a curricualar competency group by passing the title.
+function get_ccg_id($ccg_title){
+	drupal_set_message( "get ccg id: $ccg_title");
+
+	$query = new EntityFieldQuery();
+	$query->entityCondition('entity_type', 'node'); 
+	$query->entityCondition('bundle', 'curricular_competency_group');
+	$query->propertyCondition('title', $ccg_title, "=");
+	
+	$result = $query->execute();  
+	$nids = array();
+	if (isset($result['node'])) {
+	  $nids = array_keys($result['node']);
+	  $items = entity_load('node', $nids);
+	  return $nids[0];
+	}else return "_none";
+}
+
+
+function get_ccg_ids(){
+	$query = new EntityFieldQuery();
+	$query->entityCondition('entity_type', 'node'); 	
+	$query->entityCondition('bundle', 'curricular_competency_group');
+	$query->propertyCondition('title', 'ccg-Français langue seconde - immersion-Explorer et réfléchir', "=");
+
+	
+	$result = $query->execute();  
+	$nids = array();
+	if (isset($result['node'])) {
+	  $nids = array_keys($result['node']);
+	  $items = entity_load('node', $nids);
+		foreach($items as $item){
+			drupal_set_message("hello wortld" . $item->title);			
+		}
+
+
+	  return $nids[0];
+
+	}else return "_none";
+}
+
+
+//Passes in text to be pasted and separated into content
+
+function create_content_and_concepts_nodes($content_concepts, $elaborations, $curriculum_subject, $curriculum_grade){
+	//dpm($content_concepts);
+	//parse the list items
+	$dom = new DOMDocument;
+	$dom->loadHTML(clean_str($content_concepts));
+	$keywords = get_elaborations_keywords($elaborations);
+	
+							//dpm($keywords);
+
+	foreach($dom->getElementsByTagName('ul')->item(0)->childNodes as $li_node){
+		if(trim($li_node->nodeValue) != ""){
+			//drupal_set_message($li_node->nodeValue . "concept created");
+			$li_node_html =  trim(get_inner_html($li_node));
+			//drupal_set_message($li_node_html . "-li node html");
+			//Create a curricualr competency node
+			$node = new stdClass();
+			$node->type = 'concept_content';
+			$node->language = 'en';
+			$node->body['en'][0]['format']  = 'plain_text';				
+			$node->status = 1;
+			$node->promote = 0;
+			$node->comment = 0;
+			$node->sticky = 0;
+			$node->moderate = 0;
+			$node->title = 'cc';
+			$node->body['und'][0]['value'] = $li_node_html;
+			$node->field_concept_content['en'][0]['format']  = 'full_html';
+			$node->field_concept_content['en'][0]['value'] = $li_node_html;
+			$node->field_subject['und'][0]['target_id'] = $curriculum_subject;
+			$node->field_grade['und'][0]['target_id'] = $curriculum_grade;
+			
+			//add Elaborations
+					
+					$li_node_keywords = getTextBetweenTags("strong", $li_node_html);
+					
+					if($li_node_keywords){
+						$i = 0;
+						foreach($li_node_keywords as $keyword){
+							$keyword= trim($keyword,chr(0xC2).chr(0xA0));
+							//drupal_set_message("KEYWORDS");
+							//dpm($keywords);
+							
+							if($keywords[trim($keyword)] == ""){
+								//drupal_set_message("<font color='red'>cant find elaboration:". $keyword ." in keywords array</font>");	
+							}
+							
+							$node->field_keywords['en'][$i]['format']  = 'filtered_html';
+							$node->field_keywords['en'][$i]['value'] = trim($keyword);		
+							$node->field_elaboration['en'][$i]['format']  = 'filtered_html';
+							$node->field_elaboration['en'][$i]['value'] = $keywords[trim(strtolower($keyword))];										
+							$i++;
+							
+						}
+					}
+					
+			node_object_prepare($node);
+			$node = node_submit($node);
+			node_save($node);
+		}
+	}	
+	
+}
+
+//passes in text to be parsed and separated into big ideas types
+function create_big_ideas_nodes($big_ideas, $elaborations, $curriculum_subject, $curriculum_grade){
+	//dpm($big_ideas);
+	//parse the list items
+	$dom = new DOMDocument;
+	$dom->loadHTML(clean_str($big_ideas));
+	$xpath = new DOMXPath($dom);
+	$keywords = get_elaborations_keywords($elaborations);
+	//dpm($keywords);
+	$tnid_index = array();
+	$tnid_count=0;
+	foreach($dom->getElementsByTagName('p') as $p_node){
+			$clean_str =trim($p_node->nodeValue, chr(0xC2).chr(0xA0));
+			
+			if($clean_str != ""){
+			
+				//Create a curricualr competency node
+				$node = new stdClass();
+				$node->type = 'big_idea';
+				$node->language = 'en';
+				$node->body['en'][0]['format']  = 'full_html';
+				$node->body['fr'][0]['format']  = 'full_html';
+				$node->status = 1;
+				$node->promote = 0;
+				$node->comment = 0;
+				$node->sticky = 0;
+				$node->moderate = 0;
+				$node->title = 'bi';
+				$node->body['und'][0]['value'] = $p_node->nodeValue;
+				$node->field_big_idea['en'][0]['format']  = 'filtered_html';
+				$node->field_big_idea['en'][0]['value'] = trim(get_inner_html($p_node));
+				$node->field_big_idea['fr'][0]['format']  = 'filtered_html';
+				$node->field_big_idea['fr'][0]['value'] = trim(get_inner_html($p_node)."FRENCH");
+				$node->field_subject['und'][0]['target_id'] = $curriculum_subject;
+				$node->field_grade['und'][0]['target_id'] = $curriculum_grade;	
+				//add Elaborations
+					
+					$node_keywords = getTextBetweenTags("strong", trim(get_inner_html($p_node)));
+					
+					if($node_keywords){
+						$i = 0;
+						foreach($node_keywords as $keyword){
+							$keyword= trim($keyword,chr(0xC2).chr(0xA0));
+							//drupal_set_message("KEYWORDS");
+							//dpm($keywords);
+							
+							if($keywords[trim($keyword)] == ""){
+								//drupal_set_message("<font color='red'>cant find elaboration:". $keyword ." in keywords array</font>");	
+							}
+							
+							$node->field_keywords['en'][$i]['format']  = 'filtered_html';
+							$node->field_keywords['en'][$i]['value'] = trim($keyword);		
+							$node->field_elaboration['en'][$i]['format']  = 'filtered_html';
+							$node->field_elaboration['en'][$i]['value'] = $keywords[trim(strtolower($keyword))];										
+							$i++;
+							
+						}
+					}
+				node_object_prepare($node);
+				$node = node_submit($node);
+				node_save($node);
+				
+				$handler = entity_translation_get_handler('node', $node); // Create a handler from entity translation
+ 
+				// Configuration about what to translate
+				$translation = array(
+				  'translate' => 0,
+				  'status' => 1,
+				  'language' => 'fr',          // here is the language you're translating to
+				  'source' => $node->language, // here is the source language
+				);
+				 
+				$handler->setTranslation($translation);
+				$handler->saveTranslations();
+
+					
+
+			}
+	}	
+	
+}
+function getTextBetweenTags($tag, $html, $strict=0)
+{
+    /*** a new dom object ***/
+    $dom = new domDocument;
+
+    /*** load the html into the object ***/
+    if($strict==1)
+    {
+        $dom->loadXML($html);
+    }
+    else
+    {
+        $dom->loadHTML('<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>' . $html);
+    }
+
+    /*** discard white space ***/
+    $dom->preserveWhiteSpace = true;
+
+    /*** the tag by its tag name ***/
+	
+    $content = $dom->getElementsByTagname($tag);
+
+    /*** the array to return ***/
+    $out = array();
+    foreach ($content as $item)
+    {
+        /*** add node value to the out array ***/
+		$str = $item->nodeValue;
+		//drupal_set_message("unmodified: " . $str);
+		$str = rtrim($str,',');
+		$str = rtrim($str,', ');		
+		$str = rtrim($str,'.');
+		$str = rtrim($str,'. ');
+		$str = rtrim($str,':');	
+		$str = rtrim($str,': ');					
+		//drupal_set_message("modified: " . $str);
+        $out[] = $str;
+    }
+    /*** return the results ***/
+    return $out;
+}
+
+function get_inner_html( $node ) { 
+    $innerHTML= ''; 
+    $children = $node->childNodes;
+	if($children){
+		foreach ($children as $child) { 
+			$innerHTML .= $child->ownerDocument->saveXML( $child ); 
+		} 
+	}
+	$innerHTML = preg_replace('/\s+/', ' ', $innerHTML);
+
+    
+	return $innerHTML;
+} 
+function curriculum_data_entry_cron() {
+/*
+drupal_set_message("<h3>Ministry Highlights</h3>" . $output2 . "<h3>Ministry Events</h3></br/>" . $output . $end_date);
+
+$node = new stdClass();
+$node->type = 'current_events';
+$node->language = LANGUAGE_NONE;
+$node->body[$node->language][0]['format']  = 'full_html';
+$node->status = 1;
+$node->promote = 0;
+$node->comment = 0;
+$node->sticky = 0;
+$node->moderate = 0;
+$node->title = 'Upcoming Events for ' . date('d.m.Y');
+$node->body['und'][0]['value'] = "<h3>Ministry Highlights</h3>" . $output2 . "<h3>Ministry Events</h3>" . $output;
+node_object_prepare($node);
+$node = node_submit($node);
+node_save($node);
+*/
+}

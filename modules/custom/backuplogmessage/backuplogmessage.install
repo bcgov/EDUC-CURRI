@@ -1,0 +1,60 @@
+<?php
+/**
+ * @file (Backup Log Message Installation)
+ */
+
+/**
+ * Implements hook_install()
+ */
+function backuplogmessage_install() {
+
+  // t() may be unavailable at install
+  $t = get_t();
+
+  // https://api.drupal.org/api/drupal/modules%21node%21node.module/function/node_type_save/7
+  if (!node_type_get_type('backup_log_entry')) {
+
+    $type = array(
+      'type' => 'backup_log_entry',
+      'name' => 'Backup Log Entry',
+      'base' => 'node_content',
+      'description' => 'Log entries created when a new quick backup is made by the Backup and Migrate module.',
+      'custom' => TRUE,
+      'modified' => FALSE,
+      'locked' => TRUE,
+      'disabled' => FALSE,
+      'has_title' => TRUE,
+    );
+
+    // http://drupal.stackexchange.com/questions/79263/what-is-the-correct-way-to-programatically-set-node-type-options
+    variable_set('node_preview_backup_log_entry', 0);                     // Set 'Preview before submitting' to 'Disabled'.
+    variable_set('node_options_backup_log_entry', array('status'));       // Set 'Default options' to 'Published'.
+    variable_set('node_submitted_backup_log_entry', 0);                   // Unset 'Display author and date information'.
+    variable_set('comment_backup_log_entry', COMMENT_NODE_CLOSED);        // Default comment setting == 'Closed'.
+
+    $type = node_type_set_defaults($type);
+    node_type_save($type);
+    node_add_body_field($type);
+
+    drupal_set_message('Created Backup Log Entry content type.');
+
+  } // if backup_log_entry content type doesn't already exist
+
+  // give user feedback at install
+  drupal_set_message($t('Backup Log Message has been installed.'));
+
+} // backuplogmessage_install()
+
+
+/**
+ * Implements hook_uninstall()
+ */
+function backuplogmessage_uninstall() {
+
+  // t() may be unavailable during uninstall
+  $t = get_t();
+
+  // give user feedback at uninstall
+  drupal_set_message($t('Backup Log Message uninstalled. Remove any Backup Log Entry nodes manually.'));
+
+} // backuplogmessage_uninstall()

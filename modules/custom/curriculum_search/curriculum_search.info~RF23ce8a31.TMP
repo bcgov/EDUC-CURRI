@@ -1,0 +1,6 @@
+name = Curriculum Search
+description = Support Module for Curriculum Search.
+core = 7.x
+version = 7.x
+package = Curriculum
+project = "drupal"

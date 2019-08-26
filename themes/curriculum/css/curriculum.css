@@ -1,0 +1,7160 @@
+/* Curriculum temporary code for k-9*/
+/*
+.grade-picker .grade-10, .grade-picker .grade-11, .grade-picker .grade-12, .grade-picker .grade-all, .view-display-id-curriculum_megamenu .grade-10, .view-display-id-curriculum_megamenu .grade-11, .view-display-id-curriculum_megamenu .grade-12, .view-display-id-curriculum_megamenu .grade-all{
+	display:none;
+}
+.views-row-4.area-of-learning .grade-10,.views-row-4.area-of-learning .grade-11, .views-row-4.area-of-learning .grade-12{
+	display:block !important;
+}
+.views-row-4.area-of-learning .grade-10,.views-row-4.area-of-learning .grade-11, .views-row-4.area-of-learning .grade-12{
+
+}
+.views-row-11.area-of-learning .grade-10,.views-row-11.area-of-learning .grade-11, .views-row-11.area-of-learning .grade-12{
+	display:block !important;
+}*/
+
+#menu-3528-1 div > a{
+	font-weight:normal !important;
+}
+#menu-3528-1 div ol{
+	margin-left:20px;
+
+}
+#menu-3529-1 div ol{
+	margin-left:20px;
+}
+#menu-423-1 ol{
+	width: 300px !important;
+}
+#menu-423-1 ul{
+	width: 300px !important;
+}
+#menu-423-1 ul > li{
+	width: 300px !important;
+}
+#menu-771-1, #menu-3553-1, #menu-3556-1{
+	text-decoration:none;
+}
+
+/*fixes for keywords that are over 256 characters*/
+.i18n-fr.page-curriculum-social-studies-contemporary-indigenous-studies .views-row-2.curric-comp .cc:hover{
+	text-decoration: underline;
+}
+.i18n-fr.page-curriculum-social-studies-physical-geography .views-row-2.curric-comp .cc:hover{
+	text-decoration: underline;
+}
+.i18n-en.page-curriculum-fral.subject-landing-page .view-content .view-grouping:first-child .course-group-title h3{
+	display:none;
+}
+.i18n-en.page-curriculum-fral.subject-landing-page .view-content .view-grouping:first-child .course-group-title:before{
+	content: "Students are required to complete one of the four courses below:";
+}
+.i18n-fr.page-curriculum-fral.subject-landing-page .view-content .view-grouping:first-child .course-group-title h3{
+	display:none;
+}
+.i18n-fr.page-curriculum-fral.subject-landing-page .view-content .view-grouping:first-child .course-group-title:before{
+	content: "Les élèves doivent avoir terminé un des quatre cours ci-après :";
+}
+
+
+
+#block-block-70 .odd, #block-block-70 .even{
+	background-color:white !important;
+	border-bottom: 2px solid #ccc;
+	height: 200px;
+}
+.views-field.views-field-field-description{
+	color:#ccc !important;
+}
+.view-profile-illustrations{
+	float:right;
+}
+ul.quicktabs-tabs.quicktabs-style-basic li{
+	padding:15px !important;
+	top:-15px !important;
+}
+ul.quicktabs-tabs.quicktabs-style-basic li.active{
+	top:-13px !important;
+}
+.page-node-3864 ul li.c{
+    background: url(/sites/curriculum.gov.bc.ca/files/pdf/core_comp_c_orange.png) no-repeat left top;
+    padding-left: 6em;
+}
+.page-node-3864 ul li.t{
+    background: url(/sites/curriculum.gov.bc.ca/files/pdf/core_comp_t_blue.png) no-repeat left top;
+    padding-left: 6em;
+}
+.page-node-3864 ul li.ps{
+	background: url(/sites/curriculum.gov.bc.ca/files/pdf/core_comp_ps_green.png) no-repeat left top;
+    padding-left: 6em;
+}
+.page-node-3864 #block-block-69 ul{
+	position: absolute;
+    top: -85px;
+    width: 1227px;
+    padding: 20px;
+    background: white;
+    left: -280px;
+    border-bottom: 3px solid #CCC;
+    margin: auto;
+	padding: 0px 25%;
+}
+#quicktabs-container-critical_thinking_qt{
+	padding-top:20px;
+	padding-left:20px;
+}
+
+#block-block-69 .ui-accordion .ui-accordion-content{
+	padding: 10px !important;
+}
+.sample-i-statements{
+	background: #2683c5;
+	padding:5px;
+	border-top:10px solid #67a8d6;
+	color:white;
+}
+.sample-odd td, .sample-even td{
+	border: none !important;
+	padding-left:20px
+}
+.sample-odd{
+	background: #67a8d6;
+	color:white;
+}
+.sample-even{
+	background: #67a8d6;
+	color:white;
+
+}
+.sample-even p{
+	padding-left:50px;
+	background: url('/sites/curriculum.gov.bc.ca/files/images/arrow-right.png') no-repeat;
+}
+.sample-odd p{
+	padding-left:50px;
+	background: url('/sites/curriculum.gov.bc.ca/files/images/arrow-right.png') no-repeat;
+}
+
+
+#block-block-71 tr.odd{
+	background: #CCC;
+}
+#block-block-71 tr.even{
+	background: #e2e2e2;
+}
+/* FRAL 11 */
+
+.page-curriculum-fral-11.page-curriculum-fral-courses.i18n-en #block-system-main > div > div > div.view-content::before{
+    content: "Students are required to complete one of the four courses below:";
+}
+.page-curriculum-fral-11.page-curriculum-fral-courses.i18n-fr #block-system-main > div > div > div.view-content::before{
+    content: "Les élèves doivent avoir terminé un des quatre cours ci-après :";
+}
+
+/* */
+/*Career-education  CLC fix*/
+.page-curriculum-career-education-all .view-content .view-grouping:nth-child(1),.page-curriculum-career-education-all .view-content .view-grouping:nth-child(2)  {
+	display:none;
+}
+
+/* Optional courses header for grade 11 FRAL remove */
+.page-curriculum-additional-offerings .view-display-id-attachment_5 .gradepicker-subject{
+	display:none;
+}
+.page-curriculum-fral-courses.page-curriculum-fral-11 .view-grouping-header{
+	display:none;
+}
+.page-curriculum-english-language-arts-12.page-curriculum-english-language-arts-courses #block-system-main > div > div > div.view-content::before{
+    content: "*One of the following courses is required for all students: English Studies 12 -or- English First Peoples 12. All other course offerings are available as electives.";
+}
+
+/* Hide grade 12A and B group headers */
+
+.page-curriculum-additional-offerings .curriculum-directory .view-grouping:nth-child(4) .view-grouping-header,
+.page-curriculum-additional-offerings .curriculum-directory .view-grouping:nth-child(3) .view-grouping-header{
+	display:none;
+}
+.page-curriculum-additional-offerings .curriculum-directory .view-grouping:nth-child(3) .view-grouping-content{
+	margin-top:-25px;
+}
+.page-curriculum-additional-offerings .curriculum-directory .view-grouping:nth-child(4) .view-grouping-content{
+	margin-top:-35px;
+}
+
+/* Hide Download Links for intro and goals and rationale*/
+body[class*="-introduction"] #curriculum_download{
+	display: none;
+}
+
+body[class*="-introduction"] .grade-picker-view-attachment{
+	margin-top:-40px;
+}
+body[class*="-goals-and-rationale"] #curriculum_download{
+	display: none;
+}
+
+body[class*="-goals-and-ratioanle"] .grade-picker-view-attachment{
+	margin-top:-40px;
+}
+.page-curriculum-fral-courses.page-curriculum-fral-11 .view-grouping-header{
+	display:none;
+}
+.page-curriculum-english-language-arts-12.page-curriculum-english-language-arts-courses #block-system-main > div > div > div.view-content::before{
+    content: "*One of the following courses is required for all students: English Studies 12 -or- English First Peoples 12. All other course offerings are available as electives.";
+}
+
+/* Hide grade 12A and B group headers */
+
+
+/* Hide second languages front-matter*/
+
+.page-curriculum-second-languages-courses .intro-whatsnew-goals{
+	display:none;
+}
+.page-curriculum-second-languages-all-courses .intro-whatsnew-goals, .page-curriculum-second-languages-all-courses .resources{
+	display:none !important;
+}
+.page-curriculum-second-languages .resources{
+	display:none !important;
+}
+div.whats-new{
+	display:none;
+}
+
+.page-curriculum-second-languages-core-french .curriculum-info-links div{
+	display:block;
+
+}
+.page-curriculum-second-languages .curriculum-info-links div.curriculum-overview{
+	display:block !important;;
+}
+.download-grade-collection{
+	display:none !important;
+}
+
+
+.grade-10-implementation-note{
+	color:white;
+	text-align:center;
+}
+
+.grade-picker .grade-all{
+	display:none;
+}
+
+
+/* Languages Continuous Views*/
+
+.language-continuous-view{
+	display:none;
+}
+.page-curriculum-second-languages-all-courses .language-continuous-view{
+	display:block !important;
+}
+.page-curriculum-second-languages-all-courses .language-continuous-view .curriculum-download-links{
+	margin-top:-20px;
+
+}
+
+/** CSS for curriculum **/
+.continuous-view-btn, .continuous-view-btn-toggle{
+	display:none;
+}
+.continuous-view-btn.bi{
+	display:none;
+}
+
+#header .language-switcher{
+	display:none;
+}
+.front #content{
+	background:none;
+}
+.learning-standard-topic {
+	display:inline;
+}
+.mean-container > div.mean-bar > nav > ul > li:nth-child(1) > a:nth-child(1), .mean-container > div.mean-bar > nav > ul > li:nth-child(1) > a:nth-child(2){
+	visibility:hidden;
+	display:none;
+}
+#menu-1447-1 a{
+	padding-left:10px;
+}
+#menu-2850-1{
+	display:none;
+}
+.mean-container .mean-nav ul li:first-child div div div a:hover{
+	background-color: #003366;
+}
+.mean-container .mean-nav ul li:first-child div div div a{
+	visibility: visible !important;
+	float:left;
+	width:33.33%;
+	box-sizing: border-box;
+	display:block;
+	background-color: #003366;
+	height:45px;
+}
+
+#edit-keys-wrapper .description{
+  width: 100%;
+}
+
+.bt-wrapper em {
+    display:inline !important;
+}
+
+.grade_1012 a {
+    width:75px !important;
+}
+
+/**/
+
+/* Curriculum download note*/
+
+.punjabi-note{
+    float: left;
+    padding-left: 10px;
+    width: 100%;
+    text-align: right;
+}
+
+.course-note{
+	float: left;
+    padding-left: 10px;
+}
+/* Technology explorations intro*/
+.course-info{
+	margin-top:10px;
+	font-size:15px;
+	color:#e2e2e2;
+	padding:2%;
+}
+/*
+courses by subject and grade
+This curriculum document is currently being translated
+*/
+
+
+.french-msg-status{
+	width:225px;
+	float:right;
+	padding-left: 10px;
+}
+
+
+.french-not-available{
+	color:red;
+	text-align:center;
+	width:100%;
+
+}
+.french-not-available img{
+    position: relative;
+    top: 5px;
+    left: -5px;
+}
+
+/** Website Init **/
+.description {
+    font-size:.8em
+}
+
+a.bef-toggle:link,a.bef-toggle:visited,a.bef-toggle:hover,a.bef-toggle:active,a.bef-toggle:focus {
+    color:#fff;
+    font-family:"Century Gothic",Helvetica,Arial,sans-serif!important;
+    font-size:.8em
+}
+
+#edit-keys-wrapper > label,#edit-field-subject-range-value-wrapper > label,#edit-field-grade-range-value-wrapper > label,#edit-type-wrapper > label {
+    color:#444;
+    font-family:"Century Gothic",Helvetica,Arial,sans-serif!important
+}
+
+.bef-select-as-checkboxes {
+    border:1pt solid #999;
+    padding:10px;
+    font-family:"Century Gothic",Helvetica,Arial,sans-serif!important
+}
+
+#edit-field-subject-range-value-wrapper {
+    width:50%;
+}
+
+#edit-field-grade-range-value-wrapper {
+    width:100%;
+}
+
+#edit-field-grade-range-value-wrapper .form-type-bef-checkbox> label {
+    font-size:1.3em
+}
+
+#edit-keyword {
+    width:100%;
+}
+
+.bef-checkboxes label {
+    font-family:"Century Gothic",Helvetica,Arial,sans-serif !important
+}
+#edit-type-wrapper{
+	width:100%;
+}
+
+#edit-type-wrapper .bef-checkboxes {
+	width:100%;
+    padding:10px
+}
+#edit-type-wrapper .bef-checkboxes .form-item{
+	float:left;
+	padding-right:20px;
+}
+
+#edit-field-grade-range-value-wrapper .bef-checkboxes {
+    padding:10px
+}
+
+#edit-field-grade-range-value-wrapper .bef-checkboxes .form-item {
+    float:left;
+    padding:5px
+}
+
+
+#edit-field-subject-range-value-wrapper{
+	width:100%;
+}
+#edit-field-subject-range-value-wrapper .bef-checkboxes .form-item {
+	float: left;
+	width: 31%;
+	height: 30px;
+	min-width: 300px;
+}
+
+.block-search-curriculum-form {
+    display:none
+}
+
+
+/** Compare **/
+.page-curriculum-compare td{
+	vertical-align:top;
+}
+.page-curriculum-compare #main {
+	background-color: white;
+	padding: 2%;
+
+}
+
+/** Search **/
+.page-search .region-content {
+    padding:20px;
+    background-color:#fff;
+    border:1pt solid #CCC
+}
+
+.page-search #edit-keys {
+    width:500px!important
+}
+
+#curriculum_search {
+    margin-left:0;
+    margin-right:0;
+    height:25px;
+    width:34px;
+    padding:0;
+    cursor:pointer;
+    text-indent:-9999px;
+    border-color:#E4E4E4 #D2D2D2 #B4B4B4;
+    background:url(/sites/curriculum.gov.bc.ca/themes/curriculum/images/search-button.png) no-repeat scroll center top transparent;
+    overflow:hidden;
+}
+
+.page-curriculum-search #views-exposed-form-search-curriculum-page{
+	margin-top:-20px;
+}
+.page-curriculum-search .view-grouping-header{
+	font-family: "Century Gothic",Helvetica,Arial,sans-serif;
+}
+.page-curriculum-search #block-views-exp-search-curriculum-page .content{
+	background-color:white;
+}
+.page-curriculum-search .pager {
+    background-color:#fff;
+    padding:10px;
+}
+.page-curriculum-search .views-exposed-form{
+	margin: 0 1.5% 0 1.5%;
+
+}
+
+.views-exposed-form {
+    background: #808080;
+    padding:2.5%;
+    color:#fff
+}
+
+
+.view-grouping-content thead {
+    display:none
+}
+
+.view-grouping-content table {
+    background-color:#fff
+}
+.view-id-search_curriculum .view-header{
+    position: sticky;
+    background-color: white;
+    top: 1px;
+    border-bottom: 1pt solid #ccc;
+
+}
+.page-curriculum-search .search-results-header{
+	float:right;
+}
+.page-curriculum-search .download-results-label{
+    color: #666;
+    float: left;
+    padding-top: 15px;
+}
+
+.page-curriculum-search a.download_results_link{
+    float: left;
+    margin: 10px 0 10px 10px;
+    background-color:#666;
+    padding: 5px 20px;
+    border: 1px solid #e2e2e2;
+	border-radius:5px;
+	color:#FFF;
+}
+
+.page-curriculum-search caption {
+    display:none;
+    border:2pt solid #000;
+    color:#fff;
+    font-size:15pt;
+    padding-left:20px
+}
+
+.page-curriculum-search .view-grouping-header {
+    background-color: #CCC;bloc
+    font-size: 2em;
+    padding: 20px;
+    color: black;
+}
+
+.view-id-search_curriculum .more-link {
+    display: none;
+}
+.view-search-curriculum.view-data{
+	background-color: white;
+	width: 95%;
+	padding: 2.5%;
+}
+
+h3.concepts_content {
+    color:#000;
+    padding-left:2em;
+    background:url(/sites/curriculum.gov.bc.ca/files/pdf/c_and_c_icon_black_75.png) no-repeat scroll left top transparent;
+    font-size:.9em
+}
+
+.page-curriculum-search .search_row_bigidea{
+    margin-top:1em;
+    padding-left:2em;
+    background:url(/sites/curriculum.gov.bc.ca/files/pdf/big_i_bullet_black_75.png) no-repeat scroll left top transparent
+}
+
+.page-curriculum-search .search_row_concept {
+    margin-top:1em;
+    padding-left:2em;
+    background:url(/sites/curriculum.gov.bc.ca/files/pdf/c_and_c_bullet_black_75.png) no-repeat scroll left top transparent
+}
+
+.page-curriculum-search .search_row_competency {
+    margin-bottom:1em;
+    padding-left:2em;
+    background:url(/sites/curriculum.gov.bc.ca/files/pdf/cur_comp_bullet_black_75.png) no-repeat scroll left top transparent
+}
+
+.page-curriculum-search.views-field-type {
+    width:150px;
+    text-align:center
+}
+
+.page-curriculum-search th.views-field {
+    background-color:#3A4559
+}
+
+.page-curriculum-search .views-field {
+}
+
+.page-curriculum-search .views-field-title {
+    width:75%
+}
+
+.page-curriculum-search .views-field-title-field {
+    width:25%
+}
+
+.page-curriculum-search .views-exposed-form label {
+  color: white !important;
+}
+
+.before_profile,.after_profile {
+    display:none
+}
+
+.bef-checkboxes,.bef-select-as-radios .form-radios {
+/*
+   * Setting the height and overflow creates a scrollable  for the radio/checkbox elements.
+   * The border is just for looks -- adjust or remove as needed.
+   */
+    overflow:auto
+}
+
+/* Line up multi-line options nicely */
+.bef-checkboxes .form-item,.bef-select-as-radios .form-radios .form-item {
+    text-indent:-24px;
+    margin-left:24px
+}
+
+.options {
+    display:none
+}
+
+.page-curriculum-science .options {
+    display:none
+}
+
+
+/* ---------- Print Specifications ------------ */
+.elaboration {
+    display:none
+}
+a.elaboration pre{
+	display: block;
+	max-height: 200px;
+	overflow:auto;
+}
+
+.beautytips:first-letter {
+    text-transform:uppercase
+}
+
+/* ---------- Overall Specifications ---------- */
+body {
+    margin:0;
+    padding:0;
+    border:0;
+    outline:0
+}
+
+
+h1,h2,h3,h4,h5,h6 {
+    margin:0;
+    padding:0;
+    font-weight:400
+}
+
+h2 {
+    font-size:2em
+}
+
+p {
+    padding:0
+}
+
+del {
+    text-decoration:line-through
+}
+
+tr.odd {
+    background-color:#ddd
+}
+
+img {
+    outline:0
+}
+
+code,pre,kbd,samp,var {
+    padding:0 .4em;
+    font-size:.77em;
+    font-family:Menlo,Consolas,"Andale Mono","Lucida Console","Nimbus Mono L","DejaVu Sans Mono",monospace,"Courier New"
+}
+
+code {
+    background-color:#f2f2f2;
+    background-color:rgba(40,40,0,0.06)
+}
+
+pre code,pre kbd,pre samp,pre var,kbd kbd,kbd samp,code var {
+    font-size:100%;
+    background-color:transparent
+}
+
+pre code,pre samp,pre var {
+    padding:0
+}
+
+.description code {
+    font-size:1em
+}
+
+kbd {
+    background-color:#f2f2f2;
+    border:1px outset #575757;
+    margin:0 3px;
+    color:#666;
+    display:inline-block;
+    padding:0 6px;
+    -khtml-border-radius:5px;
+    -moz-border-radius:5px;
+    -webkit-border-radius:5px;
+    border-radius:5px
+}
+
+pre {
+    background-color:#f2f2f2;
+    background-color:rgba(40,40,0,0.06);
+    margin:10px 0;
+    overflow:hidden;
+    padding:15px;
+    white-space:pre-wrap
+}
+
+a:hover {
+    text-decoration:underline
+}
+
+/* ------------------ Fonts ------------------ */
+body,#site-slogan,.ui-widget,.comment-form label {
+    font-family:Arial,sans-serif
+}
+
+h1,h2,h3,h4,h5,h6 {
+    font-family:"Century Gothic",Helvetica,Arial,sans-serif
+}
+
+#header,#footer-wrapper,#skip-link,ul.contextual-links,ul.links,ul.primary,.item-list .pager,div.field-type-taxonomy-term-reference,div.messages,div.meta,p.comment-time,.breadcrumb {
+    font-family:"Century Gothic",Helvetica,Arial,sans-serif
+}
+
+input,textarea,select,a.button {
+    font-family:"Century Gothic",Helvetica,Arial,sans-serif
+}
+
+/* ------------------ Reset Styles ------------------ */
+caption {
+    text-align:left;
+/* LTR */
+    font-weight:400
+}
+
+blockquote {
+    background:#f7f7f7;
+    border-left:1px solid #bbb;
+    font-style:italic;
+    margin:1.5em 10px;
+    padding:.5em 10px;
+
+}
+
+.illustration-image blockquote{
+	width:inherit;
+	margin-top:-20px;
+}
+
+blockquote:before {
+    color:#bbb;
+    content:"\201C";
+    font-size:3em;
+    line-height:.1em;
+    margin-right:.2em;
+    vertical-align:-.4em
+}
+
+blockquote:after {
+    color:#bbb;
+    content:"\201D";
+    font-size:3em;
+    line-height:.1em;
+    vertical-align:-.45em
+}
+
+blockquote > p:first-child {
+    display:inline
+}
+
+a.feed-icon {
+    display:inline-block;
+    padding:15px 0 0
+}
+
+/* ------------------ Fr Header Styles --------------*/
+.fr-title {
+    color:#9d9ba6;
+    font-size:2em;
+    line-height:1em;
+    padding-top:2em
+}
+
+.fr-subtitle {
+    color:#9d9ba6;
+    font-size:1.6em;
+    line-height:1em
+}
+
+.fr-subtitle em {
+    color:#fff;
+    font-style:normal
+}
+
+
+/* ------------------ List Styles ------------------ */
+.block ol,.block ul {
+    margin:0;
+    padding:0 0 .25em 1em
+/* LTR */
+}
+
+.contextual-links-wrapper {
+    font-size:small!important
+}
+
+ul.contextual-links {
+    font-size:.923em
+}
+
+.contextual-links-wrapper a {
+    text-shadow:0 0 0!important
+}
+
+.item-list .pager {
+    font-size:.929em
+}
+
+ul.menu li {
+    margin:0
+}
+
+.region-content ul,.region-content ol {
+    margin:1em 0;
+    padding:0 0 .25em 2.5em
+/* LTR */
+}
+
+.region-content p + ul, .region-content p + ol {
+    margin:0 !important;
+}
+
+.item-list ul li {
+    margin:0;
+    padding:.2em .5em 0 0
+/* LTR */
+}
+
+ul.tips {
+    padding:0 0 0 1.25em
+/* LTR */
+}
+
+/* ------------------- Alerts ------------------- */
+/* remove default float */
+#highlighted .view-content {
+    float: none;
+}
+/* reset all the divs inside an alert */
+#highlighted div {
+  margin: 0;
+}
+#highlighted .view-content .views-row {
+    border-bottom:1px solid #d3d7d9;
+    text-align: center;
+    padding: 2px 0;
+}
+/* colors for the different types of notices */
+#highlighted .view-content .views-row.alert-type-Message {
+    color: #6B8189;
+    background-color: #B9C7CC;
+}
+#highlighted .view-content .views-row.alert-type-Warning {
+    background-color: #FEC74E;
+    color: #8a6d3b;
+}
+#highlighted .view-content .views-row.alert-type-Error {
+    color: #F7F3F3;
+    background-color: #D84242;
+}
+/* restrict inner alert content to be only as wide as the main content width */
+#highlighted .view-content .views-row > div {
+    margin: auto;
+    max-width: 960px;
+}
+
+/* --------------- Main Menu ------------ */
+#header {
+    height:auto;
+
+	background-color: #003366 !important;
+	width: 99%;
+	padding: 0.5%;
+}
+#main-menu {
+    clear:both;
+    background:url(/sites/curriculum.gov.bc.ca/files/pdf/bg_white_50.png) repeat left top;
+    border-bottom:.25em solid #fff;
+    margin-bottom:.25em;
+    position:relative;
+    top:.75em
+}
+
+#main-menu-links {
+    font-size:1em;
+    margin:0;
+    padding:0;
+    text-transform:uppercase
+}
+
+#main-menu-links li {
+    float:left;
+/* LTR */
+    list-style:none;
+    padding:0;
+    margin:0;
+    /*border-right:.06125em solid #9f9f9f*/
+}
+
+#main-menu-links li.active {
+    margin-right:.06125em;
+    border-right:none
+}
+
+#main-menu-links a {
+    color:gray;
+    float:left;
+/* LTR */
+    height:3em;
+    line-height:3em;
+    padding:0 1.5em;
+    text-decoration:none;
+    background:none;
+    text-shadow:none;
+    -khtml-border-radius-topleft:0;
+    -khtml-border-radius-topright:0;
+    -moz-border-radius-topleft:0;
+    -moz-border-radius-topright:0;
+    -webkit-border-top-left-radius:0;
+    -webkit-border-top-right-radius:0;
+    border-top-left-radius:0;
+    border-top-right-radius:0
+}
+
+#main-menu-links a:hover,#main-menu-links a:focus {
+    color:#616163
+}
+
+#main-menu-links a:active {
+    background-color:#fff;
+    color:#616163
+}
+
+#main-menu-links li a.active {
+    background-color:#fff!important;
+    color:#616163
+}
+
+/* --------------- Secondary Menu ------------ */
+#secondary-menu-links {
+    float:right;
+/* LTR */
+    font-size:.929em;
+    margin:10px 10px 0
+}
+
+
+#secondary-menu-links a:hover,#secondary-menu-links a:focus {
+    text-decoration:underline
+}
+
+/* ------------------- Main ------------------- */
+#main {
+    margin-top:0;
+    margin-bottom:0;
+
+}
+
+/* ----------------- Featured ----------------- */
+#featured {
+    text-align:center;
+    font-size:1.643em;
+    font-weight:400;
+    line-height:1.4;
+    padding: 0px;
+    margin:0;
+    background:#1B1F28;
+    border-bottom: none;
+    text-shadow:1px 1px #fff;
+
+}
+
+#featured h2 {
+    font-size:1.174em;
+    line-height:1
+}
+
+#featured p {
+    margin:0;
+    padding:0
+}
+
+/* ------------------- Help ------------------- */
+.region-help {
+    border:1px solid #d3d7d9;
+    padding:0 1.5em;
+    margin-bottom:30px
+}
+
+/* ----------------- Content ------------------ */
+/*One pager does not require paddding*/
+.page-curriculum .region-content{
+	width: 100%;
+	padding: 0%;
+	background:#1B1F28 !important;
+}
+
+
+
+.content {
+    margin-top:0
+}
+#content h2 {
+    font-size:2em;
+    line-height:1em;
+    color: #444;
+}
+.block-standard-blue-white h2{
+    background-color: rgba(0, 51, 102, 0.8);
+    float: left;
+    width: 97%;
+    color: #FFF !important;
+	padding-left: 3%;
+	margin-bottom: 0px !important;
+	font-size: 24px !important;
+    padding-top: 8px;
+    padding-bottom: 7px;
+
+}
+.download-2017-18, .above-main-title{
+	position: absolute !important;
+	float: left !important;
+	top: 30px !important;
+	color: white !important;
+	width:100%;
+	text-align:center;
+}
+.block-standard-blue-white h3{
+	color: black;
+}
+.block-standard-blue-white .content{
+    width: 96%;
+    float: left;
+    background: rgba(255, 255, 255, 0.80);
+    padding: 0 2%;
+
+}
+.block-standard-blue-white .content a{
+	color: black;
+}
+
+.node .content {
+    font-size:1em
+}
+
+.node-teaser .content {
+    font-size:1em
+}
+
+.node-teaser h2 {
+    margin-top:0;
+    padding-top:0
+}
+
+.node-teaser h2 a {
+    color:#181818
+}
+
+.node-teaser {
+    border-bottom:1px solid #d3d7d9;
+    margin-bottom:30px;
+    padding-bottom:15px
+}
+
+.node-sticky {
+    background:#f9f9f9;
+    background:rgba(0,0,0,0.024);
+    border:1px solid #d3d7d9;
+    padding:0 15px 15px
+}
+
+.node-full {
+    background:none;
+    border:none;
+    padding:0
+}
+
+.node-teaser .content {
+    clear:none;
+    line-height:1.6
+}
+
+.meta {
+    font-size:.857em;
+    color:#68696b;
+    margin-bottom:-5px
+}
+
+.submitted .user-picture img {
+    float:left;
+/* LTR */
+    height:20px;
+    margin:1px 5px 0 0
+/* LTR */
+}
+
+.field-type-taxonomy-term-reference {
+    margin:0 0 1.2em
+}
+
+.field-type-taxonomy-term-reference .field-label {
+    font-weight:400;
+    margin:0;
+    padding-right:5px
+/* LTR */
+}
+
+.field-type-taxonomy-term-reference .field-label,.field-type-taxonomy-term-reference ul.links {
+    font-size:1em;
+}
+.node-type-illustration .field-type-taxonomy-term-reference .field-label,.field-type-taxonomy-term-reference ul.links {
+    font-size:0.8em;
+}
+
+.node-teaser .field-type-taxonomy-term-reference .field-label,.node-teaser .field-type-taxonomy-term-reference ul.links {
+    font-size:.821em
+}
+
+.field-type-taxonomy-term-reference ul.links {
+    padding:0;
+    margin:0;
+    list-style:none
+}
+
+.field-type-taxonomy-term-reference ul.links li {
+    float:none !important;
+/* LTR */
+    padding:0 1em 0 0;
+/* LTR */
+    white-space:nowrap
+}
+
+.link-wrapper {
+    text-align:right
+}
+
+.field-type-image img,.user-picture img {
+    margin:0 0 1em
+}
+
+ul.links {
+    color:#68696b;
+    font-size:.821em
+}
+
+.node-unpublished {
+    margin:-20px -15px 0;
+    padding:20px 15px 0
+}
+
+.node-unpublished .comment-text .comment-arrow {
+    border-left:1px solid #fff4f4;
+    border-right:1px solid #fff4f4
+}
+
+/* ----------------- Custom Views Styles -------*/
+#quicktabs-container-view__continuous_view__page {
+    background-color:#FFF
+}
+
+.views-field-field-attachments {
+    clear:both;
+    display:block
+}
+
+.flowplayer {
+    width:100%;
+    height:auto;
+    float:left
+}
+
+.body-full{
+	display:none;
+}
+#block-block-70 .views-field-body{
+	width:70%;
+	vertical-align:top;
+	padding-left:20px !important;
+}
+.view-creative-thinking-illustrations .views-field-body .illustration-context p {
+    padding:7px 0
+}
+
+.view-critical-thinking-illustrations .views-field-body .illustration-context p {
+    padding:7px 0
+}
+.illustrations-loaded + tr th{
+	text-transform: uppercase;
+	background: #006fba;
+
+}
+.illustrations-loaded + tr td{
+	padding: 10px 0px !important;
+
+}
+.illustrations-loaded + tr td h3 img{
+	position:relative;
+	top:5px;
+	margin-right:5px;
+
+}
+.illustrations-loaded + tr .views-field-body blockquote{
+	display:none;
+
+}
+.illustrations-loaded + tr .views-field-body ul{
+	list-style:none;
+	float:left;
+}
+.illustrations-loaded + tr .views-field-body ul li{
+	float:left;
+	margin: 10px;
+	padding: 5px;
+	border: 1px solid #ccc;
+}
+
+.illustrations-loaded + tr .views-field-body p{
+	float:left;
+}
+.illustrations-loaded {
+	background-color:aliceblue;
+}
+
+.page-node #block-system-main .content h1,
+.page-node #block-system-main .content h2,
+.page-node #block-system-main .content h3,
+.page-node #block-system-main .content h4,
+.page-node #block-system-main .content h5 {
+    color: #3b3b3b;
+}
+.page-node #block-system-main .content h4,
+.page-node #block-system-main .content h5 {
+    margin: .75em 0;
+    font-weight: bold;
+}
+.page-node #block-system-main .content h5,
+.page-node #block-system-main .content h6 {
+    text-transform: uppercase;
+}
+
+.page-node #block-system-main .content h1.curric_subject {
+    color: white;
+}
+.subject a:visited{
+	color:#626366;
+}
+
+
+
+/* ----------------- Comments ----------------- */
+.comment h2.title {
+    margin-bottom:1em
+}
+
+.comment div.user-picture img {
+    margin-left:0
+/* LTR */
+}
+
+.comment {
+    margin-bottom:20px;
+    display:table;
+    vertical-align:top
+}
+
+.comment .attribution {
+    display:table-cell;
+    padding:0 30px 0 0;
+/* LTR */
+    vertical-align:top;
+    overflow:hidden
+}
+
+.comment .attribution img {
+    margin:0;
+    border:1px solid #d3d7d9
+}
+
+.comment .attribution .username {
+    white-space:nowrap
+}
+
+.comment .submitted p {
+    margin:4px 0;
+    font-size:1.071em;
+    line-height:1.2
+}
+
+.comment .submitted .comment-time {
+    font-size:.786em;
+    color:#68696b
+}
+
+.comment .submitted .comment-permalink {
+    font-size:.786em;
+    text-transform:lowercase
+}
+
+.comment .content {
+    font-size:.929em;
+    line-height:1.6
+}
+
+.comment .comment-arrow {
+    background:url(/sites/curriculum.gov.bc.ca/themes/curriculum/images/comment-arrow.gif) no-repeat 0 center transparent;
+/* LTR */
+    border-left:1px solid;
+    border-right:1px solid;
+    height:40px;
+    margin-left:-47px;
+/* LTR */
+    margin-top:10px;
+    position:absolute;
+    width:20px
+}
+
+.comment .comment-text {
+    padding:10px 25px;
+    border:1px solid #d3d7d9;
+    display:table-cell;
+    vertical-align:top;
+    position:relative;
+    width:100%
+}
+
+.comment .indented {
+    margin-left:40px
+/* LTR */
+}
+
+.comment ul.links {
+    padding:0 0 .25em
+}
+
+.comment ul.links li {
+    padding:0 .5em 0 0
+/* LTR */
+}
+
+.comment-unpublished {
+    margin-right:5px;
+/* LTR */
+    padding:5px 2px 5px 5px
+/* LTR */
+}
+
+.comment-unpublished .comment-text .comment-arrow {
+    border-left:1px solid #fff4f4;
+    border-right:1px solid #fff4f4
+}
+
+/* ------------------ Sidebar ----------------- */
+.sidebar .section {
+    padding-top:0
+}
+
+.sidebar .block {
+    border:none;
+    border-color:transparent;
+    padding:0;
+    margin:0;
+    background:none;
+    background-color:transparent!important
+}
+
+.sidebar h2 {
+}
+
+.sidebar .block .content {
+    font-size:1em
+}
+
+.sidebar tbody {
+    border:none
+}
+
+.sidebar tr.even,.sidebar tr.odd {
+}
+
+/* ----------------- Triptych ----------------- */
+#triptych-wrapper {
+    background-color:#f0f0f0;
+    background:rgba(30,50,10,0.08);
+    border-top:1px solid #e7e7e7
+}
+
+#triptych h2 {
+    color:#000;
+    font-size:1.714em;
+    margin-bottom:.8em;
+    text-shadow:0 1px 0 #fff;
+    text-align:center;
+    line-height:1
+}
+
+#triptych .block {
+    margin-bottom:2em;
+    padding-bottom:2em;
+    border-bottom:1px solid #dfdfdf;
+    line-height:1.3
+}
+
+#triptych .block.last {
+    border-bottom:none
+}
+
+#triptych .block ul li,#triptych .block ol li {
+    list-style:none
+}
+
+#triptych .block ul,#triptych .block ol {
+    padding-left:0
+}
+
+#triptych #block-user-login .form-text {
+    width:185px
+}
+
+#triptych #block-user-online p {
+    margin-bottom:0
+}
+
+#triptych #block-node-syndicate h2 {
+    overflow:hidden;
+    width:0;
+    height:0
+}
+
+#triptych-last #block-node-syndicate {
+    text-align:right
+}
+
+#triptych #block-search-form .form-type-textfield input {
+    width:185px
+}
+
+#triptych-middle #block-system-powered-by {
+    text-align:center
+}
+
+#triptych-last #block-system-powered-by {
+    text-align:right
+}
+
+/* ------------------ Footer ------------------ */
+.front #footer-wrapper {
+	margin-top:75px;
+}
+#footer-wrapper {
+	color:#fff;
+	background-color: #003366 !important;
+	border-top: 2px solid #fcba19;
+	font-family: Myriad-Pro,Calibri,Arial,sans serif;
+	font-size: 14px;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	overflow: hidden;
+}
+
+#footer-wrapper a {
+    color:#fcfcfc;
+    color:rgba(255,255,255,0.8)
+}
+
+#footer-wrapper a:hover,#footer-wrapper a:focus {
+    color:#fefefe;
+    color:rgba(255,255,255,0.95);
+    text-decoration:underline
+}
+
+#footer-wrapper .block {
+    margin:20px 0;
+    border:1px solid #444;
+    border-color:rgba(255,255,255,0.1);
+    padding:10px
+}
+
+#footer-columns .block-menu,#footer .block {
+    margin:0;
+    padding:0;
+    border:none
+}
+
+#footer .block {
+    margin:.5em 0
+}
+
+#footer .block .content {
+    padding:.5em 0;
+    margin-top:0
+}
+
+#footer .block h2 {
+    margin:0
+}
+
+#footer-columns h2 {
+    border-bottom:1px solid #555;
+    border-color:rgba(255,255,255,0.15);
+    font-size:1em;
+    margin-bottom:0;
+    padding-bottom:3px;
+    text-transform:uppercase
+}
+
+#footer-columns .content {
+    margin-top:0
+}
+
+#footer-columns p {
+    margin-top:1em
+}
+
+#footer-columns .content ul {
+    list-style:none;
+    padding-left:0;
+/* LTR */
+    margin-left:0
+}
+
+#footer-columns .content li {
+    list-style:none;
+    margin:0;
+
+    padding:0
+}
+
+#footer-columns .content li a {
+    display:block;
+    border-bottom:1px solid #555;
+    border-color:rgba(255,255,255,0.15);
+    line-height:1.2;
+    padding:.8em 2px .8em 20px;
+/* LTR */
+    text-indent:-15px
+}
+
+#footer-columns .content li a:hover,#footer-columns .content li a:focus {
+    background-color:#1f1f21;
+    background-color:rgba(255,255,255,0.05);
+    text-decoration:none
+}
+
+#footer {
+    margin-top:0px;
+    border-top:none;
+}
+
+#footer .region {
+    margin-top: 25px;
+    padding-bottom: 15px;
+}
+
+#footer .block {
+    clear:both
+}
+#footer .ga_mesage{
+	text-align: center;
+	float: left;
+	width: 100%;
+	margin-top: 10px;
+}
+#footer ul,#footer li {
+    list-style:none;
+    margin:0;
+    padding:0
+}
+
+#footer li a {
+    float:left;
+/* LTR */
+    padding:0 12px;
+    display:block;
+    border-right:1px solid #555;
+/* LTR */
+    border-color:rgba(255,255,255,0.15)
+}
+
+#footer li.first a {
+    padding-left:0
+/* LTR */
+}
+
+#footer li.last a {
+    padding-right:0;
+/* LTR */
+    border-right:none
+/* LTR */
+}
+
+#footer-wrapper tr.odd {
+    background-color:transparent
+}
+
+#footer-wrapper tr.even {
+    background-color:#2c2c2c;
+    background-color:rgba(0,0,0,0.15)
+}
+
+/* --------------- System Tabs  --------------- */
+.tabs {
+    font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;
+    clear: both;
+	padding: 0 3% 0 3%;
+}
+.page-curriculm-competency .tabs{
+    padding: 0px;
+}
+.tabs ul.primary {
+    padding:0 3px;
+    margin:0;
+    overflow:hidden;
+    border:none;
+    background:transparent url(/sites/curriculum.gov.bc.ca/themes/curriculum/images/tabs-border.png) repeat-x left bottom
+
+}
+
+.tabs ul.primary li {
+    display:block;
+    float:left;
+/* LTR */
+    vertical-align:bottom;
+    margin:0 5px 0 0
+/* LTR */
+}
+
+.tabs ul.primary li.active a {
+    border-bottom:1px solid #fff
+}
+
+.tabs ul.primary li a {
+    color:#000;
+    background-color:#ededed;
+    height:1.8em;
+    line-height:1.9;
+    display:block;
+    font-size:.929em;
+    float:left;
+/* not LTR */
+    padding:0 10px 3px;
+    margin:0;
+    text-shadow:0 1px 0 #fff;
+    -khtml-border-radius-topleft:6px;
+    -moz-border-radius-topleft:6px;
+    -webkit-border-top-left-radius:6px;
+    border-top-left-radius:6px;
+    -khtml-border-radius-topright:6px;
+    -moz-border-radius-topright:6px;
+    -webkit-border-top-right-radius:6px;
+    border-top-right-radius:6px
+}
+
+.tabs ul.primary li.active a {
+    background-color:#fff
+}
+
+.tabs ul.secondary {
+    border-bottom:none;
+    padding:.5em 0
+}
+
+.tabs ul.secondary li {
+    display:block;
+    float:left
+/* LTR */
+}
+
+.tabs ul.secondary li:last-child {
+    border-right:none
+/* LTR */
+}
+
+.tabs ul.secondary li:first-child {
+    padding-left:0
+/* LTR */
+}
+
+.tabs ul.secondary li a {
+    padding:.25em .5em
+}
+
+.tabs ul.secondary li a.active {
+    background:#f2f2f2;
+    border-bottom:none;
+    -moz-border-radius:5px;
+    -webkit-border-radius:5px;
+    -khtml-border-radius:5px;
+    border-radius:5px
+}
+
+ul.action-links {
+    list-style:none;
+    margin:5px;
+    padding:.5em 1em
+}
+
+ul.action-links li {
+    display:inline-block;
+    margin-left:10px
+}
+
+ul.action-links li a {
+    padding-left:15px;
+    background:url(/sites/curriculum.gov.bc.ca/themes/curriculum/images/add.png) no-repeat left center;
+    margin:0 10px 0 0
+}
+
+/* ---------------- Messages  ----------------- */
+#messages {
+    padding: 0px;
+    margin:0px !important;
+}
+#messages .messages{
+	padding:20px 40px 20px 40px !important;
+	margin: 0px !important;
+}
+
+.featured #messages {
+    background:#f0f0f0;
+    background:rgba(30,50,10,0.08)
+}
+
+div.messages {
+    margin:8px 15px
+}
+
+/* -------------- Breadcrumbs   -------------- */
+.breadcrumb {
+    font-size:.929em
+}
+
+/* -------------- User Profile   -------------- */
+.profile .user-picture {
+    float:none
+}
+
+/* -------------- Password Meter  ------------- */
+.confirm-parent,.password-parent {
+    width:34em
+}
+
+.password-parent,div.form-item div.password-suggestions {
+    position:relative
+}
+
+.password-strength-text,.password-strength-title,div.password-confirm {
+    font-size:.82em
+}
+
+.password-strength-text {
+    margin-top:.2em
+}
+
+div.password-confirm {
+    margin-top:2.2em;
+    width:20.73em
+}
+
+/* ---------------- Buttons    ---------------- */
+input.form-submit,a.button {
+    background:#fff url(/sites/curriculum.gov.bc.ca/themes/curriculum/images/buttons.png) 0 0 repeat-x;
+    border:1px solid #e4e4e4;
+    border-bottom:1px solid #b4b4b4;
+    border-left-color:#d2d2d2;
+    border-right-color:#d2d2d2;
+    color:#3a3a3a;
+    cursor:pointer;
+    font-size:.929em;
+    font-weight:400;
+    text-align:center;
+    margin-bottom:1em;
+    margin-right:.6em;
+/* LTR */
+    padding:4px 17px;
+    -khtml-border-radius:15px;
+    -moz-border-radius:20px;
+    -webkit-border-radius:15px;
+    border-radius:15px
+}
+
+a.button:link,a.button:visited,a.button:hover,a.button:focus,a.button:active {
+    text-decoration:none;
+    color:#5a5a5a
+}
+
+/* -------------- Form Elements   ------------- */
+fieldset {
+    background:#fff;
+    border:1px solid #ccc;
+    margin-top:10px;
+    margin-bottom:32px;
+    padding:0 0 10px;
+    position:relative;
+    top:12px;
+/* Offsets the negative margin of legends */
+    -khtml-border-radius:4px;
+    -moz-border-radius:4px;
+    -webkit-border-radius:4px;
+    border-radius:4px
+}
+
+.fieldset-wrapper {
+    margin-top:25px
+}
+
+.node-form .vertical-tabs .fieldset-wrapper {
+    margin-top:0
+}
+
+.filter-wrapper {
+    top:0;
+    padding:1em 0 .2em;
+    -khtml-border-radius-topright:0;
+    -khtml-border-radius-topleft:0;
+    -moz-border-radius-topright:0;
+    -moz-border-radius-topleft:0;
+    -webkit-border-top-left-radius:0;
+    -webkit-border-top-right-radius:0;
+    border-top-left-radius:0;
+    border-top-right-radius:0
+}
+
+.filter-help a {
+    font-size:.857em;
+    padding:2px 20px 0
+}
+
+.filter-wrapper .form-item label {
+    margin-right:10px
+}
+
+.filter-wrapper .form-item {
+    padding:0 0 .5em .5em
+}
+
+.filter-guidelines {
+    padding:0 1.5em 0 .5em
+}
+
+fieldset.collapsed {
+    background:transparent;
+    -khtml-border-radius:0;
+    -moz-border-radius:0;
+    -webkit-border-radius:0;
+    border-radius:0
+}
+
+fieldset legend {
+    background:#dbdbdb;
+    border:1px solid #ccc;
+    border-bottom:none;
+    color:#3b3b3b;
+    display:block;
+    height:2em;
+    left:-1px;
+/* LTR */
+    font-family:"Lucida Grande","Lucida Sans Unicode",Verdana,sans-serif;
+    line-height:2;
+    padding:0;
+    position:absolute;
+    text-indent:10px;
+    text-shadow:0 1px 0 #fff;
+    top:-12px;
+    width:100%;
+    -khtml-border-radius-topleft:4px;
+    -moz-border-radius-topleft:4px;
+    -webkit-border-top-left-radius:4px;
+    border-top-left-radius:4px;
+    -khtml-border-radius-topright:4px;
+    -moz-border-radius-topright:4px;
+    -webkit-border-top-right-radius:4px;
+    border-top-right-radius:4px
+}
+
+fieldset.collapsed legend {
+    -khtml-border-radius:4px;
+    -moz-border-radius:4px;
+    -webkit-border-radius:4px;
+    border-radius:4px
+}
+
+fieldset legend a {
+    color:#3b3b3b
+}
+
+fieldset legend a:hover,fieldset legend a:focus,fieldset legend a:active {
+    color:#000
+}
+
+fieldset .fieldset-wrapper {
+    padding:0 10px
+}
+
+fieldset .fieldset-description {
+    margin-top:5px;
+    margin-bottom:1em;
+    line-height:1.4;
+    color:#3c3c3c;
+    font-style:italic
+}
+
+input {
+    margin:2px 0;
+    padding:4px
+}
+
+input,textarea {
+    font-size:.929em
+}
+
+textarea {
+    line-height:1.5
+}
+
+textarea.form-textarea,select.form-select {
+    padding:4px
+}
+
+input.form-text,textarea.form-textarea,select.form-select {
+    border:1px solid #ccc
+}
+
+input.form-submit:hover,input.form-submit:focus {
+    background:#dedede
+}
+
+.password-suggestions ul li {
+    margin-left:1.2em
+/* LTR */
+}
+
+.form-item {
+    margin-bottom:1em;
+    margin-top:2px
+}
+
+.form-item label {
+    font-size:.929em
+}
+
+.form-type-radio label,.form-type-checkbox label {
+    margin-left:4px
+}
+
+.form-type-radio .description,.form-type-checkbox .description {
+    margin-left:2px
+}
+
+.form-actions {
+    padding-top:10px
+}
+
+/* Contact Form */
+.contact-form #edit-name {
+    width:75%;
+    -khtml-border-radius:4px;
+    -moz-border-radius:4px;
+    -webkit-border-radius:4px;
+    border-radius:4px
+}
+
+.contact-form #edit-mail {
+    width:75%;
+    -khtml-border-radius:4px;
+    -moz-border-radius:4px;
+    -webkit-border-radius:4px;
+    border-radius:4px
+}
+
+.contact-form #edit-subject {
+    width:75%;
+    -khtml-border-radius:4px;
+    -moz-border-radius:4px;
+    -webkit-border-radius:4px;
+    border-radius:4px
+}
+
+.contact-form #edit-message {
+    width:76.3%;
+    -khtml-border-top-left-radius:4px;
+    -khtml-border-top-right-radius:4px;
+    -moz-border-radius-topleft:4px;
+    -moz-border-radius-topright:4px;
+    -webkit-border-top-left-radius:4px;
+    -webkit-border-top-right-radius:4px;
+    border-top-left-radius:4px;
+    border-top-right-radius:4px
+}
+
+.contact-form .resizable-textarea .grippie {
+    width:76%;
+    -khtml-border-bottom-left-radius:4px;
+    -khtml-border-bottom-right-radius:4px;
+    -moz-border-radius-bottomleft:4px;
+    -moz-border-radius-bottomright:4px;
+    -webkit-border-bottom-left-radius:4px;
+    -webkit-border-bottom-right-radius:4px;
+    border-bottom-left-radius:4px;
+    border-bottom-right-radius:4px
+}
+
+/* Disabled form elements */
+input.form-button-disabled,input.form-button-disabled:hover,input.form-button-disabled:focus,input.form-button-disabled:active,.form-disabled input,.form-disabled select,.form-disabled textarea {
+    background:#ededed;
+    border-color:#bbb;
+    color:#717171
+}
+
+.form-disabled .grippie {
+    background-color:#ededed;
+    border-color:#bbb
+}
+
+.form-disabled label {
+    color:#717171
+}
+
+/* Animated throbber */
+html.js input.form-autocomplete {
+    background-position:100% 4px
+/* LTR */
+}
+
+html.js input.throbbing {
+    background-position:100% -16px
+/* LTR */
+}
+
+/* Comment form */
+.comment-form label {
+    float:left;
+/* LTR */
+    font-size:.929em;
+    width:120px
+}
+
+.comment-form input,.comment-form .form-select {
+    margin:0;
+    -khtml-border-radius:4px;
+    -moz-border-radius:4px;
+    -webkit-border-radius:4px;
+    border-radius:4px
+}
+
+.comment-form .form-type-textarea label {
+    float:none
+}
+
+.comment-form .form-item,.comment-form .form-radios,.comment-form .form-type-checkbox,.comment-form .form-select {
+    margin-bottom:10px;
+    overflow:hidden
+}
+
+.comment-form .form-type-checkbox,.comment-form .form-radios {
+    margin-left:120px
+/* LTR */
+}
+
+.comment-form .form-type-checkbox label,.comment-form .form-radios label {
+    float:none;
+    margin-top:0
+}
+
+.comment-form input.form-file {
+    width:auto
+}
+
+.no-sidebars .comment-form .form-text {
+    width:800px
+}
+
+.one-sidebar .comment-form .form-text {
+    width:500px
+}
+
+.two-sidebars .comment-form .form-text {
+    width:320px
+}
+
+.comment-form .form-item .description {
+    font-size:.786em;
+    line-height:1.2;
+    margin-left:120px
+/* LTR */
+}
+
+#content h2.comment-form {
+    margin-bottom:.5em
+}
+
+.comment-form .form-textarea {
+    -khtml-border-radius-topleft:4px;
+    -khtml-border-radius-topright:4px;
+    -moz-border-radius-topleft:4px;
+    -moz-border-radius-topright:4px;
+    -webkit-border-top-left-radius:4px;
+    -webkit-border-top-right-radius:4px;
+    border-top-left-radius:4px;
+    border-top-right-radius:4px
+}
+
+.comment-form fieldset.filter-wrapper .fieldset-wrapper,.comment-form .text-format-wrapper .form-item {
+    margin-top:0;
+    margin-bottom:0
+}
+
+.filter-wrapper label {
+    width:auto;
+    float:none
+}
+
+.filter-wrapper .form-select {
+    min-width:120px
+}
+
+.comment-form fieldset.filter-wrapper .tips {
+    font-size:.786em
+}
+
+#comment-body-add-more-wrapper .form-type-textarea label {
+    margin-bottom:.4em
+}
+
+#edit-actions input {
+    margin-right:.6em
+/* LTR */
+}
+
+/* -------------- Other Overrides ------------- */
+div.password-suggestions {
+    border:0
+}
+
+.ui-widget-overlay {
+    background:#222;
+    opacity:.7
+}
+
+div.vertical-tabs .vertical-tabs-panes fieldset.vertical-tabs-pane {
+    padding:1em
+}
+
+#forum .name {
+    font-size:1.083em
+}
+
+#forum .description {
+    font-size:1em
+}
+
+/* --------------- Search Form ---------------- */
+#block-search-form {
+    padding-bottom:7px;
+	z-index: 10;
+    width:70%;
+    position: relative;
+    top: 7px;
+    width: 70%;
+}
+#edit-search-block-form--2{
+	width:80% !important;
+}
+.form-item-custom-search-types{
+
+	display:none !important;
+}
+#block-search-form .content {
+    margin-top:0
+}
+.search-form .container-inline{
+	padding-top:20px;
+}
+.form-type-checkboxes{
+	display:none;
+}
+
+.page-search-node .search-advanced legend, .page-search-node .form-item-or, .page-search-node .form-item-phrase, .page-search-node .form-item-negative{
+	display:none;
+}
+#search-form input#edit-keys,#block-search-form .form-item-search-block-form input {
+    float:left;
+/* LTR */
+    font-size:1em;
+    height:1.143em;
+    margin-right:5px;
+    width:9em
+}
+
+#search-block-form input.form-submit,#search-form input.form-submit {
+    margin-left:0;
+    margin-right:0;
+    height:25px;
+    width:34px;
+    padding:0;
+    cursor:pointer;
+    text-indent:-9999px;
+    border-color:#e4e4e4 #d2d2d2 #b4b4b4;
+    background:url(/sites/curriculum.gov.bc.ca/themes/curriculum/images/search-button.png) no-repeat center top;
+    overflow:hidden
+}
+
+#search-block-form input.form-submit:hover,#search-block-form input.form-submit:focus,#search-form input.form-submit:hover,#search-form input.form-submit:focus {
+    background-position:center bottom
+}
+
+#search-form .form-item-keys label {
+    display:block
+}
+
+/* --------------- Search Results ---------------- */
+ol.search-results {
+    padding-left:0
+}
+
+.search-results li {
+    border-bottom:1px solid #d3d7d9;
+    padding-bottom:.4285em;
+    margin-bottom:.5em
+}
+
+.search-results li:last-child {
+    border-bottom:none;
+    padding-bottom:0;
+    margin-bottom:1em
+}
+
+.search-results .search-snippet-info {
+    padding-left:0
+}
+
+/* -------------- Shortcut Links -------------- */
+.shortcut-wrapper {
+    margin:2.2em 0 1.1em
+/* Same as usual h1#page-title margin. */
+}
+
+.shortcut-wrapper h1#page-title {
+    float:left;
+/* LTR */
+    margin:0
+}
+
+div.add-or-remove-shortcuts {
+    padding-top:.9em
+}
+
+.overlay div.add-or-remove-shortcuts {
+    padding-top:.8em
+}
+#overlay-container,
+.overlay-modal-background,
+.overlay-element {
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+.overlay-element {
+  background: transparent;
+  left: -200%;
+  z-index: 1001;
+}
+
+/* Modals http://jquerymodal.com/ */
+.modal {
+  width: 960px;
+}
+.modal p {
+  margin-bottom: 1rem;
+}
+
+.blocker {
+  z-index: 99;
+}
+
+.btn {
+    -moz-box-shadow:inset 0px -3px 7px 0px #29bbff;
+    -webkit-box-shadow:inset 0px -3px 7px 0px #29bbff;
+    box-shadow:inset 0px -3px 7px 0px #29bbff;
+    background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #2dabf9), color-stop(1, #0688fa));
+    background:-moz-linear-gradient(top, #2dabf9 5%, #0688fa 100%);
+    background:-webkit-linear-gradient(top, #2dabf9 5%, #0688fa 100%);
+    background:-o-linear-gradient(top, #2dabf9 5%, #0688fa 100%);
+    background:-ms-linear-gradient(top, #2dabf9 5%, #0688fa 100%);
+    background:linear-gradient(to bottom, #2dabf9 5%, #0688fa 100%);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#2dabf9', endColorstr='#0688fa',GradientType=0);
+    background-color:#2dabf9;
+    -moz-border-radius:3px;
+    -webkit-border-radius:3px;
+    border-radius:3px;
+    border:1px solid #0b0e07;
+    display:inline-block;
+    cursor:pointer;
+    color:#ffffff;
+    font-family:Arial;
+    font-size:15px;
+    padding:9px 23px;
+    text-decoration:none;
+    text-shadow:0px 1px 0px #263666;
+    text-decoration: none;
+    font-weight: bold;
+}
+.btn:hover {
+    background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #0688fa), color-stop(1, #2dabf9));
+    background:-moz-linear-gradient(top, #0688fa 5%, #2dabf9 100%);
+    background:-webkit-linear-gradient(top, #0688fa 5%, #2dabf9 100%);
+    background:-o-linear-gradient(top, #0688fa 5%, #2dabf9 100%);
+    background:-ms-linear-gradient(top, #0688fa 5%, #2dabf9 100%);
+    background:linear-gradient(to bottom, #0688fa 5%, #2dabf9 100%);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#0688fa', endColorstr='#2dabf9',GradientType=0);
+    background-color:#0688fa;
+    color: white;
+    text-decoration: none;
+}
+.btn:active {
+    position:relative;
+    top:1px;
+}
+
+/* ---------- Admin-specific Theming ---------- */
+.page-admin #content img {
+    margin-right:15px
+/* LTR */
+}
+
+.page-admin #content .simpletest-image img {
+    margin:0
+}
+
+.page-admin-structure-block-demo .block-region {
+    background:#ff6;
+    border:1px dotted #9f9e00;
+    color:#000;
+    font:90% "Lucida Grande","Lucida Sans Unicode",sans-serif;
+    margin:5px;
+    padding:5px;
+    text-align:center;
+    text-shadow:none
+}
+
+.page-admin-structure-block-demo #featured .block-region {
+    font-size:.55em
+}
+
+.page-admin-structure-block-demo #header .block-region {
+    width:500px
+}
+
+.page-admin #admin-dblog img {
+    margin:0 5px
+}
+
+/* Fix spacing when Seven is used in the overlay. */
+#system-theme-settings fieldset {
+    padding:0
+}
+
+#system-theme-settings fieldset .fieldset-legend {
+    margin-top:0
+}
+
+/* Configuration. */
+div.admin .right,div.admin .left {
+    width:49%;
+    margin:0
+}
+
+div.admin-panel {
+    background:#fbfbfb;
+    border:1px solid #ccc;
+    margin:10px 0;
+    padding:0 5px 5px
+}
+
+div.admin-panel h3 {
+    margin:16px 7px
+}
+
+div.admin-panel dt {
+    border-top:1px solid #ccc;
+    padding:7px 0 0
+}
+
+div.admin-panel dd {
+    margin:0 0 10px
+}
+
+div.admin-panel .description {
+    margin:0 0 14px 7px
+}
+
+/* ---------- Overlay layout styles ----------- */
+.overlay #main,.overlay #content {
+    width:auto;
+    float:none
+}
+
+.overlay #page {
+    padding:0 2em
+}
+
+.overlay .region-page-top,.overlay #header,.overlay #page-title,.overlay #featured,.overlay #sidebar-first,.overlay #triptych-wrapper,.overlay #footer-wrapper {
+    display:none
+}
+
+.overlay-processed .field-type-image {
+    display:block;
+    float:none
+}
+
+.overlay #messages {
+    width:auto
+}
+
+/* ---------- Poll ----------- */
+.node .poll {
+    margin:2em 0
+}
+
+.node .poll #edit-choice {
+    margin:0 0 1.5em
+}
+
+.poll .vote-form {
+    text-align:left
+/* LTR */
+}
+
+.poll .vote-form .choices {
+
+
+
+
+    margin:0
+}
+
+.poll .percent {
+    font-size:.857em;
+    font-style:italic;
+    margin-bottom:3em;
+    margin-top:-3.2em;
+    float:right;
+    text-align:right
+}
+
+.poll .text {
+    clear:right;
+    margin-right:2.25em
+}
+
+.poll .total {
+    font-size:.929em;
+    font-style:italic;
+    text-align:right;
+/* LTR */
+    clear:both
+}
+
+.node .poll {
+    margin:1.8em 0 0
+}
+
+.node .poll .text {
+    margin-right:6.75em
+}
+
+.node .poll #edit-choice {
+    margin:0 0 1.2em
+}
+
+.poll .bar .foreground {
+    background-color:#666
+}
+
+#footer-wrapper .poll .bar {
+    background-color:#666
+}
+
+#footer-wrapper .poll .bar .foreground {
+    background-color:#ddd
+}
+
+/*--------------------- added by ccharles -------------*/
+body {
+    font-size:100%
+}
+
+.curriculum_announcement {
+    width:98%;
+    background:url(/sites/curriculum.gov.bc.ca/files/pdf/bg_grey_50.png) repeat scroll left top transparent!important;
+    line-height:1em;
+	padding:0 0 0 2%;
+    font-family:Arial,sans-serif;
+    float:left
+}
+
+.curriculum_announcement a.announcement_link{
+	  padding:10px 0 10px 0.3%;
+	  margin-right: 20px;
+      float:left;
+      text-decoration:none;
+}
+.curriculum_grad_years {
+    display:none;
+    float:right;
+    text-decoration:none;
+    width:4em;
+    font-size:1.3em;
+    line-height:1em;
+    padding:1em 1em 1em 4em
+}
+
+.curriculum_announcement a {
+    color:#d1cfcb;
+    text-decoration:underline
+}
+
+.curriculum_announcement a:hover {
+    color:#fff
+}
+
+
+.page-home #content .view-id-announcements .view-content ul{
+	padding-bottom: 1px;
+}
+
+.view-id-announcements a {
+
+    text-decoration:underline
+}
+
+.view-id-announcements a:hover {
+    color:#fff
+}
+
+/*-------------------------------------------------------------------*/
+.page-home #content {
+    padding-top:350px !important;
+}
+
+.page-home #block-system-main {
+    float:left;
+    width:60em
+}
+
+.page-home #content .view-content .views-row-1.context-block .views-field-title {
+    background-color:#fff;
+    color:#414142;
+    width:25em;
+    padding:1.25em;
+    z-index:999;
+    position:relative;
+    left:30em;
+    margin-top:2.25em;
+    padding-top:2.5em
+}
+
+.page-home #content .view-content .views-row-1.context-block .views-field-body {
+
+    color:#414142;
+    width:30em;
+
+    padding-top:0;
+    z-index:11;
+    position:relative;
+    left:30em
+}
+
+.rethink_curriculum .content, .redesign_assessment .content{
+  background-color: #FFF;
+  padding: 15px 15px 0 15px;
+  margin: 15px 0 10px 0;
+  font-size: 0.9em;
+  width: 27em;
+  border: 1pt solid #ccc;;
+  float:right;
+}
+.rethink_curriculum .arrow, .redesign_assessment .arrow{
+  background: transparent url("/sites/curriculum.gov.bc.ca/files/pdf/go_icon_gw_60x60.png") no-repeat scroll right top;
+  width: 3.5em;
+  height:3.5em;
+  float:right;
+  margin-top: 15px;
+}
+.rethink_curriculum .arrow a, .redesign_assessment .arrow a{
+  width: 2.5em;
+  height:2.5em;
+  text-align:center;
+}
+
+
+.page-home #content .view-content .context-block .views-field-view-node {
+    width:2.5em;
+    height:2.5em;
+    float:right;
+
+}
+
+
+
+.page-home #content .view-content .context-block .views-field-view-node span a {
+    display:block;
+    width:2.5em;
+    line-height:2.5em;
+    text-align:center;
+    background-color:#aea393;
+    color:#565555
+}
+
+.page-home #content .view-content .context-block .views-field-view-node span a:hover {
+    display:block;
+    width:2.5em;
+    line-height:2.5em;
+    text-align:center;
+    background-color:#dcd9d3;
+    color:#565555
+}
+
+.page-home #content .view-content .views-row-1.context-block .views-field-view-node {
+    width:2.5em;
+    height:2.5em;
+    float:right;
+    margin-top:-2.5em
+}
+
+.page-home #content .view-content .views-row-1.context-block .views-field-field-image .field-content img {
+    width:45em;
+    height:auto;
+    position:absolute;
+    top:0;
+    z-index:10
+}
+
+.page-home #content .view-content .views-row-1.context-block {
+    position:relative;
+    margin-top:.25em;
+    width:60em;
+    float:left;
+    clear:both;
+    height:30em
+}
+
+.page-home #content .view-content .views-row-2.context-block .views-field-view-node {
+    width:2.5em;
+    height:2.5em;
+    float:right
+}
+
+.page-home #content .view-content .views-row-2.context-block {
+    position:relative;
+    margin-top:2.5em;
+    width:29.75em;
+    float:left;
+    margin-right:.25em
+}
+
+.page-home #content .view-content .views-row-2.context-block .views-field-title {
+    background-color:#fff;
+    color:#414142;
+    width:24.75em;
+    padding:1.25em;
+    z-index:999;
+    position:relative;
+    left:2.5em;
+    margin-top:.25em;
+    padding-top:2.5em
+}
+
+.page-home #content .view-content .views-row-2.context-block .views-field-body {
+    background-color:#fff;
+    color:#414142;
+    width:24.75em;
+    padding:1.25em;
+    z-index:998;
+    position:relative;
+    left:2.5em;
+    padding-bottom:22.5em;
+    padding-top:0;
+    height:16em
+}
+
+.page-home #content .view-content .views-row-2.context-block .views-field-field-image .field-content img {
+    width:27.25em;
+    height:auto;
+    position:absolute;
+    bottom:5em;
+    z-index:1000
+}
+
+.page-home #content .view-content .views-row-3.context-block .views-field-view-node {
+    width:2.5em;
+    height:2.5em;
+    float:right;
+    margin-top:0;
+    margin-right:0
+}
+
+.page-home #content .view-content .views-row-3.context-block {
+    position:relative;
+    margin-top:2.5em;
+    width:27.25em;
+    float:left;
+    margin-left:.25em
+}
+
+.page-home #content .view-content .views-row-3.context-block .views-field-title {
+    background-color:#fff;
+    color:#414142;
+    width:23.5em;
+    padding:1.25em;
+    z-index:999;
+    position:relative;
+    left:0;
+    margin-top:.25em;
+    padding-top:20em;
+    padding-left:2.5em;
+    margin-top:2.5em
+}
+
+.page-home #content .view-content .views-row-3.context-block .views-field-body {
+    background-color:#fff;
+    color:#414142;
+    width:23.5em;
+    padding:1.25em;
+    z-index:998;
+    position:relative;
+    left:0;
+    padding-top:0;
+    padding-left:2.5em;
+    height:9em
+}
+
+.page-home #content .view-content .views-row-3.context-block .views-field-field-image .field-content img {
+    width:27.25em;
+    height:auto;
+    position:absolute;
+    top:0;
+    z-index:1000;
+    left:2.5em
+}
+
+.page-home #content .view-content .views-row-4.context-block .views-field-view-node {
+    width:2.5em;
+    height:2.5em;
+    float:right;
+    margin-top:-2.5em
+}
+
+.page-home #content .view-content .views-row-4.context-block {
+    position:relative;
+    margin-top:.25em;
+    width:29.75em;
+    float:left;
+    margin-right:.25em;
+    clear:both
+}
+
+.page-home #content .view-content .views-row-4.context-block .views-field-title {
+    background-color:#fff;
+    color:#414142;
+    width:24.75em;
+    padding:1.25em;
+    z-index:999;
+    position:relative;
+    margin-top:.25em
+}
+
+.page-home #content .view-content .views-row-4.context-block .views-field-body {
+    background-color:#fff;
+    color:#414142;
+    width:24.75em;
+    padding:1.25em;
+
+    z-index:998;
+    position:relative;
+    height:9em
+}
+
+.page-home #content .view-content .views-row-5.context-block .views-field-view-node {
+    width:2.5em;
+    height:2.5em;
+    float:right;
+    margin-top:-2.5em
+}
+
+.page-home #content .view-content .views-row-5.context-block {
+    position:relative;
+    margin-top:.25em;
+    width:29.75em;
+    float:left;
+    margin-left:.25em;
+    margin-top:4.55em
+}
+
+.page-home #content .view-content .views-row-5.context-block .views-field-title {
+    background-color:#fff;
+    color:#414142;
+    width:24.75em;
+    padding:1.25em;
+    z-index:999;
+    position:relative;
+    margin-top:.25em
+}
+
+.page-home #content .view-content .views-row-5.context-block .views-field-body {
+    background-color:#fff;
+    color:#414142;
+    width:24.75em;
+    padding:1.25em;
+    z-index:998;
+    position:relative;
+    height:8em
+}
+
+.views-field-view-node a {
+    background:url(/sites/curriculum.gov.bc.ca/files/pdf/go_icon_gw_75_100.png) no-repeat left top
+}
+
+#content .node {
+    background-color:#fff;
+}
+
+
+#content .node .submitted {
+    display:none;
+    visibility:hidden
+}
+
+#breadcrumb {
+	display:none;
+
+}
+
+#content .node .submitted {
+    display:none;
+    visibility:hidden
+}
+
+#context_sub h3.em-box {
+    width:7em
+}
+
+.page-curriculum .view-display-id-courses_attachment{
+ display: none;
+}
+.page-curriculum-arts-education .view-display-id-courses_attachment,
+.page-curriculum-core-french .view-display-id-courses_attachment,
+.page-curriculum-english-language-arts .view-display-id-courses_attachment,
+.page-curriculum-francais-langue-premiere .view-display-id-courses_attachment,
+.page-curriculum-fral .view-display-id-courses_attachment,
+.page-curriculum-mathematics .view-display-id-courses_attachment,
+.page-curriculum-physical-health-education .view-display-id-courses_attachment,
+.page-curriculum-science .view-display-id-courses_attachment,
+.page-curriculum-social-studies .view-display-id-courses_attachment,
+.page-curriculum-adst .view-display-id-courses_attachment,
+.page-curriculum-career-education .view-display-id-courses_attachment{
+	display:block;
+}
+.curriculum-grade-level{
+	width: 100%;
+}
+.page-curriculum h1#page-title{
+	background-color: #1B1F28 !important;
+	color: white !important;
+	font-size:3em !important;
+	margin-top:60px;
+
+}
+.page-curriculum-search h1#page-title{
+	width: 96% !important;
+	padding: 2% !important;
+	background-color:white !important;
+	color: #444 !important;
+	text-align:left !important;
+}
+.grade-picker{
+	top:0px !important;
+}
+div.area-of-learning.expanded{
+	height:500px;
+	background-color:#ccc;
+
+}
+
+
+div.area-of-learning.expanded .mathematics-course-10-12{
+	display:block !important;
+}
+div.area-of-learning.views-row-odd{
+	margin-right: 0.3%;
+}
+div.area-of-learning {
+    float:left;
+    height:7.75em;
+    padding: 0 2%;
+    background-color:#fff;
+    margin-bottom:0.3%;
+    position:relative;
+	overflow:hidden;
+}
+
+
+div.area-of-learning h3 {
+    font-size:1em
+}
+
+div.area-of-learning h2,div.area-of-learning h3 {
+    color:gray;
+    margin-bottom:.5em;
+    line-height:1em
+}
+
+div.area-of-learning h2 a,div.area-of-learning h3 a {
+    font-size:1em;
+    color:gray;
+    text-decoration:none;
+    line-height:1em
+}
+
+div.area-of-learning h2 a:hover,div.area-of-learning h3 a:hover {
+    color:#000;
+    text-decoration:none
+}
+
+div.area-of-learning ul {
+    list-style-type:none;
+    margin-top:0;
+    padding:0;
+    position:relative;
+    bottom:0;
+    width:100%;
+    padding-top:.625em;
+    border-bottom:.0625em dashed gray;
+}
+div.area-of-learning ul li {
+    float:left;
+    list-style-type:none;
+    font-size:1.3em;
+    margin:0;
+    padding:0;
+	text-align:center;
+
+}
+
+.view-id-curriculum_one_pager div.area-of-learning h3 a{
+		width: 100%;
+		border-bottom: 1pt dotted #ccc;
+
+}
+.i18n-en div.area-of-learning ul li a{
+    color: #808080;
+    text-decoration: none;
+    display: block;
+
+
+
+}
+.i18n-en div.area-of-learning ul li.career-education-links a{
+  display:inline !important;
+}
+.i18n-en div.area-of-learning ul li a {
+    color:gray;
+    text-decoration:none;
+    display:block;
+    width:1.3em;
+		height: 1.5em;
+	overflow: hidden;
+}
+.i18n-fr div.area-of-learning ul li.career-education-links a{
+  display:inline !important;
+}
+.i18n-fr div.area-of-learning ul li a {
+    color:gray;
+    text-decoration:none;
+    display:block;
+	height: 1.5em;
+	overflow: hidden;
+}
+
+.i18n-fr div.area-of-learning ul li a {
+    color:gray;
+    text-decoration:none;
+    display:block;
+    width:1.3em
+}
+
+.i18n-en div.area-of-learning ul li.fral-6T a, .i18n-en div.area-of-learning ul li.fral-7T a {
+    width:2.4em
+}
+
+.i18n-fr div.area-of-learning ul li.fral-6T a, .i18n-fr div.area-of-learning ul li.fral-7T a {
+    width:2.4em
+}
+
+div.area-of-learning ul li a:hover {
+    color:#000;
+    text-decoration:none
+}
+
+
+
+
+
+
+
+
+/*--------------------- fast links -------------*/
+/*#block-block-3,#block-block-11,#block-block-9 {*/
+
+.fast-links{
+	float:left;
+	width: 100%;
+	color: black;
+    font-size: 0.85em;
+	position;relative;
+	top:-50px;
+}
+.fast-links .custom_search-popup{
+	display:none !important;
+}
+#fast_links .fast_links_content ul li {
+    list-style-type:none;
+    margin:0;
+    padding:0;
+    margin-left:0;
+    padding-left:1.75em;
+    margin-bottom:.25em;
+    margin-top:.25em;
+    line-height:1.666em;
+    background:url(/sites/curriculum.gov.bc.ca/files/pdf/go_icon_small_w_50.png) no-repeat left top;
+	color: black;
+}
+
+#fast_links .fast_links_content ul li a {
+    color: #212121
+}
+
+#fast_links .fast_links_content ul li a:hover {
+    color:#616163
+}
+
+#cc_links {
+    background:url(/sites/curriculum.gov.bc.ca/files/pdf/bg_black_50.png) repeat left top;
+    margin-left:2.75em;
+    width:11.25em;
+    float:right
+}
+
+#cc_links .cc_links_header {
+/*background-color:#5f5a51;*/
+    margin-top:10px;
+    margin-left:-2.5em;
+    width:2.5em;
+    height:3.5em;
+    background:url(/sites/curriculum.gov.bc.ca/files/pdf/cc_links_icon_white_50.png) no-repeat left top
+}
+
+#cc_links .cc_links_header h3.em-box {
+    margin-left:3em;
+    line-height:1.1em;
+    font-size:1.15em;
+    color:#fff;
+    padding:5px 0 0;
+    width:8em;
+    margin-left:3em
+}
+
+#cc_links .cc_links_content {
+    margin:1.666em;
+    margin:0;
+    padding-left:.8333em;
+    padding-right:.8333em;
+    margin-bottom:0;
+    font-size:.75em;
+    margin-top:0;
+    padding-top:.8333em;
+    border-top:.08333em dashed #9f9f9f;
+    color:#d1cfcb;
+    padding-bottom:1.25em
+}
+
+#cc_links .cc_links_content ul {
+    list-style-type:none;
+    margin:0;
+    padding:0
+}
+
+#cc_links .cc_links_content ul li {
+    list-style-type:none;
+    margin:0;
+    padding:0;
+    margin-left:0;
+    padding-left:1.75em;
+    margin-bottom:.25em;
+    margin-top:.25em;
+    line-height:1.666em;
+    background:url(/sites/curriculum.gov.bc.ca/files/pdf/go_icon_small_w_50.png) no-repeat left top
+}
+
+#cc_links .cc_links_content ul li a {
+    color:gray
+}
+
+#cc_links .cc_links_content ul li a:hover {
+    color:#acacac
+}
+
+#block-block-9 {
+    margin-top:15px
+}
+
+/*****************************************/
+h1#page-title {
+    float:left;
+    background-color:#fff;
+    width:96%;
+    color:#444;
+    padding: 2%;
+}
+h1#feature-title{
+	font-size: 35pt;
+    background-color:#fff;
+	line-height: 1;
+	color:#444;
+	width:96%;
+	padding: 2%;
+}
+
+.front #block-system-main .content{
+	display:none;
+}
+.page-node #block-system-main {
+    width:auto;
+}
+
+
+.page-node #block-system-main .node {
+    padding-top:0 !important
+}
+
+
+.page-node #block-system-main .content .content {
+    margin:0;
+    width:auto;
+}
+
+.page-node #block-system-main .content h2 {
+    margin:.75em 0
+}
+
+.page-node #block-system-main .content h3 {
+    font-size:1.55em;
+    line-height: 1.1em;
+    margin:.75em 0
+}
+
+.page-node #block-system-main .content h4 {
+    font-size:1.05em;
+    margin-bottom:.666em
+}
+
+
+
+.page-node-2312 #block-system-main .content .field-type-image {
+    margin-top:0
+}
+
+#curric_screenshot {
+    float:right;
+    margin-left:2.5em;
+    width:13.5em;
+    margin-right:-11.5em
+}
+
+/****************** context sub menus ***************/
+#block-block-4,#block-block-5,#block-block-6,#block-block-12,#block-block-13,#block-block-14{
+    float:left;
+    width:46em;
+    background-color:#fff;
+    padding-bottom:2.5em
+}
+
+#block-block-4 .content,#block-block-5 .content,#block-block-6 .content,#block-block-12 .content,#block-block-13 .content,#block-block-14 .content {
+    float:left
+}
+
+#context_sub {
+    background-color:#867f73;
+    margin-left:2.5em;
+    width:21.5em;
+    float:left
+}
+
+#context_sub .context_sub_header {
+    background-color:#5f5a51;
+    margin-left:-2.5em;
+    width:2.5em;
+    height:2.5em
+}
+
+#context_sub h3.em-box {
+    margin-left:3em;
+    line-height:2em;
+    font-size:1.25em;
+    color:#fff;
+    padding:0
+}
+
+#context_sub .context_sub_content {
+    margin:1.6666em;
+    font-size:.75em;
+    margin-top:0;
+    padding-top:.8333em;
+    border-top:.08333em dashed #e0dfdc;
+    color:#d1cfcb
+}
+
+#context_sub .context_sub_content ul {
+    list-style-type:none;
+    margin:0;
+    padding:0
+}
+
+#context_sub .context_sub_content ul li {
+    list-style-type:none;
+    margin:0;
+    padding:0
+}
+
+#context_sub .context_sub_content ul li a {
+    color:#D1CFCB
+}
+
+#context_sub .context_sub_content ul li a:hover {
+    color:#fff
+}
+
+/***********************************/
+.whats-new-rationale {
+    background-color:#fff;
+    margin-top:.25em;
+    padding:2.5em
+}
+
+.whats-new-rationale p,.whats-new-rationale h2,.whats-new-rationale h3 {
+    margin-bottom:1em
+}
+
+/***************************************/
+div.curric-bottom-links {
+    float:left;
+    clear:both;
+    width:100%;
+}
+
+div#curric-bottom-links ul {
+    list-style-type:none;
+    margin:0;
+    padding:0
+}
+
+div#curric-bottom-links ul li {
+    display:table;
+    height:70px;
+    float:left;
+    list-style-type:none;
+    font-size:1em;
+    margin:0;
+    padding:0;
+    color:#999794;
+    background:url(/sites/curriculum.gov.bc.ca/files/pdf/bg_black_75.png) repeat left top;
+/*line-height:3.5em;*/
+    width:14.25em;
+    text-align:center;
+    margin-left:.25em
+}
+
+div#curric-bottom-links ul li:first-child {
+    margin-left:0;
+    width:16.5em
+}
+
+div#curric-bottom-links ul li a {
+    color:#999794;
+    text-decoration:none;
+    display:table-cell;
+    vertical-align:middle
+/*line-height:3.5em;*/
+}
+
+div#curric-bottom-links ul li a:hover {
+    color:#fff;
+    text-decoration:none
+}
+
+div#curric-bottom-links ul li.active a {
+    color:#333;
+    text-decoration:none;
+    display:block;
+    line-height:2.5em;
+    padding-left:.75em;
+    padding-right:.75em;
+    background-color:#fff
+}
+
+/***************************************/
+li {
+    margin-bottom:.5em
+}
+
+.tooltip_center {
+    position:relative
+}
+
+.tooltip_center span {
+    position:absolute;
+    line-height:1em;
+    text-align:left;
+    bottom:3.5em;
+    left:0;
+    width:22em;
+    background:url(/sites/curriculum.gov.bc.ca/files/pdf/bg_grey_90.png) repeat left top;
+    display:none;
+    visibility:hidden;
+    margin-bottom:1.25em
+}
+
+.tooltip_center:hover span {
+    position:absolute;
+    display:block;
+    visibility:visible;
+    padding:1.25em
+}
+
+.tooltip_right {
+    position:relative
+}
+
+.tooltip_right span {
+    position:absolute;
+    line-height:1em;
+    text-align:left;
+    bottom:5.5em;
+    right:0;
+    width:20em;
+    background:url(/sites/curriculum.gov.bc.ca/files/pdf/bg_white_90.png) repeat left top;
+    display:none;
+    visibility:hidden;
+    margin-bottom:1.25em;
+    z-index:9999;
+}
+
+.tooltip_right:hover span {
+    position:absolute;
+    display:block;
+    visibility:visible;
+    padding:1.25em;
+    color:#616161
+}
+
+
+
+
+
+#page {
+	background: #EFEFEF;
+	position:relative;
+	height: auto;
+	min-height:100%;
+}
+
+#main-wrapper {
+    background: #1B1F28;
+}
+
+
+#curriculum_download .gr1012{
+	display:none;
+}
+
+.page-curriculum-whats-new-francais-langue-premiere #curriculum_download .english,.page-curriculum-goals-rationale-fral #curriculum_download .english {
+    display:none;
+    visibility:hidden
+}
+
+.page-curriculum-whats-new-english-language-arts #curriculum_download .french,.page-curriculum-goals-rationale-english-language-arts #curriculum_download .french {
+    display:none;
+    visibility:hidden
+}
+
+.communications-highlight,
+.creativethinking-highlight,
+.criticalthinking-highlight,
+.ppci-highlight {
+    background-color:#5691bb;
+    color:white;
+}
+
+/* Profile Summary Styles */
+/*table*/
+.node-illustrations .group-profile-summary {
+    display:table
+}
+
+.node-illustrations .group-profile-summary .field-group-format-wrapper {
+    display:table-row
+}
+
+/*Table Row*/
+
+
+.node-illustrations .group-profile-summary .field-group-format-wrapper .field-name-field-profile {
+    display:table-cell;
+    border:solid;
+    border-width:thin;
+    padding-left:5px;
+    padding-right:5px;
+    vertical-align:top;
+    width:70px
+}
+
+.node-illustrations .group-profile-summary .field-group-format-wrapper .field-name-field-profile-description {
+    display:table-cell;
+    border:solid;
+    border-width:thin;
+    padding-left:5px;
+    padding-right:5px;
+    vertical-align:top
+}
+
+.node-illustrations .group-profile-summary .field-group-format-wrapper .field-name-field-facets {
+    display:table-cell;
+    border:solid;
+    border-width:thin;
+    padding-left:5px;
+    padding-right:5px;
+    vertical-align:top
+}
+
+.node-illustrations .group-profile-summary .field-group-format-wrapper .field .field-items {
+}
+
+.page-node #block-system-main .content .node-illustrations .group-profile-summary h3 {
+    color:#E48456
+}
+
+.page-node #block-system-main .content .node-illustrations .field-type-image {
+    margin-left:0;
+    clear:both;
+    float:none
+}
+
+#block-views-illustrations-block {
+    float:left;
+    width:100%;
+    background-color:#fff;
+    padding:2.5em;
+    padding-top:0
+}
+
+#block-views-illustrations-block h2 {
+    padding-bottom:.5em;
+    color:#e48456
+}
+.view-illustrations tr td + td{
+	border-left: 1px solid #ccc;
+}
+.page-curriculum-competency .view-content {
+    float: none;
+}
+
+.page-curriculm-competency .view-communication-illustrations h2 {
+    color:#e48456;
+}
+
+.page-curriculm-competency .region-content { /* reset some layout.css styles */
+    width: 100%;
+    padding: 0;
+}
+
+.page-curriculm-competency #content .section {
+    padding: 0 3% 3% 3%;
+	overflow:hidden;
+}
+
+#block-views-ppci-illustrations-block h2{
+    padding-bottom:.5em;
+    color:#80BA69;
+}
+
+.personal-awareness-responsibility-block h2{
+    padding-bottom:.5em;
+    color:#4ac81e;
+}
+
+.social-responsibility-block h2 {
+    padding-bottom:.5em;
+    color:#00965c
+}
+
+/* set active trail menu tabs to white */
+#main-menu-links li.active-trail a {
+    background-color:#fff !important
+}
+
+body.page-node-2892 ul {
+    list-style-type:none;
+    margin-left:0;
+    padding-left:0
+}
+
+body.page-node-2892 ul ul {
+    list-style-type:disc;
+    padding-left:3em
+}
+
+
+
+
+
+/** Illustration View Titles **/
+#block-system-main .content .view-display-id-illustration_view {
+    color:#444;
+}
+
+.illustration-image-gallery {
+    clear:both;
+    display:block
+}
+
+.illustration-image-gallery .illustration-image ul li {
+    float:left;
+    margin-left:0;
+    margin-right:10px;
+    width:220px;
+    list-style-type:none
+}
+
+table thead .views-field-field-profile {
+}
+
+table tbody .views-field-field-profile {
+    color:#444;
+    font-size:2em
+}
+
+div.views-field-field-profile {
+    padding-bottom:3em;
+    color:#fff;
+    line-height:1.4em;
+    width:100%
+}
+
+.views-field-field-profile a:hover {
+    color:#fff;
+    text-decoration:underline
+}
+
+.views-field-php {
+    clear:both
+}
+
+.view-communication-illustrations .views-field-field-profile table tr,.view-communication-illustrations .views-field-php table tr.profile_selected,.view-communication-illustrations .views-field-php table thead tr {
+    background-color:#E48456;
+}
+
+.view-creative-thinking-illustrations .views-field-field-profile table tr {
+    background-color:#11A2C6;
+}
+
+.page-competencies-critical-thinking-illustration .views-field-field-profile table tr {
+    background-color:#006FBA;
+}
+
+.view-ppci-illustrations .views-field-field-profile table tr {
+    background-color:#80BA69;
+}
+
+.page-competencies-social-responsibility-illustration .view-ppci-illustrations .views-field-field-profile table tr {
+    background-color:#00965C;
+}
+
+.page-competencies-personal-awareness-responsibility-illustration .view-ppci-illustrations .views-field-field-profile table tr {
+    background-color:#4AC81E;
+}
+
+.view-social-responsibility-illustrations .views-field-field-profile table tr {
+    background-color:#00965c;
+}
+
+h3.illustration-title {
+    font-size:2em;
+    line-height:1.2em;
+    margin-bottom:.5em
+}
+
+.illustration-cc-label {
+    font-weight:700;
+    margin:10px 0
+}
+
+.illustration-context {
+    margin:10px 0
+}
+
+
+#content #block-system-main .content div.view-communication-illustrations,#content #block-system-main .content div.view-creative-thinking-illustrations,#content #block-system-main .content div.view-critical-thinking-illustrations .view-content,#content #block-system-main .content div.view-ppci-illustrations,#content #block-system-main .content div.view-social-responsibility-illustrations,#content #block-system-main .content div.view-personal-awareness-responsibility-illustrations {
+    min-height:10px
+}
+
+.page-competencies-communication-illustrationproto .content div.view-communication-illustrations {
+    background-color:#fff
+}
+
+.page-competencies-communication-illustration #content #block-system-main .content {
+    background-color:#FFF
+}
+
+.page-competencies-communication-illustration h1#page-title {
+    background:url(/sites/curriculum.gov.bc.ca/files/pdf/core_comp_c_orange_small.png) no-repeat scroll left #FFF!important;
+    color:#E48456;
+	padding-left: 50px;
+	margin-left: 3%;
+	width:90%;
+}
+
+.page-competencies-creative-thinking-illustration #content #block-system-main .content,.page-competencies-critical-thinking-illustration #content #block-system-main .content {
+    background-color:#FFF
+}
+
+.page-competencies-critical-thinking-illustration h1#page-title {
+    background:url(/sites/curriculum.gov.bc.ca/files/pdf/core_comp_ct_blue_small.png) no-repeat scroll left #FFF!important;
+    color:#006FBA;
+	padding-left: 50px;
+	margin-left: 3%;
+	width:90%;
+}
+
+.page-competencies-creative-thinking-illustration h1#page-title {
+    background:url(/sites/curriculum.gov.bc.ca/files/pdf/core_comp_t_blue_small.png) no-repeat scroll left #FFF!important;
+    color:#11A2C6;
+	padding-left: 50px;
+	margin-left: 3%;
+	width:90%;
+}
+
+.page-competencies-personal-awareness-responsibility-illustration h1#page-title {
+    background:url(/sites/curriculum.gov.bc.ca/files/pdf/core_comp_par_green_small.png) no-repeat scroll left #FFF!important;
+    color:#4ac81e;
+	padding-left: 50px;
+	margin-left: 3%;
+	width:90%;
+}
+
+.page-competencies-social-responsibility-illustration h1#page-title {
+    background:url(/sites/curriculum.gov.bc.ca/files/pdf/core_comp_sr_green_small.png) no-repeat scroll left #FFF!important;
+    color:#00965c;
+	padding-left: 50px;
+	margin-left: 3%;
+	width:90%;
+}
+
+.view-communication-illustrations #illustration-subhead {
+    color:#E48456;
+    margin-top:0;
+    padding-top:0;
+    margin-bottom:2em;
+    border-bottom:1px dashed #aaa;
+    padding-bottom:1em
+}
+
+.view-communication-illustrations #illustration-subhead h2 {
+    width:20em;
+    line-height:40px
+}
+
+.view-communication-illustrations #illustration-subhead a {
+    float:right;
+    line-height:40px;
+    background-color:#E48456;
+    color:#fff;
+    font-weight:700;
+    font-size:.78em;
+    padding:0 10px
+}
+
+.view-creative-thinking-illustrations #illustration-subhead {
+    color:#11A2C6;
+    margin-top:0;
+    padding-top:0;
+    margin-bottom:2em;
+    border-bottom:1px dashed #aaa;
+    padding-bottom:1em
+}
+
+
+.view-critical-thinking-illustrations #illustration-subhead {
+    color:#0070B3;
+    margin-top:0;
+    padding-top:0;
+    margin-bottom:2em;
+    border-bottom:1px dashed #aaa;
+    padding-bottom:1em
+}
+
+.view-creative-thinking-illustrations #illustration-subhead h2 {
+    line-height:40px
+}
+
+#quicktabs-tabpage-critical_thinking_facets-3 .competency-illustration-table{
+	display:block !important;
+}
+
+
+.page-competencies-critical-thinking-illustration #illustration-subhead h2 {
+    color:#0070B3;
+    line-height:40px
+}
+
+.view-creative-thinking-illustrations #illustration-subhead a {
+    float:right;
+    line-height:40px;
+    background-color:#11A2C6;
+    color:#fff;
+    font-weight:700;
+    font-size:.78em;
+    padding:0 10px;
+	margin-top: -40px;
+}
+
+.page-competencies-critical-thinking-illustration #illustration-subhead a {
+    float:right;
+    line-height:40px;
+    background-color:#006FBA;
+    color:#fff;
+    font-weight:700;
+    font-size:.78em;
+    padding:0 10px;
+	margin-top: -40px;
+}
+.page-competencies-ppci-illustration h1#page-title{
+	color: #80ba69 !important;
+    background: #fff url(/sites/curriculum.gov.bc.ca/files/pdf/core_comp_ps_green_small.png) no-repeat 0 center !important;
+    width: 90%;
+    padding-left: 4%;
+	margin-left: 3%;
+}
+.page-competencies-ppci-illustration #illustration-subhead {
+    color:#80BA69;
+    margin-top:0;
+    padding-top:0;
+    margin-bottom:2em;
+    border-bottom:1px dashed #aaa;
+    padding-bottom:1em
+}
+
+.page-competencies-personal-awareness-responsibility-illustration #illustration-subhead {
+    color:#4ac81e;
+    margin-top:0;
+    padding-top:0;
+    margin-bottom:2em;
+    border-bottom:1px dashed #aaa;
+    padding-bottom:1em
+}
+
+.page-competencies-social-responsibility-illustration #illustration-subhead {
+    color:#00965C;
+    margin-top:0;
+    padding-top:0;
+    margin-bottom:2em;
+    border-bottom:1px dashed #aaa;
+    padding-bottom:1em
+}
+
+.view-ppci-illustrations #illustration-subhead h2, .personal-awareness-responsibility-block #illustration-subhead h2, .social-responsibility-block #illustration-subhead h2 {
+    line-height:40px
+}
+
+.page-competencies-ppci-illustration #illustration-subhead a {
+    float:right;
+    line-height:40px;
+    background-color:#80BA69;
+    color:#fff;
+    font-weight:700;
+    font-size:.78em;
+    padding:0 10px;
+	margin-top: -40px;
+}
+
+.page-competencies-personal-awareness-responsibility-illustration #illustration-subhead a {
+    float:right;
+    line-height:40px;
+    background-color:#4ac81e;
+    color:#fff;
+    font-weight:700;
+    font-size:.78em;
+    padding:0 10px;
+	margin-top:-40px;
+}
+
+.page-competencies-social-responsibility-illustration #illustration-subhead a {
+    float:right;
+    line-height:40px;
+    background-color:#00965C;
+    color:#fff;
+    font-weight:700;
+    font-size:.78em;
+    padding:0 10px;
+	margin-top:-40px;
+
+}
+
+#block-system-main .content .view-display-id-illustration_view .view-content {
+    padding-top:1em
+}
+
+.profile-value {
+    font-size:3em
+}
+
+body.page-node-2890 table ul {
+    margin:11px 0 0;
+    padding:0 0 0 auto
+}
+
+body.page-node-2890 table ul li {
+    margin:0;
+    padding:0
+}
+
+.new_highlight {
+    color:#b00
+}
+
+#phe_note {
+    display:none;
+    visibility:hidden
+}
+
+.page-curriculum-physical-and-health-education #phe_note {
+    display:block;
+    visibility:visible;
+    float:left;
+    width:21.6667em;
+    background:url(/sites/curriculum.gov.bc.ca/files/pdf/bg_white_75.png) repeat left top;
+    font-size:.75em;
+    line-height:1.25em;
+    padding:1.666em;
+    border-top:.0125em dashed #aaa
+}
+
+
+/**** Styles for courses sub menus  *****/
+.menu {
+    margin:0 auto
+}
+
+.menu li {
+    margin:0;
+    list-style:none;
+    transition:all linear .10s;
+}
+
+.menu a {
+    transition:all linear .15s;
+    color:#919191;
+}
+
+.menu li:hover > a,.menu .current-item > a {
+    text-decoration:none;
+    color:#be5b70
+}
+
+.menu .arrow {
+    font-size:11px;
+    line-height:0
+}
+
+/*----- Top Level -----*/
+.menu > ul > li {
+    float:left;
+    display:inline-block;
+    position:relative;
+    font-size:19px
+}
+
+.menu > ul > li > a {
+    padding:10px 40px;
+    display:inline-block;
+    text-shadow:0 1px 0 rgba(0,0,0,0.4)
+}
+
+.menu > ul > li:hover > a,.menu > ul > .current-item > a {
+    background:#2e2728
+}
+
+/*----- Bottom Level -----*/
+.menu li:hover .sub-menu {
+    z-index:1;
+    opacity:1
+}
+
+.sub-menu {
+    padding:5px 0;
+    position:absolute;
+    top:100%;
+    left:0;
+    z-index:-1;
+    opacity:0;
+    transition:opacity linear .15s;
+    box-shadow:0 2px 3px rgba(0,0,0,0.2);
+    background:#2e2728
+}
+
+.sub-menu li {
+    display:block;
+    font-size:16px
+}
+
+.sub-menu li a {
+    padding:10px 30px;
+    display:block
+}
+
+.sub-menu li a:hover,.sub-menu .current-item a {
+    background:#3e3436
+}
+
+.click-nav {
+    width:100%
+}
+
+.click-nav ul {
+    position:relative
+}
+
+.click-nav ul li {
+    position:relative;
+    list-style:none;
+    cursor:pointer
+}
+
+.click-nav ul li ul {
+    position:absolute;
+    left:-41px;
+    right:0;
+    z-index:10;
+	top: 32px;
+}
+#curriculum_download{
+	margin-top:0px;
+}
+#curriculum_download .click-nav ul .clicker:hover{
+	border:none !important;
+}
+.with_elaborations_label{
+	width: 100%;
+	color:white;
+}
+
+
+/* Grade Colelction Link. Only show son curriculum grade pages */
+.view-display-id-list_all_courses_by_grade .download-grade-collection{
+	display: block;
+}
+.view-display-id-list_all_courses_by_grade #curriculum_download{
+	display:none;
+}
+
+
+.download-grade-collection{
+	display: none;
+	float:right;
+}
+.download-grade-collection a{
+    color: #DAD7D3 !important;
+    text-decoration: none;
+    display: block;
+    line-height: 1;
+    background: transparent url("/sites/curriculum.gov.bc.ca/files/pdf/bg_grey_50.png") repeat scroll left top;
+    width: auto;
+	text-decoration: none !important;
+	padding: 8px 10px 8px 10px !important;
+	box-shadow: 0 2px 3px rgba(0,0,0,0.2)
+}
+.i18n-en #curriculum_download .click-nav ul .clicker {
+  color: #DAD7D3;
+  text-decoration: none;
+  display: block;
+  line-height:1;
+  background: transparent url("/sites/curriculum.gov.bc.ca/files/pdf/bg_grey_50.png") repeat scroll left top;
+  width:200px;
+}
+.i18n-fr #curriculum_download .click-nav ul .clicker {
+  color: #DAD7D3;
+  text-decoration: none;
+  display: block;
+  line-height:1;
+  background: transparent url("/sites/curriculum.gov.bc.ca/files/pdf/bg_grey_50.png") repeat scroll left top;
+}
+.i18n-en #curriculum_download .click-nav ul .french .clicker, .i18n-fr #curriculum_download .click-nav ul .english .clicker{
+	display:none;
+}
+#curriculum_download .click-nav ul li a {
+    transition:background-color .2s ease-in-out;
+    -webkit-transition:background-color .2s ease-in-out;
+    -moz-transition:background-color .2s ease-in-out;
+    display:block;
+    padding:8px 10px 8px 40px;
+    transition:opacity linear .15s;
+    box-shadow:0 2px 3px rgba(0,0,0,0.2);
+    background-color:#000;
+    opacity:1;
+    color:#fff;
+    text-decoration:none;
+    width: 200px;
+    line-height: 1em;
+
+}
+
+#subject_sub .click-nav ul .clicker {
+    margin-top:-20px;
+    position:relative;
+    color:#FFF;
+    background-color:#000;
+    opacity:.6
+}
+
+
+.click-nav ul .clicker:hover,.click-nav ul .active {
+    background-color:#000;
+    opacity:.6
+}
+
+
+#curriculum_download .click-nav ul li span.elab_downloads {
+    display:block;
+    padding:8px 10px 8px 15px;
+    background-color:#404040;
+    opacity:1;
+    color:#fff;
+    text-decoration:none;
+    width: 105px;
+}
+
+#curriculum_download .click-nav ul li span.elab_downloads {
+	border-top: 1px solid #ccc;
+	font-size: 12px !important;
+	line-height: 2;
+}
+
+.click-nav img {
+    position:absolute;
+    top:9px;
+    left:12px
+}
+
+.click-nav ul li a {
+    transition:background-color .2s ease-in-out;
+    -webkit-transition:background-color .2s ease-in-out;
+    -moz-transition:background-color .2s ease-in-out;
+    display:block;
+    padding:8px 10px 8px 10px;
+    transition:opacity linear .15s;
+    box-shadow:0 2px 3px rgba(0,0,0,0.2);
+    background-color:#000;
+    opacity:.85;
+    color:#333;
+    text-decoration:none
+}
+
+.click-nav ul li a:hover {
+    transition:opacity linear .15s;
+    box-shadow:0 2px 3px rgba(0,0,0,0.2)
+}
+
+/* Fallbacks */
+.click-nav .no-js ul {
+    display:none
+}
+
+.click-nav .no-js:hover ul {
+    display:block
+}
+
+/**** site navigation with dropdowns******/
+
+/*hide megamenu menu option and replace it with default dropdown*/
+#menu-3057-1{
+	display:none;
+}
+.mean-nav li:nth-child(4) {
+	display:none;
+}
+
+#menu-3064-1 div a{
+	font-weight:normal !important;
+}
+
+#superfish-1 {
+  color: #808080;
+  font-family: "Century Gothic",Helvetica,Arial,sans-serif;
+  display: flex;
+  height: 3em;
+  text-decoration: none;
+  text-shadow: none;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+  background: #e5e5e5 none repeat scroll 0% 0%;
+  border-bottom: 1px solid #ccc;
+  margin: auto;
+  font-size: 1em;
+  width: 100%;
+}
+#superfish-1 li {
+	flex: 2;
+}
+#superfish-1 li.first {
+	flex: 1;
+}
+#superfish-1 a {
+  color: #808080;
+  padding: 0.666em 1.333em;
+  background: transparent none repeat scroll 0% 0%;
+  text-shadow: none;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+  text-transform: uppercase;
+}
+
+#superfish-1 li + li {
+  border-left: 1px solid #ccc;
+}
+
+#superfish-1 .sf-depth-1 > li:hover , #superfish-1 .sf-depth-1 li.active{
+	border-bottom: 10px solid #003366;
+  	background-color: white !important;
+}
+#superfish-1 li.active-trail, #superfish-1 a.active{
+  	background-color: white !important;
+}
+
+#superfish-1 li ul{
+  margin:8px 0 0 -1px;
+}
+#superfish-1 ul li{
+  float: left;
+  list-style: outside none none;
+  padding: 0px;
+  margin: 0px;
+  /*border-right: 1px solid #ccc*/;
+}
+
+#superfish-1 li ul li:hover,  #superfish-1 a:hover{
+  background-color: #fff !important;
+}
+#superfish-1 li ul li{
+  background-color: #FFF !important;
+}
+/*fixes padding issue for first item in submenu*/
+#superfish-1 li ul li.first{
+  border-left:1pt solid #ccc;
+}
+.site-header{
+	float:left;
+	width: 100%;
+	height: 75px !important;
+	margin-top: 10px;
+}
+.i18n-fr h1#site-name {
+	margin-top:10px;
+	margin-bottom:0;
+	font-size: 25px;
+	font-weight: 400;
+	font-family: Myriad-Pro, Calibri, Arial, Sans Serif;
+	margin-top: 20px;
+
+}
+h1#site-name {
+	margin-top:10px;
+	margin-bottom:0;
+	font-size: 35px;
+	font-weight: 400;
+	font-family: Myriad-Pro, Calibri, Arial, Sans Serif;
+
+}
+.sf-menu.sf-style-white li{
+  background: #f2f2f2;
+}
+
+.sf-menu.sf-style-white a{
+  border: none;
+
+}
+.sf-clone-parent{
+	display:none;
+}
+#home-drop-link-2850{
+	display:none;
+}
+
+/* Responsive Menu styles for Mean Menu (hamburger menu)*/
+
+.mean-container .mean-bar{
+    position: absolute;
+    background: none;
+    top: 48px;
+    border-bottom: 2px solid #fcba19;
+    font-family: Myriad-Pro, Calibri, Arial, 'sans serif';
+    font-size: 16px;
+    z-index: 10000;
+	padding:0px;
+
+}
+.mean-nav{
+
+	background-color: #2b4777;
+
+}
+.mean-nav a.mean-expand, .mean-nav .mean-expand:hover{
+	background: url(/sites/curriculum.gov.bc.ca/themes/curriculum/images/menu-arrow-dn.png) no-repeat 			center center !important;
+	text-indent: -9999px;
+	height:17px !important;
+
+}
+.mean-expand.mean-clicked, .mean-expand.mean-clicked:hover{
+	background: url(/sites/curriculum.gov.bc.ca/themes/curriculum/images/menu-arrow-up.png) no-repeat center center !important;
+	text-indent: -9999px !important;
+}
+/* Add hamburger ICON*/
+.meanmenu-reveal{
+	background:url(/sites/curriculum.gov.bc.ca/themes/curriculum/images/menu-open-mobile.png) no-repeat center center;
+	text-indent: -9999px !important;
+	padding: 0px 26px 3px !important;
+}
+
+.meanmenu-reveal span{
+	display: none !important;
+}
+.mean-nav ul li{
+	margin-bottom: 0px;
+	opacity: 1;
+	list-style:none;
+}
+.mean-container .mean-nav ul li a{
+	background-color:#2b4777;
+	font-family: Myriad-Pro, Calibri, Arial, 'sans serif';
+	text-transform:none;
+	padding: 8px 6%;
+}
+.mean-nav ul li a:hover {
+	background:#2b4777 !important;
+	text-decoration: underline;
+}
+.mean-container .mean-nav ul li ul li ul li {
+	background: #4773b6;
+}
+.mean-container .mean-nav ul li li a, .mean-container .mean-nav ul li li a:hover{
+	opacity: 1 !important;
+	background-color: #36588c !important;
+
+}
+
+/* beautytips */
+.bt-wrapper .keyword_elaboration_title{
+	display:none;
+	width:100%;
+	border-bottom: 1pt dashed #666;
+}
+.keyword_elaboration_title{
+   text-transform: capitalize;
+   display:none;
+}
+
+a.beautytips, .beautytips {
+  cursor: help;
+}
+.view-curriculum-one-pager .conc-cont strong {
+	cursor: pointer;
+}
+/* site updates page */
+.page-site-updates .view-content .views-row-first {
+  margin-left: 0;
+}
+.node-backup-log-entry {
+  border-bottom: 2px dashed #ccc;
+}
+.views-row-last .node-backup-log-entry {
+  border-bottom: none;
+}
+.view-site-updates .view-header {
+  background: white;
+}
+a[title="Subscribe to Site Updates"] { float: right; }
+
+/* instructional samples */
+.page-instructional-samples .views-exposed-form { background: rgba(128,128,128,1); }
+.page-instructional-samples #edit-field-grade-range-value-wrapper { width: 100%; }
+.page-instructional-samples #edit-field-subject-range-value-wrapper,
+.page-instructional-samples #edit-field-school-district-value-wrapper { float: left; }
+.page-instructional-samples #edit-field-subject-range-value-wrapper { width: 45%; }
+.page-instructional-samples #edit-field-school-district-value-wrapper { width: 37%; }
+.page-instructional-samples .views-exposed-widget label { color: white !important; }
+.page-instructional-samples #edit-field-subject-range-value-wrapper .bef-checkboxes .form-item { width: 93%; }
+.page-instructional-samples .group-header { margin-bottom: 1rem; font-size: 0.75rem; }
+.page-instructional-samples .views-column .view-mode-teaser { padding: 1rem 1rem 0 !important; }
+.page-instructional-samples .views-column .group-left,
+.page-taxonomy-term .node-contributed-resource .group-left { width: 65%; padding-right: 3px; }
+.fr .page-instructional-samples .views-column .group-left,
+.fr .page-taxonomy-term .node-contributed-resource .group-left { width: 54%; }
+.page-instructional-samples .views-column .group-right,
+.page-taxonomy-term .node-contributed-resource .group-right {
+  width: 32%;
+  padding-left: 22px;
+  border-left: 1px solid #ccc;
+}
+.fr .page-instructional-samples .views-column .group-right,
+.fr .page-taxonomy-term .node-contributed-resource .group-right { width: 43%; }
+.page-taxonomy-term .node-contributed-resource .field-name-body,
+.page-instructional-samples .views-column .field-name-body { padding: 0.5rem 0; }
+.fr .page-instructional-samples .views-column .field-name-body { padding: 0.5rem 0.5rem 0.5rem 0; }
+.fr .page-instructional-samples .field-name-field-vimeo-video { margin-top: 1.333rem; }
+.page-instructional-samples .views-column .field-type-taxonomy-term-reference .field-label,
+.page-instructional-samples .views-column .field-type-taxonomy-term-reference ul.links li,
+.page-taxonomy-term .node-contributed-resource .field-name-field-contrib-tags { font-size: 16px !important; }
+.page-taxonomy-term .node-contributed-resource .field-name-field-contrib-tags .links.inline li:after { content: ', '; display: inline; }
+.page-taxonomy-term .node-contributed-resource .field-name-field-contrib-tags .links.inline li:last-of-type:after { content: ''; }
+.page-taxonomy-term .node-contributed-resource .field-name-field-contrib-tags .links.inline li { padding-right: 3px; margin-bottom: 0; }
+.page-instructional-samples .views-column .field-type-taxonomy-term-reference .field-label { font-weight: bold; }
+.page-instructional-samples .field-name-field-grade .field-items .field-item { display: inline; }
+.page-instructional-samples .field-name-field-grade .field-items .field-item:after { content: ', '; }
+.page-instructional-samples .field-name-field-grade .field-items .field-item:last-of-type:after { content: ''; }
+.page-instructional-samples h1.title,
+.page-instructional-samples .view-header { background: white; color: #222; }
+/* "welcome note" */
+.page-instructional-samples h1.title { padding-left: .83333rem }
+.page-instructional-samples .view-header p { margin-bottom: 1rem; }
+.page-instructional-samples .links.inline { text-transform: capitalize; }
+.page-instructional-samples .links.inline li { padding-right: 2px; margin-bottom: 1px; }
+.page-instructional-samples .links.inline li a:after { content: ',' }
+.page-instructional-samples .links.inline li:last-of-type a:after { content: '' }
+/* hide grades with "T" in them, on English side */
+.page-instructional-samples .form-item-edit-field-grade-range-value-7t,
+.page-instructional-samples .form-item-edit-field-grade-range-value-6t { display: none; }
+.fr .page-instructional-samples .form-item-edit-field-grade-range-value-7t,
+.fr .page-instructional-samples .form-item-edit-field-grade-range-value-6t { display: block; }
+.page-taxonomy-term .node-contributed-resource:last-of-type,
+.page-instructional-samples .views-row-last .node-teaser { border-bottom: 0; margin-bottom: 0; }
+/* no results message */
+.page-instructional-samples .view-empty { padding: 1rem; font-size: 110%; }
+.page-instructional-samples .view-empty h4 { font-size: 130%; }
+/* taxonomy page */
+.page-taxonomy-term .node-contributed-resource .field-name-field-grade .field-items .field-item {
+    display: inline-block;
+    padding-right: 3px;
+    margin-bottom: 0;
+}
+.page-taxonomy-term .node-contributed-resource .field-name-field-contrib-tags .links.inline li a.active { background: rgba(229, 205, 48, 0.3); padding: 2px; }
+.page-taxonomy-term .node-contributed-resource .field-name-field-contrib-tags .field-label,
+.page-taxonomy-term .node-contributed-resource .field-name-field-contrib-tags .links.inline { font-size: 16px; }
+.page-taxonomy-term .feed-icon { display: none; }
+.page-taxonomy-term .back-to-main { padding-left: 36px; }
+.instructional-sample-tax-title { background: rgba(229, 205, 48, 0.3); padding: 2px; }
+
+/* Yummy.... */
+.fr .page-instructional-samples .views-row-5 .group-left .field-name-body .field-item p:first-of-type:after {
+  content: 'Veuillez noter que le document ci-dessous est disponible en anglais seulement.';
+  display: block;
+  margin-top: 1rem;
+  font-style: italic;
+}
+
+/*Individual Instructional Samples Styles*/
+.node-contributed-resource .field-name-field-subject .field-items .field-item{
+	display:inline;
+	padding-left: 5px;
+}
+.node-contributed-resource .field-name-field-grade .field-items .field-item{
+	display: inline;
+	padding-left: 5px;
+}
+.node-contributed-resource .field-name-field-vimeo-video .field-items .field-item iframe{
+	width: 100% !important;
+}
+.node-contributed-resource .field-name-body .field-items .field-item{
+	padding: 10px 0px 10px 0px;
+}
+
+
+/* we should fix this! */
+.no-roles .messages.error { display: none; }
+
+/* Clear Fixes for firefox*/
+.page-curriculum .attachment-after:after {
+  content:"";
+  display:block;
+  clear:both;
+}
+
+/* Slider smallest breakpoint (mobile) */
+.slide_question{
+	color:#FFF;
+	height:100px;
+}
+
+#block-views-homepage-slideshow-block h2{
+	visibility:hidden;
+	display:none;
+}
+
+.views-field.views-field-field-slide-image {
+    display: none;
+    visibility: hidden;
+}
+.views-field-field-slide-image .field-content{
+	width:100%;
+	position:absolute;
+}
+
+
+#homepage_slider{
+    position: absolute;
+    width: 100%;
+    left: 0;
+}
+
+.right-slide .slide-title{
+	font-size:26px;
+	color:white;
+	font-famil: Arial,sans-serif;
+	float:left;
+	width: 100%;
+}
+.left-slide .slide-title{
+	font-size:26px;
+	color:white;
+	font-famil: Arial,sans-serif;
+	float:left;
+}
+#main-content #page-title{
+	display:none;
+}
+#views_slideshow_cycle_main_homepage_slideshow-block{
+
+	height: 300px;
+	background-color: rgba(0, 51, 102, 0.8);
+}
+
+#views_slideshow_cycle_main_homepage_slideshow-block .views-field-title .field-content {
+	font-size: 26px;
+}
+
+#views_slideshow_cycle_main_homepage_slideshow-block .views-field-body .field-content {
+	font-size: 19px;
+	top:-20px;
+}
+
+#views_slideshow_cycle_main_homepage_slideshow-block .views-field-title {
+    padding: 3% 3% 1.5% 3%;
+	margin-top:3%;
+}
+
+#views_slideshow_cycle_main_homepage_slideshow-block .views-field-body {
+    padding: 1.5% 3% 3% 3%;
+}
+
+
+#views_slideshow_cycle_main_homepage_slideshow-block .views-field-body .field-content span.languages {
+	font-size:14px;
+	display: block;
+	margin-top:10px;
+	line-height: 1.8;
+	color: #fff;
+}
+
+#views_slideshow_cycle_main_homepage_slideshow-block .views-field-body .field-content span.languages a {
+		padding: 0px 10px 0px 0px;
+		color: #fff;
+		text-decoration: underline;
+}
+
+#views_slideshow_cycle_main_homepage_slideshow-block .views-field-body .field-content span.languages a:hover {
+	color: rgba(255, 255, 255, 0.8);
+}
+
+#views_slideshow_cycle_main_homepage_slideshow-block .views-field-body .field-content span.languages a + a {
+		border-left: 1px solid #777;
+		padding: 0px 0px 0px 10px;
+
+}
+
+#views_slideshow_cycle_main_homepage_slideshow-block .views-field-body .field-content span.learn-more {
+	font-size:16px;
+	display: block;
+	text-align: right;
+	margin-top:10px;
+	color: #fff;
+	margin-bottom: 10px;
+    position: relative;
+    top: -58px;
+}
+
+#views_slideshow_cycle_main_homepage_slideshow-block .views-field-body .field-content span.learn-more a{
+	color: #fff;
+	text-decoration: underline;
+}
+
+#views_slideshow_cycle_main_homepage_slideshow-block .views-field-body .field-content span.learn-more a:hover{
+	color: rgba(255, 255, 255, 0.8);
+}
+
+.views-slideshow-controls-bottom {
+	padding-right: 6%;
+}
+.views_slideshow_cycle_slide{
+	width: 100% !important;
+}
+.views-slideshow-cycle-main-frame{
+	width:100% !important;
+	height: auto !important;
+	margin:auto;
+}
+
+#views_slideshow_controls_text_homepage_slideshow-block {
+	width: 100%;
+	margin: 0 0 0 auto;
+	position:relative;
+	z-index: 12 !important;
+}
+
+#views_slideshow_controls_text_previous_homepage_slideshow-block a{
+	display:block;
+	background-image: url(/sites/curriculum.gov.bc.ca/themes/curriculum/images/left_slider_arrow.png);
+	width: 0px;
+	height: 0px;
+	padding-left: 26px;
+	padding-top: 51px;
+	overflow: hidden;
+	position: absolute;
+	top: -100px;
+	right:30px;
+}
+
+#views_slideshow_controls_text_pause_homepage_slideshow-block {
+	display:none;
+	visibility: hidden;
+}
+
+#views_slideshow_controls_text_next_homepage_slideshow-block a{
+	display:block;
+	background-image: url(/sites/curriculum.gov.bc.ca/themes/curriculum/images/right_slider_arrow.png);
+	width: 0px;
+	height: 0px;
+	padding-left: 26px;
+	padding-top: 51px;
+	overflow: hidden;
+	position: absolute;
+	top: -100px;
+	right: -20px;
+}
+
+
+/* homepage blocks announcements (what's new) and fast links*/
+.page-home .fast-links-block{
+	width:100%;
+	position: relative;
+	z-index: 100;
+	left: 0;
+	float:left;
+
+
+}
+.page-home .fast-links-block .content{
+	width:100%;
+}
+
+.page-home #content .region-content {
+    width: 100%;
+    padding: 0;
+    background-color: transparent;
+}
+
+#block-views-announcements-block {
+    float:left;
+	width:100%;
+	position:relative;
+	z-index:100;
+}
+
+
+.page-home #content .view-id-announcements .view-content {
+    padding: 0;
+    font-size: 0.85em;
+    margin-top: 0;
+    border-top: .1px dashed #999;
+    color: black;
+    width: 100%;
+}
+
+
+
+#fast_links {
+    /*background: url(/sites/curriculum.gov.bc.ca/files/pdf/bg_white_50.png) repeat left top;*/
+    float: none;
+    width: 100%;
+}
+
+/* Featured Content Styles*/
+
+#featured .high_level_content {
+	color:#222;
+	margin: 0;
+}
+
+#featured .high_level_content p{
+	font-size: 18px;
+	font-weight: normal;
+}
+
+
+#featured .high_level_content.pull_quote p{
+	display:block;
+	font-size: 21px;
+	font-weight: bold;
+	padding: 30px 40px 30px 40px;
+	background-color: #fff;
+	text-align:center;
+}
+#featured h2{
+	height:70px;
+
+}
+#featured .row_1 {
+	padding:0 !important;
+	margin:0 !important;
+	width:100%;
+	height:150px;
+	position:relative;
+	overflow:hidden;
+	background-size:100%;
+}
+
+#featured .row_1 h2{
+	font-size: 45px !important;
+	color: #fff;
+	bottom:-7px;
+	padding-left: 20px;
+	background-size: 767px auto;
+	padding-top:20px;
+	padding-bottom:130px;
+
+
+}
+
+#featured .languages {
+	background: none;
+	padding: 0;
+	margin: 0;
+	position:relative;
+}
+
+#featured .languages p{
+	background-color:#fff;
+	margin: 0;
+	padding: 10px 0px 10px 10px;
+	font-size: 16px;
+	font-weight:normal;
+	text-align: right;
+}
+
+#featured .languages p a{
+	padding: 1px 10px 1px 10px;
+}
+
+#featured .languages p a + a{
+	border-left: 1px solid #777;
+}
+
+#featured .languages p a.current{
+	color: #666;
+	text-decoration: none;
+}
+
+#featured .row_2 {
+	padding: 0;
+	margin: 0;
+	padding-bottom: 20px;
+	margin-bottom:-20px;
+	position:relative;
+	z-index: 99;
+}
+
+#featured .row_2 p{
+	background-color:#fff;
+	margin: 0;
+	padding: 3%;
+	font-size: 21px;
+	font-weight:bold;
+}
+
+
+
+/************************* Curriculum story ************************/
+
+
+
+
+.page-node-31091 .story_read_more {
+		text-align:center;
+}
+
+.page-node-31091 .story_read_more a{
+	background: transparent url(/sites/curriculum.gov.bc.ca/themes/curriculum/images/stories/right_swirl_arrow.png) no-repeat 100% 40%;
+	padding: 10px 60px 10px 0px;
+	font-size: 18px;
+
+}
+
+#curriculum_feature {
+	margin-bottom: 0px;
+}
+
+#curriculum_feature .row_1{
+	width:100%;
+	position:relative;
+	overflow:hidden;
+background: transparent url(/sites/curriculum.gov.bc.ca/themes/curriculum/images/stories/curric_story_header.jpg) no-repeat 0px 0px;
+}
+#curriculum_feature .row_1 h2{
+	background: transparent;
+}
+
+#curriculum_feature .row_2 {
+	min-height:200px;
+}
+#curriculum_feature .row_2 img{
+	height:250px;
+	padding:20px;
+}
+
+#featured #curriculum_feature .row_2 p{
+	background-color:#fff;
+	margin: 0;
+	font-size: 21px;
+	font-weight:bold;
+	background: #fff;
+	min-height:270px;
+}
+#curriculum_feature .row_3 {
+	background: #88d5be;
+	min-height:300px;
+	padding:5%;
+}
+#curriculum_feature .row_3 img{
+	padding:25px;
+}
+#curriculum_feature .row_4 {
+	min-height:500px;
+	background: #83ccb6;
+}
+#curriculum_feature .row_4 img{
+
+}
+#curriculum_feature .row_4 p{
+	padding-top:100px;
+}
+
+#curriculum_feature .row_5 {
+	background-color: #7ec4af;
+}
+#curriculum_feature .row_5 p{
+	padding-bottom:100px;
+}
+
+#curriculum_feature .row_5.pull_quote {
+	background: #7ec4af;
+	padding:5%;
+	margin:auto;
+}
+
+.page-node-31620 #curriculum_feature .row_5.pull_quote, .page-node-31621 #curriculum_feature .row_5.pull_quote {
+	background-color: #7ec4af;
+	padding: 10%;
+	background: #7ec4af url(/sites/curriculum.gov.bc.ca/themes/curriculum/images/stories/down_arrow.gif) no-repeat 30% 32%;
+}
+
+#curriculum_feature .row_5.pull_quote p{
+	position:relative;
+	top:-110px;
+}
+
+#curriculum_feature .row_6 {
+	background: #79bda8;
+	min-height:300px;
+}
+#curriculum_feature .row_6 p{
+	padding-top:100px;
+}
+#curriculum_feature .row_6 img{
+	padding-right:20px;
+}
+#curriculum_feature .row_7 {
+	background-color: #76b8a4;
+}
+#curriculum_feature .row_7.pull_quote {
+	background-color: #72b39f;
+	padding: 10%;
+	position:relative;
+	z-index: 50;
+	background: #72b39f;
+
+}
+
+#curriculum_feature .row_7.pull_quote p{
+	position:relative;
+	top:40px;
+}
+#curriculum_feature .row_8 img{
+	margin-top:40px;
+}
+#curriculum_feature .row_8 {
+	background: #72b39f;
+	position:relative;
+	z-index: 40;
+	min-height:350px;
+}
+
+
+/************************* Assessment story ************************/
+
+
+#featured #assessment_feature .row_2 p{
+	background-color:#fff;
+	margin: 0;
+	font-size: 21px;
+	font-weight:bold;
+	background: #fff;
+	background-size: auto 75%;
+}
+#featured #assessment_feature .row_2 img{
+	width: 150px;
+	padding: 0 5%;
+}
+.page-node-31093 .story_read_more {
+		text-align:center;
+}
+
+.page-node-31093 .story_read_more a{
+	background: transparent url(/sites/curriculum.gov.bc.ca/themes/curriculum/images/stories/right_swirl_arrow.png) no-repeat 100% 40%;
+	padding: 10px 62px 10px 26px;
+	font-size: 18px;
+
+}
+
+#assessment_feature h2 {
+	background: transparent url(/sites/curriculum.gov.bc.ca/themes/curriculum/images/stories/assess_story_header.jpg) no-repeat 0px 0px;
+	margin-bottom: 0px;
+	background-size:100%;
+}
+
+#assessment_feature .row_gears{
+	background: transparent url(/sites/curriculum.gov.bc.ca/themes/curriculum/images/stories/assess_gears_header.jpg) no-repeat 0px 0px;
+	width:100%;
+	height:200px;
+	position:relative;
+	overflow:hidden;
+	background-size:760px auto;
+}
+
+#assessment_feature .row_gears h2{
+	font-size: 60px;
+	color: #fff;
+	position:absolute;
+	bottom:-7px;
+	left: 20px;
+}
+
+#assessment_feature .row_3 {
+	min-height:350px;
+	background: #b2d87f;
+
+}
+#assessment_feature .row_3 img{
+	margin-top:-100px;
+}
+#assessment_feature .row_3 p{
+	padding-top:100px;
+	padding-bottom:50px;
+}
+.header_message{
+	float:right;
+	position:relative;
+	padding:15px;
+	background:#fff;
+	top: 20px;
+	right: 30px;
+	font-size:18px;
+
+
+}
+
+#assessment_feature .row_4 {
+	background-color: #a8cc78;
+	padding: 50px 20px;
+}
+
+#assessment_feature .row_4.pull_quote {
+	background-color: #9fc272;
+	padding: 0px 160px 0px 160px;
+	background: #9fc272;
+	position: relative;
+	z-index: 50;
+    padding-bottom: 53px;
+    margin-bottom: -49px;
+}
+
+#assessment_feature .row_4.pull_quote p{
+	position:relative;
+	top:40px;
+}
+
+#assessment_feature .row_5 {
+	background: #9fc272;
+	position:relative;
+	z-index: 40;
+	min-height:300px;
+}
+#assessment_feature .row_5 p{
+	padding: 80px;
+
+}
+#assessment_feature .row_5 img{
+	height:200px;
+	padding:20px 80px 20px 0;
+
+}
+
+#assessment_feature .row_6 {
+	background-color: #97b86c;
+	padding: 50px 20px;
+}
+
+#assessment_feature .row_7 {
+  background-color: #8DAB65;
+  padding: 50px 20px;
+}
+
+#assessment_feature .row_8 {
+  margin-top: -70px;
+  width: 300px;
+  padding: 20px;
+  background-color: #7C9659;
+
+}
+
+.fsa-box-div{
+	float: left;
+	clear:right;
+}
+.fsa_box{
+	width: 100%;
+	float: left;
+	border-style: dotted;
+	border-width: 1px;
+	border-color: grey;
+	padding:1%;
+}
+
+.fsa-box-div .fsa_box:first-child{
+	margin-bottom:2.5em;
+}
+
+/************************* Grad story ************************/
+
+
+
+.story_read_more {
+		text-align:center;
+		padding: 15px 0 30px 0 !important;
+}
+
+.page-node-31094 .story_read_more a{
+	background: transparent url(/sites/curriculum.gov.bc.ca/themes/curriculum/images/stories/right_swirl_arrow.png) no-repeat 100% 40%;
+	padding: 10px 60px 10px 0px;
+	font-size: 18px;
+
+}
+
+
+#page-wrapper{
+  background: #1B1F28;
+  height: 100%
+}
+#featured p{
+	padding: 0px 5%;
+}
+#featured #graduation_feature .row_2 p{
+	background-color:#fff;
+	margin: 0;
+	font-size: 21px;
+	font-weight:bold;
+	background-size: 15%;
+	min-height:275px;
+
+}
+
+.i18n-fr #featured #graduation_feature .row_2 p{
+		background-size: auto 50%;
+}
+#graduation_feature {
+	margin-bottom: 0px;
+}
+
+#graduation_feature .row_1{
+
+	width:100%;
+	height:200px;
+	position:relative;
+	overflow:hidden;
+}
+
+#graduation_feature .row_1 h2{
+	font-size: 60px;
+	color: #fff;
+	bottom:-7px;
+	background: transparent url(/sites/curriculum.gov.bc.ca/themes/curriculum/images/stories/grad_story_header.jpg) no-repeat 0px 0px;
+
+}
+
+
+
+#graduation_feature .row_3 {
+	background: #8dd3ed;
+	padding: 50px 0 75px 0;
+}
+#graduation_feature .row_3 img{
+	padding: 0px 25px 75px 25px;
+}
+#graduation_feature .row_3 p{
+	padding:5%;
+}
+
+#graduation_feature .row_4.pull_quote {
+	background: #86cae3 ;
+	padding: 3%;
+	height:50px;
+}
+
+#graduation_feature .row_4.pull_quote p{
+	position:relative;
+	top:-90px;
+	margin:auto;
+	width:60%;
+}
+
+#graduation_feature .row_4 {
+	padding: 3%;
+	background: #86cae3;
+}
+#graduation_feature .row_4 img{
+	width:300px;
+	margin-top:-50px;
+}
+#graduation_feature .row_5 {
+	background: #80c1d9 ;
+	padding: 100px 3%;
+}
+
+#graduation_feature .row_6 {
+	background: #7bbad1;
+	padding: 0px 3%;
+	height: 250px;
+}
+#graduation_feature .row_6 p{
+	padding-top:25px;
+}
+#graduation_feature .row_6 img{
+	padding: 30px 20px;
+	margin-top: -25px;
+}
+
+
+#graduation_feature .row_6.pull_quote {
+	background:none;
+	padding: 3%;
+	background: #7bbad1;
+	height:70px;
+}
+
+#graduation_feature .row_6.pull_quote p{
+	position:relative;
+	top:-90px;
+	margin:auto;
+	width:60%;
+}
+
+#graduation_feature .row_7 {
+	background: #77b3c9;
+	min-height:300px;
+}
+#graduation_feature .row_7 p{
+	padding-top:100px;
+}
+#graduation_feature .row_8 {
+	background-color: #72adc2;
+	padding: 3%;
+}
+
+
+/***************    END INFOGRAPHIC    ***************/
+
+
+
+
+/************** temp announcements -> what's new fix *************/
+
+.page-home #content .view-id-announcements .view-header {
+	background:none !important;
+}
+
+.page-home #content .view-id-announcements h3.em-box {
+	margin-left: 1em !important;
+}
+
+
+/***************** GRAD TABLE **************************/
+
+.grad-table {
+	clear:both;
+}
+
+.grad-table ul{
+
+		margin:0;
+		padding:0;
+		margin-bottom:30px;
+		border:none;
+		float:left;
+}
+
+.grad-table ul li{
+	list-style-type: none;
+	float:left;
+	clear:both;
+	margin-bottom:20px;
+}
+
+.grad-table ul li span{
+	padding: 10px;
+	display: block;
+	float: left;
+	height: 100%;
+	width: 20%;
+}
+
+.grad-table ul li ul {
+	float: right;
+	clear:none;
+	width: 75%;
+	border: 1px solid #ccc;
+	background-color: #fff;
+	margin:0;
+	padding:5px;
+}
+
+.grad-table ul li ul li{
+	display: list-item;
+	list-style-type: disc;
+	padding: 5px;
+	margin-left: 30px;
+	margin-bottom:0px;
+
+}
+
+.grad-table li.row-1{
+	background-color: #92ccc6;
+	width:100%;
+}
+.grad-table li.row-2{
+	background-color: #7cada8;
+}
+.grad-table li.row-3{
+	background-color: #678f8b;
+}
+
+/* HOTFIX - color module is overwritting this stuff */
+#header {
+  background-color: #3a4559;
+  background-image: none;
+  padding-bottom:15px;
+
+}
+.region-header .block { margin-top: 0px; }
+
+/************* WHAT'S NEW ETC - MAKE NEW LOOK LIKE OLD **************/
+
+.view-display-id-attachment_4 {
+}
+
+.view-display-id-attachment_4 .view-content{
+    clear:both;
+	width: 100%;
+    padding: 10px 0px 10px 0px;
+	background-color: #626366;
+    background-position: 20px;
+    border-top: 1pt solid #CCC;
+	float:left;
+ }
+
+ .view-display-id-attachment_4 .view-content div {
+ 	float:left;
+ }
+
+
+.view-display-id-attachment_4 .view-content div a{
+  padding: 5px 10px 5px 10px;
+}
+
+.view-display-id-attachment_4 .view-content div a{
+  color: #CCC;
+  }
+
+/* "Front Facing" content */
+
+/* Underline the front facing content link*/
+.introduction-page .intro a{
+	text-decoration: underline;
+}
+.goals-and-rationale-page .goals-and-rationale a{
+	text-decoration: underline;
+}
+.whats-new a{
+	display:none !important;
+}
+
+
+.node-type-goals-and-rationale .content,
+.node-type-introduction .content,
+.node-type-what-s-new .content,
+.node-type-goals-and-rationale #block-system-main .content,
+.node-type-introduction #block-system-main .content,
+.node-type-what-s-new #block-system-main .content {
+    width: 100%;
+}
+.node-type-goals-and-rationale #block-system-main .content,
+.node-type-introduction  #block-system-main .content,
+.node-type-what-s-new #block-system-main .content {
+    width: 100%;
+}
+.node-type-goals-and-rationale #block-system-main .content .content,
+.node-type-introduction #block-system-main .content .content,
+.node-type-what-s-new #block-system-main .content .content {
+    width: 100%;
+}
+.node-type-goals-and-rationale #block-system-main .node,
+.node-type-introduction #block-system-main .node,
+.node-type-what-s-new #block-system-main .node {
+
+    width: 100%;
+}
+.node-type-goals-and-rationale #page-title,
+.node-type-introduction #page-title,
+.node-type-what-s-new #page-title {
+    display: none;
+}
+
+.node-type-goals-and-rationale .content h1,
+.node-type-introduction .content h1,
+.node-type-what-s-new .content h1{
+    color: black;
+	font-size:2.5em;
+}
+
+.node-type-goals-and-rationale .content h1.curric_subject,
+.node-type-introduction .content h1.curric_subject,
+.node-type-what-s-new .content h1.curric_subject {
+    color: white;
+
+}
+
+.front-feature-content-page {
+    background: #1B1F28;
+    width: 106.5%;
+	margin-left:-3.25%;
+	left: 0;
+	float:left;
+
+}
+
+.front-feature-content-page .curric_subject {
+    padding-bottom: 30px;
+}
+
+.front-feature-content-page #curriculum_download {
+    color: white;
+}
+
+.front-feature-content-page #curriculum_download .click-nav .hide {
+    display: none;
+}
+
+
+.front-feature-links-wrapper {
+    clear: both;
+    height: 45px;
+    background-color: #626366;
+    border-top: 1pt solid #ccc;
+}
+
+.front-feature-links-wrapper .intro-whatsnew-goals {
+    display: inline-block;
+    border-left: 1pt solid #ccc;
+    margin-top: 13px;
+}
+.front-feature-links-wrapper .intro-whatsnew-goals:first-of-type { border: 0; }
+
+.front-feature-links-wrapper .intro-whatsnew-goals a,
+.front-feature-links-wrapper .intro-whatsnew-goals a:hover {
+    color: #ccc;
+    padding: 5px 10px 5px 10px;
+}
+
+/* /curriculum/overview */
+/* Try to "fix" the hover show/hide on the Download Curriculum tabs */
+.i18n-en #curriculum_download .main > li ul { display: none;  top: 32px; }
+.i18n-fr #curriculum_download .main > li ul { display: none;  top: 48px; }
+#curriculum_download .main > li:hover ul { display: block; }
+
+/* JIRA CURRIC-73 */
+.last_updated {
+    text-align: right;
+    padding: 3px 0;
+}
+
+/***** HELPER CLASSES ******/
+.visuallyhidden {
+    position: absolute;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    height: 1px; width: 1px;
+    margin: -1px; padding: 0; border: 0;
+}
+
+/********** trying to fix ugly H1 tags for French when they go multiple lines ***********/
+
+
+
+
+
+
+.block-french-soon {
+	color: #fff;
+	font-size: 1.3em;
+	margin: 10px 0 12px 0;
+	text-align: center;
+}
+
+
+/***************** for Back to School Video ****************CC**/
+
+div.back-to-school_thumb {
+    float: right;
+    margin-top: -165px;
+    position: relative;
+    z-index: 999;
+}
+
+.page-node-58312 h1#page-title, .page-node-56937 h1#page-title {
+	display:none;
+	visibility:hidden;
+}
+
+.page-node-58312 #block-system-main .node, .page-node-56937 #block-system-main .node{
+    padding-top: 0!important;
+    padding: 0 !important;
+}
+
+
+/** Styles for Release Updates **/
+.page-site-updates h1#page-title {
+  color: #3b3b3b;
+  line-height: 1;
+  font-size: 4em;
+  padding-top: .2em;
+  padding-bottom: .2em;
+}
+
+.page-site-updates #content .section {
+  margin: auto;
+  width:100%;
+}
+
+.site-updates-row {
+  border-bottom: 1px dotted #666;
+  padding-top: 10px;
+  padding-bottom: 5px;
+}
+.site-updates-title {
+ font-size: 1.3em;
+}
+
+.site-updates-body-title-label {
+  font-size: 1.2em;
+}
+
+.view-site-updates .view-content {
+  float: left;
+}
+
+.view-site-updates .view-content .item-list li {
+  font-size: 0.8em;
+}
+
+.view-site-updates .view-content .views-row-last {
+  margin-bottom: 30px;
+}
+
+.view-site-updates .views-field-body {
+  font-size: 0.8em;
+}
+
+.view-display-id-block_1 .pager {
+  font-size: 0.8em;
+  text-align: left;
+}
+
+.view-site-updates .view-footer {
+  clear: both;
+  font-size: 0.8em;
+  padding: 10px 0 0 0;
+}
+
+/***************************** 10 - 12 Drafts ********************CC**/
+
+.adst_test td {
+	/*padding-left: 10px !important;*/
+}
+.adst_test h2 a {
+	text-decoration: none;
+	color: #333;
+}
+
+.adst_test h2 a:hover {
+	text-decoration: none;
+	color: #333;
+	cursor: default;
+}
+
+tr.front_matter{
+	border-bottom: 1px solid #ccc !important;
+	background-color: transparent;
+}
+
+
+.front_matter ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	float:left;
+}
+
+.front_matter ul li {
+	float:left;
+	margin: 0;
+	padding: 10px 10px 10px 10px;
+	/*border-right: 1px solid #999;*/
+	font-size: medium;
+}
+
+.front_matter ul li:first-child {
+	padding-left: 0;
+}
+
+tr.adst_test:first-child {
+	background-color: transparent;
+}
+
+tr.adst_test:first-child h2{
+	margin-bottom: 0 !important;
+}
+
+/* Subject Landing Pages */
+
+/* French and English Grade Groupings*/
+.i18n-en .slp_grade_groups_fr,
+.i18n-fr .slp_grade_groups_en{
+	display: none;
+}
+
+
+
+
+.subject-landing-page .core{
+	border-bottom: 1pt dotted #CCC;
+	padding-bottom:5px;
+}
+.subject-landing-page .core h3{
+	margin-bottom: 20px;
+    width: auto;
+    float: left;
+    padding-right: 15px;
+	font-size: 22px;
+	line-height:22px;
+}
+.language-arts-continuous-views{
+	position: absolute;
+	top:300px;
+	padding: 3%;
+}
+
+
+.course-group-title{
+	margin: 20px 0 10px 0;
+}
+/* Subject Landing Pages with 3 cols*/
+
+
+.curriculum-directory > .view-content,
+.page-curriculum-physical-health-education .curriculum-directory > .view-content,
+.page-curriculum-social-studies .curriculum-directory > .view-content,
+.page-curriculum-science .curriculum-directory > .view-content{
+		column-count: 1 !important;
+}
+		/* Add even and odd row colors*/
+	.curriculum-directory .view-grouping-content .course-row:nth-child(2n+1){
+		background-color: #ececec;
+	}
+	.curriculum-directory .view-grouping-content .course-row:nth-child(2n){
+		background-color: #e2e2e2;
+	}
+.subject-landing-pages-block .view-grouping-header{
+	border:none !important;
+}
+.subject-landing-page-courses h3{
+	border-bottom: 1px solid #ccc;;
+}
+.subject-landing-page-content,
+.subject-landing-page-random-instructional-sample,
+.page-curriculum .drafts_10-12.appended,
+.drafts_10-12.appended table {
+    background-color: white;
+}
+.subject-landing-pages-block{
+	float:left;
+	width:100%;
+}
+
+.drafts_10-12.appended {
+    clear: both;
+}
+
+.drafts_10-12.appended table {
+    margin-top: 0;
+}
+
+.drafts_10-12 h3 {
+    font-size: 50px;
+}
+
+.drafts_10-12_link {
+    float: right;
+    padding: 3px;
+    margin-bottom: 10px;
+}
+.subject-landing-page-courses .col-4 div{
+	float:left;
+	padding-right:5px;
+}
+.subject-landing-page .curric_subject span{
+	display:none !important;
+}
+.subject-landing-page .curric_subject .grade_picker ul li{
+	border-bottom:none !important;
+}
+.subject-landing-page .curriculum-directory{
+	background-color: #f2f2f2;
+}
+
+.subject-landing-page-random-instructional-sample h3 {
+    padding-bottom: 0;
+}
+.subject-landing-page-random-instructional-sample h3 + div {
+    padding-top: 0;
+}
+
+
+.subject-landing-page-random-instructional-sample.full-width {
+    width: 100% !important;
+}
+
+#subject_landing_get_started{
+	padding: 50px 0px 0px 0px;
+	float: left;
+}
+#subject_landing_get_started div{
+	width: 31%;
+	float:left;
+}
+#subject_landing_get_started div + div{
+	padding-left: 3%;
+}
+#subject_landing_get_started h3{
+	border-bottom: 1pt dotted;
+	font-weight: 300;
+	padding-bottom:5px;
+	margin-bottom:10px;
+	width: 98%;
+
+}
+#subject_landing_choose{
+	width: 100%;
+	float: left;
+	background-color: #f2f2f2;
+	padding: 30px 2%;
+	position: relative;
+	left: -2%;
+	top: 30px;
+	border-top: 1px solid #e2e2e2;
+}
+#subject_landing_choose ul{
+	padding:0px;
+	list-style:none;
+}
+
+.not-needed{
+	border-bottom:none;
+	border-top:none;
+
+
+}
+
+#subject_landing_choose .k-9 ul li{
+	width:31%;
+	padding-right:1%;
+	float:left;
+
+
+}
+.subject-landing-page #grade_picker ul li{
+	border-bottom: none !important;
+}
+
+
+/* new language switcher */
+
+.language-switcher{
+	width: 100%;
+	position:absolute;
+	text-align: right;
+	z-index: 100;
+	left:-16px;
+
+
+}
+
+ul.language-switcher-locale-url {
+    width: 100%;
+}
+.authenticated-user ul.language-switcher-locale-url{
+
+}
+ul.language-switcher-locale-url li {
+    display: inline;
+}
+ul.language-switcher-locale-url li a {
+    color: #ccc;
+}
+ul.language-switcher-locale-url li.active a {
+    color: white;
+}
+
+
+/***** SUBJECT LANDING PAGE ********/
+
+
+
+.subject_landing_page_search {
+	float:right;
+	height: 40px;
+	width: 94%;
+	padding:3%;
+	background-color: rgba(128, 128, 128, 0.7);
+}
+
+.subject_landing_page_search #submit_slp_search_curric {
+    background: #fff url(/sites/curriculum.gov.bc.ca/themes/curriculum/images/buttons.png) 0 0 repeat-x;
+    border: 1px solid #e4e4e4;
+    border-bottom: 1px solid #b4b4b4;
+    border-left-color: #d2d2d2;
+    border-right-color: #d2d2d2;
+    color: #3a3a3a;
+    cursor: pointer;
+    font-size: .929em;
+    font-weight: 400;
+    text-align: center;
+    margin-bottom: 1em;
+    margin-right: 0px;
+    padding: 4px 17px;
+    -khtml-border-radius: 15px;
+    -moz-border-radius: 20px;
+    -webkit-border-radius: 15px;
+    border-radius: 15px;
+	margin-left: 10px;
+}
+div.drafts_10-12{
+	display:none;
+}
+.subject-landing-page-content {
+	width: 96%;
+	padding: 0 2%;
+	height: auto !important;
+	float:left;
+}
+
+.subject-landing-page-content h2{
+	padding: 10px 0px 20px 0px;
+	font-size: 30px;
+}
+#subject-bottom-links{
+	background:#FFF;
+	padding:2%;
+	width:96%;
+	float:left;
+
+}
+#subject-bottom-links h2{
+	padding-bottom:30px;
+
+}
+#subject-bottom-links div{
+	background:#FFF;
+	padding-left:2%;
+	width:30.333%;
+	float:left;
+
+}
+#subject-bottom-links div+div{
+	padding-left: 1%;
+}
+
+h2.example_instructional_sample{
+	color:white !important;
+}
+.subject-landing-page-random-instructional-sample {
+	width: 96%;
+	padding: 4% 2%;
+	height: auto !important;
+	background-color: #c1c1c1;
+	color:#111;
+	float:left;
+}
+
+.page-curriculum .drafts_10-12 {
+	padding: 30px;
+}
+
+.page-curriculum .drafts_10-12 tr:first-child {
+	display:none;
+}
+.page-curriculum .drafts_10-12 tr.front_matter {
+	display:none;
+}
+
+.page-curriculum .drafts_10-12 tr td {
+	vertical-align: top;
+}
+
+/*Keyword elaboration styles*/
+
+a.keyword_w_elaboration{
+	color: #0070b3;
+	cursor: help;
+}
+.cc .elaboration, .concept .elaboration{
+	font-size: 14px;
+	padding:10px;
+	background-color: #ccc;
+	border-left: 6px solid rgb(108,136,146);
+
+}
+.bi .elaboration{
+	display:none;
+}
+.bi .elaboration_content{
+	font-size:10px;
+
+}
+.elaboration_content{
+	font-size: 14px;
+	padding-left: 16px;
+
+}
+.bt-wrapper .elaboration_content a:link{
+	color: white;
+}
+.bt-wrapper .elaboration_content a:visited{
+	color: white;
+}
+.elaboration_content a:link{
+	color: #0070b3;
+
+}
+.elaboration_content a:visited{
+	color: #0070b3;
+
+}
+
+.elaboration_controls{
+	text-align:right;
+	display:none;
+
+
+}
+
+.open_elaboration{
+	background:url("/sites/curriculum.gov.bc.ca/files/images/open_in_new_20.png") no-repeat left;
+	padding-left: 25px;
+	color: black;
+}
+/* elaborations switch styles*/
+ /* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 30px;
+  height: 17px;
+    border: 1pt solid #666;
+}
+
+/* Hide default HTML checkbox */
+.switch input {display:none;}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+  padding-left:10px;
+  line-height: 20px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 13px;
+  width: 13px;
+  left: 1px;
+  bottom: 2px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: rgb(108,136,146);
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(13px);
+  -ms-transform: translateX(13px);
+  transform: translateX(13px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 17px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+.show_all_keyword_elaborations_container{
+	width: auto;
+	float:right;
+	padding: 1% 2% 0 0;
+	font-family: "Century Gothic",Helvetica,Arial,sans-serif;
+	color: white !important;
+	text-align:right;
+}
+
+#cboxLoadedContent{
+	padding:20px;
+}
+#cboxLoadingGraphic{
+	display:none !important;
+}
+.dataTables_wrapper{
+	background-color: #ccc;
+}
+.tab-selected{
+	background-color: #CCC !important;
+}
+.dataTables_wrapper{
+	display:none;
+}
+.subject-tabs li{
+	display:inline;
+	padding:20px;
+	background-color:white;
+}
+.subject-tabs{
+	width:100%;
+	background-color:white;
+	float:right;
+	text-align:right;
+	padding: 20px 0 18px 0;
+}
+.type-tabs{
+	float:left;
+	background-color:white;
+	width:15%;
+
+}
+.type-tabs li{
+	padding:20px;
+	list-style:none;
+	border-right: 10px solid #CCC;
+	margin-bottom:0px !important;
+}
+
+#block-views-course-index-block{
+	float:right;
+	width: 40%;
+	margin-top: 20px;
+}
+.download-competency{
+
+	color: white;
+	background: #006fba;
+	width: 167px;
+	padding: 10px;
+	border-radius: 10px;
+	float: right;
+	position: absolute;
+	right: 3%;
+	top: 30px;
+}
+.download-competency{
+	
+	color: white;
+	background: #006fba;
+	width: 167px;
+	padding: 10px;
+	border-radius: 10px;
+	float: right;
+	position: absolute;
+	right: 3%;
+	top: 30px;
+}
+
+/***** Styles for superfish megamenu *******/
+a.dropped.menu-attach-block-drop-link ~ .menu-attach-block-wrapper{
+	display:inline !important;
+}
+.sf-menu.sf-style-default {
+  float: left;
+  margin-bottom: 1em;
+  padding: 0;
+}
+.sf-menu.sf-style-default.sf-navbar {
+  width: 100%;
+}
+.sf-menu.sf-style-default ul {
+  padding-left: 0;
+}
+.sf-menu.sf-style-default a,
+.sf-menu.sf-style-default a:visited,
+.sf-menu.sf-style-default span.nolink {
+  border-left: 1px solid #fff;
+  border-top: 1px solid #cfdeff;
+  color: #13a;
+  padding: 0.75em 1em;
+}
+.sf-menu.sf-style-default a.sf-with-ul,
+.sf-menu.sf-style-default span.nolink.sf-with-ul {
+  padding-right: 2.25em;
+}
+.sf-menu.sf-style-default.rtl a.sf-with-ul,
+.sf-menu.sf-style-default.rtl span.nolink.sf-with-ul {
+  padding-left: 2.25em;
+  padding-right: 1em;
+}
+.sf-menu.sf-style-default span.sf-description {
+  color: #13a;
+  display: block;
+  font-size: 0.833em;
+  line-height: 1.5;
+  margin: 5px 0 0 5px;
+  padding: 0;
+}
+.sf-menu.sf-style-default.rtl span.sf-description {
+  margin: 5px 5px 0 0;
+}
+.sf-menu.sf-style-default li,
+.sf-menu.sf-style-default.sf-navbar {
+  background: #bdd2ff;
+}
+.sf-menu.sf-style-default li li {
+  background: #aabde6;
+}
+.sf-menu.sf-style-default li li li {
+  background: #9aaedb;
+}
+.sf-menu.sf-style-default li:hover,
+.sf-menu.sf-style-default li.sfHover,
+.sf-menu.sf-style-default a:focus,
+.sf-menu.sf-style-default a:hover,
+.sf-menu.sf-style-default a:active,
+.sf-menu.sf-style-default span.nolink:hover {
+  background: #cfdeff;
+  outline: 0;
+}
+div.sf-accordion-toggle.sf-style-default a {
+  background: #bdd2ff;
+  border-left: 1px solid #fff;
+  border-top: 1px solid #cfdeff;
+  color: #13a;
+  padding: 1em;
+}
+div.sf-accordion-toggle.sf-style-default a.sf-expanded,
+.sf-menu.sf-style-default.sf-accordion li.sf-expanded {
+  background-color: #cfdeff;
+}
+div.sf-accordion-toggle.sf-style-default a.sf-expanded,
+.sf-menu.sf-style-default.sf-accordion li.sf-expanded > a,
+.sf-menu.sf-style-default.sf-accordion li.sf-expanded > span.nolink {
+  font-weight: bold;
+}
+.sf-menu.sf-style-default.sf-accordion li a.sf-accordion-button {
+  font-weight: bold;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 499;
+}
+.sf-menu.sf-style-default.sf-accordion li li a,
+.sf-menu.sf-style-default.sf-accordion li li span.nolink {
+  padding-left: 2em;
+}
+.sf-menu.sf-style-default.sf-accordion li li li a,
+.sf-menu.sf-style-default.sf-accordion li li li span.nolink {
+  padding-left: 3em;
+}
+.sf-menu.sf-style-default.sf-accordion li li li li a,
+.sf-menu.sf-style-default.sf-accordion li li li li span.nolink {
+  padding-left: 4em;
+}
+.sf-menu.sf-style-default.sf-accordion li li li li li a,
+.sf-menu.sf-style-default.sf-accordion li li li li li span.nolink {
+  padding-left: 5em;
+}
+.sf-menu.sf-style-default.rtl.sf-accordion li li a,
+.sf-menu.sf-style-default.rtl.sf-accordion li li span.nolink {
+  padding-left: auto;
+  padding-right: 2em;
+}
+.sf-menu.sf-style-default.rtl.sf-accordion li li li a,
+.sf-menu.sf-style-default.rtl.sf-accordion li li li span.nolink {
+  padding-left: auto;
+  padding-right: 3em;
+}
+.sf-menu.sf-style-default.rtl.sf-accordion li li li li a,
+.sf-menu.sf-style-default.rtl.sf-accordion li li li li span.nolink {
+  padding-left: auto;
+  padding-right: 4em;
+}
+.sf-menu.sf-style-default.rtl.sf-accordion li li li li li a,
+.sf-menu.sf-style-default.rtl.sf-accordion li li li li li span.nolink {
+  padding-left: auto;
+  padding-right: 5em;
+}
+ ul.sf-megamenu li.sf-megamenu-wrapper{
+	width:100%;
+ }
+
+.sf-menu.sf-style-default ul.sf-megamenu li.sf-megamenu-wrapper ol,
+.sf-menu.sf-style-default ul.sf-megamenu li.sf-megamenu-wrapper ol li {
+	width: 50%;
+  margin: 0;
+  padding: 0;
+}
+.sf-menu.sf-style-default ul.sf-megamenu li.sf-megamenu-wrapper a.menuparent,
+.sf-menu.sf-style-default ul.sf-megamenu li.sf-megamenu-wrapper span.nolink.menuparent {
+  font-weight: bold;
+}
+.sf-menu.sf-style-default ul.sf-megamenu li.sf-megamenu-wrapper ol li.sf-megamenu-column {
+  display: inline;
+  float: left;
+}
+.sf-menu.sf-style-default.rtl ul.sf-megamenu li.sf-megamenu-wrapper ol li.sf-megamenu-column {
+  float: right;
+}
+div.sf-megamenu-column{
+	width:100% !important;
+}
+
+/* Browse by subject listing column */
+
+.front-matter-box{
+	padding: 50px 0 50px 0;
+	background-color: #ebebeb;
+}
+.main-bg-color{
+	background-color: #ebebeb;
+}
+#block-block-61 h2{
+	border-bottom: 1pt solid #CCC;
+}
+#block-block-61 h1{
+	color: #666;
+	font-weight:500;
+}
+#block-block-61 .row .row a{
+	float:left;
+	padding:5px !important;
+}
+.block.megamenu{
+	background: url(/sites/curriculum.gov.bc.ca/files/images/megamenu_gradient.png) repeat-x;
+	border-bottom: 5px solid #CCC;
+	padding-top: 40px;
+	padding-bottom: 10px;
+	top:-47px !important;
+}
+.menu-attach-block-wrapper.orientation-horizontal .block{
+	padding:0px;
+}
+
+.subject-select{
+	border-right:1pt solid #ccc;
+
+}
+.subject-select a{
+	margin:2.5px 0;
+	text-align:right;
+}
+.sf-clicked{
+	border-bottom: 10px solid #003366 !important
+}
+
+.all-subject{
+	float:left;
+}
+.all-subject h3{
+	float:left;
+	width:100%;
+	border-bottom: 1px dotted #CCC;
+}
+.all-subject h3 a{
+	text-transform:none !important;
+}
+.subject-courses{
+	display:none;
+	float:left;
+}
+.selected{
+	display:block !important;
+}
+
+.subject-select .selected{
+	background-color: #fff !important;
+}
+#all-list{
+	margin-top:-20px;
+}
+#all-list button{
+	padding: 2px 10px;
+	margin-left: 10px;
+}
+#all-list h3 a{
+	width: 100%;
+	border-bottom: 1pt dotted;
+	text-transform:initial;
+}
+.grade-levels{
+	width: 100% !important;
+	margin: 10px 0px !important;
+}
+.all-subject-general-links a{
+	float:left !important;
+	padding: 10px !important;
+	color:#444 !important;
+
+}
+.all-subject-general-links{
+	float:left !important;
+
+}
+.all-subject-general-links input{
+	float:right;
+}
+
+/* Course Navigation*/
+
+
+.view-display-id-curriculum_megamenu .gradepicker-subject{
+	color: #808080;
+	text-transform: uppercase;
+	font-size:20px;
+	font-family: "Century Gothic",Helvetica,Arial,sans-serif;
+	clear:both;
+	float:left;
+}
+.area-of-learning .gradepicker-subject{
+	width: 100%;
+	float:left;
+	border-bottom: 1pt dotted #CCC;
+	font-size 30px;
+}
+.curriculum-directory{
+
+	float: left;
+	background-color: #1B1F28;
+	font-family: "Century Gothic",Helvetica,Arial,sans-serif;
+	text-shadow: none;
+	font-size: 1em;
+	min-width: 100%;
+}
+.view-display-id-courses_by_grade_and_subject #curriculum_download{
+	display:none;
+}
+.page-curriculum h1{
+	text-align:center;
+	font-size:4em !important;
+}
+/***Courses by subject styles*/
+.curriculum-link.not-active{
+	color: #3b3b3b !important;
+	text-decoration:none;
+}
+.page-curriculum-career-education-all .curriculum-course-title{
+	float:left;
+	width:70%;
+}
+.page-curriculum-career-education-all .curriculum-course-title{
+	float:left;
+}
+.page-curriculum-career-education-all  .curriculum-download-links{
+	float:right;
+}
+
+.view-display-id-courses_by_grade_and_subject .view-content{
+	background-color:white;
+}
+.curriculum-directory .view-header a{
+	padding-right:2%;
+}
+.page-curriculum-second-languages-all .curriculum-directory .available-grade{
+	display: block;
+	width: 100%;
+	float: left;
+}
+.curriculum-directory .available-grade{
+	display: inline;
+}
+.curriculum-directory .gradepicker{
+	top:-60px !important;
+}
+
+.curriculum-directory .view-grouping-header{
+	font-size: 22px;
+	border-bottom: 1pt dotted #ccc;
+}
+
+/* Course Directorys that need 1 columns*/
+.page-curriculum-secondary-languages .curriculum-directory > .view-content{
+	float:left;
+	column-count:1;
+	column-gap:25px;
+	margin-top:30px;
+	width:96%;
+	padding:2%;
+
+}
+.page-curriculum-secondary-languages .curriculum-directory > .view-content .row{
+	border-bottom: 1pt dotted #e2e2e2;
+}
+
+.page-curriculum-secondary-languages .curriculum-directory > .view-content .row .col-4{
+	border-bottom: none !important;
+}
+/* Course Directorys that need 3 columns*/
+.curriculum-directory > .view-content{
+	float:left;
+	column-count:1;
+	column-gap:25px;
+	margin-top:30px;
+	padding: 2%;
+	width:96%;
+}
+.curriculum-directory .subject{
+	top: 70px !important;
+}
+.curriculum-directory .subject a{
+	color: #666 !important;
+}
+.curriculum-directory .view-grouping{
+    display: inline-block;
+    margin: 25px 0 0 0;
+    width: 100%;
+}
+/*
+.curriculum-directory #grade_picker{
+	margin-top: -3%;
+	color: white;
+	float: left;
+	clear: both;
+	width: 105%;
+	margin-left: -2%;
+	background-color: #1B1F28 !important;
+	padding-bottom:40px;
+}
+*/
+.curriculum-directory .col-8{
+	color: #444;
+}
+.curriculum-directory .view-display-id-attachment_4 .view-footer #core_competency_subject{
+	display:none;
+}
+.curriculum-directory .view-display-id-attachment_4 .view-content{
+	width:104%;
+	margin-left:-2%;
+}
+.view-display-id-attachment_5 > .view-content{
+	background-color:#1B1F28 !important;
+	width:100% !important;
+	background: none !important;
+	margin-bottom: 35px;
+}
+
+.grade-whats-new, .grade-introduction, .grade-goals-and-rationale {
+	margin-top: 0px !important;
+}
+
+.view-display-id-courses_by_subject .view-content{
+	background-color: white;
+}
+.view-display-id-courses_by_subject  .filter-curriculum, .view-display-id-courses_by_grade_and_subject  .filter-curriculum, .view-display-id-list_all_courses_by_grade .filter-curriculum{
+	position: relative;
+	width: 98%;
+	text-align: right;
+	display: block;
+	color: #666;
+	padding-right: 2%;
+	height:20px;
+	float:left;
+	background-color:white;
+	padding-top:10px;
+
+}
+.filter-curriculum{
+	display:none !important;
+}
+.view-display-id-courses_by_grade_and_subject .view-content{
+	margin-top:0px;
+}
+
+.search_results_msg{
+	position: relative;
+	width: 98%;
+	text-align: right;
+	display: block;
+	color: red;
+	padding-right: 3%;
+	height: 20px;
+}
+.curriculum-status{
+   float: left;
+	border-right: 1px solid #CCC;
+	padding: 0 10px;
+	display: block;
+}
+.curriculum-directory .curriculum-status{
+	top:0px !important;
+}
+
+.course-grade-title{
+	float:left;
+}
+.curriculum-pdf-link{
+	float:left;
+	padding:0 10px;
+	display:block;
+}
+.curriculum-doc-link{
+	float:left;
+	border-right: 1px solid #CCC;
+	padding: 0 10px;
+	display:block;
+}
+.curriculum-link{
+	float:left;
+}
+.curriculum-download-links{
+	float:right;
+}
+.curriculum-implementation-date{
+	float:right;
+}
+
+.view-display-id-list_all_courses_by_grade .view-header{
+	float:left;
+	z-index:100;
+	padding: 0 !important;
+	position:relative;
+	width:96%;
+	top:-5px;
+
+}
+.view-display-id-list_all_courses_by_grade .view-header a{
+	float:right;
+	color:white;
+}
+.view-display-id-list_all_courses_by_grade.curriculum-directory a{
+	display:block;
+}
+.view-display-id-list_all_courses_by_grade.curriculum-directory .intro-whatsnew-goals{
+	display:none;
+}
+.view-display-id-list_all_courses_by_grade .view-grouping .col-12{
+	margin:0;
+}
+/**Navigation Drawer Styles**/
+#navigation_drawer{
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+.side_drawer #navigation_drawer{
+	float: left;
+	color: white;
+	width: 25%;
+	position: absolute;
+	background-color: #FFF;
+    transition: 0.3s;
+	position:fixed;
+
+}
+
+.view-implementation .view-content{
+	width:100%;
+}
+.side_drawer #main-wrapper, .side_drawer .region-header, .side_drawer .region-navigation, .side_drawer #footer-wrapper {
+	width:75%;
+	margin-left:25%;
+	transition: 0.3s;
+}
+.side_drawer .drawer_toggle{
+	margin-left: 25%;
+	z-index: 1000;
+	transition: 0.3s;
+
+}
+.drawer_toggle{
+
+	position:absolute;
+	color:white;
+	height:50px;
+	background-color:#666;
+	border-radius: 0 20% 20% 0;
+	border: 5px solid #ccc ;
+	border-left:none !important;
+	padding:50px 15px;
+	top:150px;
+
+}
+
+.close_megamenu{
+	float: right;
+	z-index:1000;
+
+}
+.close_megamenu img{
+	position:absolute;
+}
+
+/* Curriculum Finder Styles*/
+.view-curriculum-finder{
+	z-index:1000;
+	float:left;
+	border-top: 1px dashed #ccc;
+}
+.curriculum-finder-block{
+	float:right;
+    width: 100%;
+	margin-top:-25px;
+	position:relative;
+	color:white;
+	z-index:99;
+
+}
+.homepage-curric-overview{
+	color:white !important;
+}
+.view-curriculum-finder .view-content{
+	float:left;
+	width: 98%;
+}
+.view-curriculum-finder .view-footer{
+	float:left;
+
+
+}
+.view-curriculum-finder .view-footer .col-3{
+	min-height:30px;
+}
+.view-curriculum-finder .view-footer .col-3 a{
+	display:inline-block;
+	background: url(/sites/curriculum.gov.bc.ca/themes/curriculum/images/right_slider_arrow.png) no-repeat top left;
+	background-size: 15px 20px;
+
+}
+.view-curriculum-finder .view-footer .col-3 a{
+	color:white;
+}
+#ctools-jump-menu{
+    position: relative;
+    margin-top: -35px;
+    left: 1%;
+    width: 300px;
+}
+.view-curriculum-finder a{
+	color:white;
+}
+.front #page{
+	background-color: #1B1F28;
+}
+.curriculum-by-subject{
+	width: 46% !important;
+	float:left;
+	border-right: 1pt solid #e2e2e2;
+	box-sizing: border-box;
+}
+.curriculum-by-subject .col-6 a{
+	background: url(/sites/curriculum.gov.bc.ca/files/pdf/go_icon_small_w_50.png) no-repeat left top;
+	padding-left:30px;
+	padding-bottom:15px;
+	display:inline-block;
+	width:90%;
+	color: black;
+}
+
+curriculum-by-subject-k-9{
+	width: 100% !important;
+	float:left;
+	border-right: 1pt solid #e2e2e2;
+	box-sizing: border-box;
+
+}
+.curriculum-by-subject-k-9 .col-4 a{
+	background: url(/sites/curriculum.gov.bc.ca/files/pdf/go_icon_small_w_50.png) no-repeat left top;
+	padding-left:30px;
+	padding-bottom:15px;
+	display:inline-block;
+	width:90%;
+	color: black;
+}
+.curriculum-by-grade{
+	float:right;
+	width: 44% !important;
+	color: black;
+}
+#block-block-60--2 .homepage-curric-overview{
+	float: right;
+	position: absolute;
+	top: 10px;
+	right: 40px;
+	color: white !important;
+}
+.curriculum-finder-block .view-header{
+	float: right;
+	position: absolute;
+	top: 10px;
+	right: 40px;
+	color: white !important;
+}
+
+/*goals-and-rationale, introduction and whats new*/
+.goals-and-rationale-page .view-content{
+	width: 94% !important;
+	padding:3%;
+	background-color:white;
+}
+.introduction-page tr.row-highlight, .introduction-page td.column-highlight{
+	background-color: rgb(98, 99, 102) !important;
+	color:white !important;
+	font-weight:bold;
+	text-align:center !important;
+}
+.introduction-page tr.row-highlight td{
+	text-align:center;
+}
+.whats-new-page table{
+	width: 100%;
+}
+.whats-new-page h1, .introduction-page h1, .goals-and-rationale-page h1{
+	font-size: 2.5em !important;
+	text-align:left !important;
+}
+
+.whats-new-page h2, .introduction-page h2, .goals-and-rationale-page h2{
+	margin:25px 0px 10px 0;
+	margin-bottom: 20px !important;
+}
+.whats-new-page h3, .introduction-page h3, .goals-and-rationale-page h3{
+	font-size:25px;
+	margin:25px 0px 10px 0;
+}
+
+.whats-new-page .view-content, .introduction-page .view-content, .goals-and-rationale-page .view-content{
+	background-color:white;
+	width: 96% !important;
+	padding: 0 2%;
+}
+.whats-new-page td, .introduction-page td, .goals-and-rationale-page td{
+	vertical-align:top;
+}
+div[class~="something"]
+
+/**
+    Data export page. CURRIC-471
+*/
+.page-curriculum-search-xls .region-content,
+.page-curriculum-search-doc .region-content,
+.page-curriculum-search-xls #main,
+.page-curriculum-search-doc #main {
+    background-color: white !important;
+}
+.page-curriculum-search-xls .content p,
+.page-curriculum-search-doc .content p {
+    padding: 5px;
+}
+.page-curriculum-search-xls .content p a,
+.page-curriculum-search-doc .content p a {
+    color: #0070b3;
+}
+#block-views-curriculum-finder-block-1 h2{
+	height:70px;
+}
+#block-block-2 p{
+    margin: 10px;
+}
+
+/* List curriculum */
+.view-list-curriculum{
+	padding: 3%;
+	background-color:white;
+}
+
+
+.page-curriculum-career-education-all .first_div {
+	-webkit-box-ordinal-group: 2;
+	-moz-box-ordinal-group: 2;
+	-ms-flex-order: 2;
+	-webkit-order: 2;
+	order: 2;
+}
+/*
+Styles for Competency illustrations
+*/
+
+.group-illustration-elements .field-group-format-title{
+	border-bottom: 1px solid;
+}
+.profiles.count-1 .profile-analysis,.profiles.count-2 .profile-analysis,.profiles.count-3 .profile-analysis,.profiles.count-4 .profile-analysis{
+	width:96%;
+	padding:2%;
+	float: left;
+    display: block;
+	border: 1px solid #ccc;
+}
+.profiles.count-1 .profile-analysis .profile_number{
+	text-align:left;
+}
+.profile-analysis .core-competency-highlight{
+	color:white;
+}
+.profile-analysis.communication .core-competency-highlight{
+	background-color: #e48456;
+
+}
+.profile-analysis.thinking .core-competency-highlight{
+	background-color: #11a2c6;
+}
+.profile-analysis.personal-and-social .core-competency-highlight{
+	background-color: #80ba69;
+
+}
+.profile-analysis + .profile-analysis{
+	margin-left:2%;
+}
+.profiles.count-4 .profile-analysis:nth-child(4){
+	margin-left:0%;
+	clear:both;
+	margin-top:20px;
+}
+.profile-analysis h3{
+	margin: .75em 0 0 0;
+	min-height: 2em !important;
+	font-size: 1.55em;
+    line-height: 1.1em;
+    margin: .75em 0;
+
+}
+.profile-analysis.communication h3{
+    background: url(/sites/curriculum.gov.bc.ca/files/pdf/core_comp_c_orange_small.png) no-repeat left top;
+
+}
+.profile-analysis.thinking h3{
+    background: url(/sites/curriculum.gov.bc.ca/files/pdf/core_comp_t_blue_small.png) no-repeat left top;
+}
+.profile-analysis.personal-and-social h3{
+	background: url(/sites/curriculum.gov.bc.ca/files/pdf/core_comp_ps_green_small.png) no-repeat left top;
+}
+.profile-analysis h3{
+	padding-left: 50px;
+}
+.profile-analysis .profile_number{
+	text-align: center;
+    border-bottom: 1px dotted #ccc;
+    margin-bottom: 10px;
+}
+
+
+.group-context{
+	float:left;
+	width:100%;
+	margin-left:3%;
+}
+
+.group-context h3{
+	font-size: 1.2em !important;
+	font-weight:bold;
+	color: #0070b3 !important
+}
+.field-name-field-image-s , .field-name-field-image-s + .field-name-field-illustration-video{
+	margin-left: 10px;
+
+}
+.node-illustration h1#page-title{
+	border-bottom: 1px solid #ccc;
+	padding: 0px !important;
+}
+
+.profile-analysis-header{
+	margin-top:50px !important;
+	color:black;
+}
+
+/*
+File / Audio Icons
+*/
+.group-media.field-group-div{
+
+	clear:both;
+}
+
+.group-media.field-group-div .file-icon{
+	display:none;
+}
+.group-media.field-group-div .illustration-audio{
+	background: url(/sites/curriculum.gov.bc.ca/files/images/audio.png) no-repeat center center;
+	text-align:center;
+	padding-top:15px;
+
+}
+.group-media.field-group-div .illustration-file{
+	background: url(/sites/curriculum.gov.bc.ca/files/images/document.png) no-repeat center center;
+	text-align:center;
+	padding-top:15px;
+
+}
+.group-media.field-group-div .illustration-audio a, .group-media.field-group-div .illustration-file a{
+	padding-bottom: 200px;
+	text-transform:uppercase;
+	font-size: 10px;
+}
+.group-media.field-group-div .field-item{
+	float:left;
+	width: 250px;
+	height: 250px;
+	border: 1px solid #ccc;
+	box-sizing: border-box;
+	padding:10px;
+	margin: 10px 0 0 10px;
+}
+
+/* Illustration Elements*/
+.node-illustration .group-illustration-elements{
+	float: left;
+	border: 1px solid #ccc;
+	width: 100%;
+	margin-top: 19px;
+	padding: 10px;
+}
+.node-illustration .group-illustration-elements h3{
+	height: 20px;
+}
+
+.node-illustration .field-name-body img{
+	margin:10px;
+	padding:5px;
+	border: 1px solid #ccc;
+}
+/* Illustration Context*/
+
+.node-illustration .field-name-body{
+	float: left;
+	width: 100%;
+}
+
+
+
+/*
+Video Play button overlay
+*/
+
+.node-illustration .content{
+	border-top : 1px solid #ccc;
+}
+.illustration-video a{
+
+	position:relative;
+}
+.illustration-video a img{
+
+	position:relative;
+}
+.illustration-video a span.play-button{
+	height:250px;
+	width:250px;
+	background: url('/sites/curriculum.gov.bc.ca/files/images/play_button_60x60.png') center center no-repeat;
+	z-index: 10;
+	opacity:0.6;
+	position:relative;
+	left: -20px;
+	transition: .5s ease;
+	float:left;
+	margin-top:-250px !important;
+}
+.illustration-video a span.play-button:hover{
+	opacity: 1;
+}
+
+/* Taxonomy page styles when displaying illustrations*/
+
+.page-taxonomy h2.profile-analysis-header, .page-taxonomy .profiles{
+	display:none;
+}
+.page-taxonomy h1{
+	padding: 2% 2% !important;
+}
+
+
+
+/* Illustrations Search*/
+#views-exposed-form-illustrations-page li{
+	margin-bottom: 0px !important;
+}
+.views-submit-button{
+	position:sticky;
+	bottom: 0;
+}
+#edit-submit-illustrations{
+	width: 260px;
+}
+
+#views-exposed-form-illustrations-page #edit-field-illustration-competencies-tid-wrapper > label,
+#views-exposed-form-illustrations-page #edit-field-profile-number-value-wrapper > label,
+#views-exposed-form-illustrations-page #edit-field-competency-theme-tid-wrapper > label,
+#views-exposed-form-illustrations-page #edit-title-wrapper > label{
+
+	width: 100%;
+	text-align:left;
+	border-bottom: 1px solid #ccc;
+}
+#edit-field-profile-number-value-wrapper{ width: 100%;  }
+#edit-field-profile-number-value-wrapper > div{
+	width: 100%;
+	border: none !important;
+
+}
+#edit-field-profile-number-value-wrapper > div .bef-select-as-checkboxes{ border: none !important;}
+
+ul.bef-tree{
+	padding: 0px !important;
+
+}
+.bef-tree, .bef-tree-child {
+	list-style:none;
+
+}
+#views-exposed-form-illustrations-page .exposed-form{
+	color:#333;
+	background: #fff;
+
+}
+#views-exposed-form-illustrations-page .bef-checkboxes{
+	padding-left: 10px;
+
+
+}
+#views-exposed-form-illustrations-page .bef-checkboxes label::before{
+	content : "PROFILE ";
+
+}
+
+
+
+#views-exposed-form-illustrations-page{
+	width:25%;
+	float:left;
+	background: #fff !important;
+	color: #333;
+	border: 1px solid #ccc;
+}
+
+
+.page-curriculm-competency .field-name-field-competency .field-label{
+	display: none;
+}
+.page-search-illustrations #block-system-main{
+	width:73%;
+	float:left;
+	padding-left:10px;
+}
+.page-search-illustrations .region-content {
+	float:left;
+	border: none !important;
+}
+.view-illustrations{
+	margin-left: 10px !important;
+}
+.view-illustrations tr.odd{
+	background: white !important;
+}
+.view-illustrations tr td div{
+	margin-bottom:5px;
+}
+.view-illustrations tr.odd td,.view-illustrations tr.even td{
+	margin: 15px 0px;
+	padding: 20px;
+
+}
+.illustration-competencies a + a{
+	margin-left: 10px;
+}
+.illustration-competencies strong{
+	width:250px;
+}
+
+.page-competencies-search #block-system-main{
+	width:100%;
+	float:left;
+}
+.page-competencies-search .views-exposed-form{
+	background: none !important;
+	color: #666;
+}
+.page-competencies-search .views-exposed-form .views-exposed-widget{
+	padding: 0px !important;
+	width:100%;
+
+}
+
+.image-group{
+	width:100%;
+	float:left;
+	clear:both;
+}
+.image-group .illustration-image{
+	float:left;
+}
+.image-group .illustration-image + .illustration-image{
+	margin-left: 20px;
+
+}
+
+ul.quicktabs-tabs.quicktabs-style-basic a{
+	color: #333;
+}
+
+/* Curricular Competency*/
+.page-curriculm-competency .field-name-body li{
+	width:100%;
+	float:left;
+
+}
+.page-curriculm-competency .competency-content{
+	float:left;
+	clear:both;
+
+}
+
+.page-curriculm-competency .field-name-body ul {
+
+    margin:0;
+    padding:0
+}
+
+.page-curriculm-competency #page-title {
+	background: #fff url(/sites/curriculum.gov.bc.ca/files/pdf/core_comp_icon_grey.png) no-repeat left !important;
+	padding-left: 50px;
+}
+
+.page-curriculm-competency .field-name-body ul > li {
+    list-style: disc outside;
+    
+     margin-left: 1em;
+    padding-right: 10px;
+    width:95%;
+}
+
+.page-curriculm-competency .field-name-body ul > li li {
+    list-style: circle inside;
+
+}
+
+/*.page-curriculm-competency .field-name-body ul li.c {
+    background:url(/sites/curriculum.gov.bc.ca/files/pdf/core_comp_c_orange.png) no-repeat center top;
+	padding-top: 100px;
+}
+
+.page-curriculm-competency .field-name-body ul li.t {
+    background:url(/sites/curriculum.gov.bc.ca/files/pdf/core_comp_t_blue.png) no-repeat center top;
+	padding-top: 100px;
+}
+
+.i18n-fr .page-curriculm-competency .field-name-body ul li.t {
+    background:url(/sites/curriculum.gov.bc.ca/files/pdf/core_comp_r_blue.png) no-repeat center top;
+	padding-top: 100px;
+}
+
+.page-curriculm-competency .field-name-body ul li.ps {
+    background:url(/sites/curriculum.gov.bc.ca/files/pdf/core_comp_ps_green.png) no-repeat center top;
+	padding-top: 100px;
+}*/
+
+.c a {
+    color:#e48456
+}
+
+.t a {
+    color:#11a2c6
+}
+
+.ps a {
+    color:#80ba69
+}
+
+.center {
+   display: block;
+    margin-left: auto;
+    margin-right: auto;
+    
+  }
+  .accordion {
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    transition: 0.4s;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    
+    /*margin: 5px 0;*/
+  }
+  
+  .active, .accordion:hover {
+    background-color: #ccc;
+  }
+  
+  .accordion:after {
+    content: '\002B';
+    color: #777;
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+  }
+  
+  .active:after {
+    content: "\2212";
+  }
+  
+  .panel {
+    padding: 0 18px;
+    background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    border-left: 1px solid #eee;
+    border-right: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 5px;
+  }
+
+    .panel ul {
+        margin: 5px;
+    }
+
+    hr { 
+        display: block;
+        margin-top: 0.5em;
+        margin-bottom: 0.5em;
+        margin-left: auto;
+        margin-right: auto;
+        border-top: 1px solid #000;
+      
+      }

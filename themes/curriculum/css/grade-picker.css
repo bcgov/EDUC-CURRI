@@ -1,0 +1,194 @@
+/*Gradepicker CSS*/
+
+/* Grade picker HR*/
+
+span.gradepicker_hr{ 
+    display:block;
+    border:none;
+    color:white;
+    height:1px;
+    background:white;
+    background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 475, from(#FFF), to(#1B1F28));
+	max-width:900px;
+	margin:20px auto 0 auto;
+	
+}
+
+.curriculum-grade-level .grade-picker{
+	margin:auto;	
+}
+.grade-level{
+	width: 150px !important;
+}
+
+/*** Next and previous links *****/
+
+.next_grade, .prev_grade{
+	display:none;	
+}
+#prev_grades{
+	width: 125px;
+	float: left;
+	position: relative;
+	top:225px;
+	margin-top:-150px;	
+	background: url(/sites/curriculum.gov.bc.ca/themes/curriculum/images/left_slider_arrow.png) no-repeat left;
+	padding-left: 30px;	
+	left:-100px;
+
+}
+.view-display-id-attachment_5 .view-empty{
+	background-color:#1C202B; 
+	width: 106.5%;
+	margin-left: -4%;
+	top:70px;
+}
+
+
+#next_grades{
+	width: 125px;
+	float: right;
+	position: relative;
+	top:225px;
+	right:-100px;
+	margin-top:-150px;
+	text-align:right;
+	background: url(/sites/curriculum.gov.bc.ca/themes/curriculum/images/right_slider_arrow.png) no-repeat right;
+	padding-right: 30px;
+}
+#next_grades a, #prev_grades a{
+	color:white;	
+	font-size:1.2em;
+	text-align:center;
+
+}
+.gradepicker_subject a{
+	width: 100% !important;
+	margin-right:15px;
+}
+/*
+div#grade_picker {
+    float:left;
+    height:100px;
+	width:100%;
+}
+*/	
+
+/* Subject grades with courses*/
+
+.grade-picker a.grade-ywit, .grade-picker a.grade-we{
+	width: auto !important;	
+	padding-left: 15px;
+}
+
+
+/* Gradepicker courses*/
+#grade_picker .courses, #grade_picker .grade_10, #grade_picker .grade_11, #grade_picker .grade_12{
+	display:none;	
+}
+
+#grade_picker .grade_10.courses, #grade_picker .grade_11.courses, #grade_picker .grade_12.courses{
+	display:block;	
+}
+
+/* Gradepicker Career Education*/
+.page-curriculum-career-education .courses{
+	display:none;
+	
+}
+.page-curriculum-career-education .grade_10, .page-curriculum-career-education .grade_11, .page-curriculum-career-education .grade_12{
+	display:block;
+}
+
+
+
+
+/**** New Grade Picker */
+
+.grade-picker {
+    width: auto;
+    font-family: "Century Gothic",Helvetica,Arial,sans-serif;
+    display: inline-block !important;
+    position: relative;
+
+}	
+.grade-picker a {
+    color: inherit;
+	opacity:inherit;
+    display: block;
+    width: 30px;
+    text-align: center;
+	float:left;
+	box-sizing: border-box;
+}
+.grade-picker a.grade-clc, .grade-picker a.grade-cle{
+	width:45px;	
+}
+.grade-picker {
+    color: #FFF;
+ opacity: 0.75;
+   transition: opacity .50s ease-in-out;
+   -moz-transition: opacity .50s ease-in-out;
+   -webkit-transition: opacity .50s ease-in-out;	
+}
+.grade-picker:hover {
+ opacity: 1;
+}
+
+.grade-picker a.gradepicker-subject{
+	width:auto;	
+}
+
+.grade-picker a {
+    float:left;
+    list-style-type:none;
+    font-size:1.2em;
+	text-decoration:none;
+	position:relative;
+	height:35px;
+}
+.grade-picker a:hover {
+	border-bottom: 3px solid #aaa;
+}
+
+.grade-picker-view-attachment{
+	position:relative;
+	width:100%;	
+	left:0;
+}
+.grade-picker-view-attachment .view-content{
+	text-align:center !important;
+	width: 100%;
+
+}
+
+/* Underlining the current selected grade */
+
+
+.grade-picker.grade-k .grade-k,
+.grade-picker.grade-1 .grade-1,
+.grade-picker.grade-2 .grade-2,
+.grade-picker.grade-3 .grade-3,
+.grade-picker.grade-4 .grade-4,
+.grade-picker.grade-5 .grade-5,
+.grade-picker.grade-6 .grade-6,
+.grade-picker.grade-6T .grade-6T,
+.grade-picker.grade-7 .grade-7,
+.grade-picker.grade-7T .grade-7T,
+.grade-picker.grade-8 .grade-8,
+.grade-picker.grade-9 .grade-9,
+.grade-picker.grade-10 .grade-10,
+.grade-picker.grade-11 .grade-11,
+.grade-picker.grade-12 .grade-12,
+.grade-picker.grade-courses .grade-all{
+	border-bottom: 3px solid #e2e2e2;	
+}
+
+/* Remove underline for subject landing page*/
+.subject-landing-page .grade-picker-view-attachment a{
+	border-bottom: none !important;
+}
+
+
+
+

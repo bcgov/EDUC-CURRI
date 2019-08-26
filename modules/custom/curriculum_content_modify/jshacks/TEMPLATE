@@ -1,0 +1,36 @@
+/**
+ * Copy/paste code below into a new file to get started. Name the file with the convention:
+ * [subject-short-name]_[grade as interger OR 'k' for kindergarten].js
+ */
+
+function addElaboration(itemText, elaboration) {
+  jQuery('strong').each(function() {
+    if (jQuery(this).text() == itemText) {
+      jQuery(this).bt(elaboration, Drupal.settings.beautytips['.beautytips']).addClass('beautytips');
+      console.log('Elaboration: "' + itemText + '" added via JS and the curriculum_content_modify module.');
+    }
+  });
+} // addElaboration
+
+window.onload = function() {
+
+  /**
+   * Add elaborations with JavaScript. Isn't that neat!?!?!?
+   * Remeber to clear cache after add new elaborations. ;) 
+   */
+
+  // if French page
+  if (jQuery('html').hasClass('fr')) {
+    // if you've got a <strong> that is linking to its elaboration correctly, 
+    // you can add it manually here.
+    
+    // un-comment the next line to get started
+    // addElaboration('modifier', 'changer la longueur ou la largeur d’un patron, ajouter des embellissements, changer la fermeture');
+  }
+
+  // if English page
+  if (jQuery('html').hasClass('en')) {
+
+  }
+
+}; // window.onload

@@ -1,0 +1,65 @@
+/** CSS for curriculum site @ 768px**/
+
+@media only screen and (max-width: 768px) {
+  /* 
+  Instructional samples reset. 
+  Resets all of the stylings at higher breakpoints. 
+*/
+.page-curriculum #content .subject-select {
+    background: #4D4F54;
+    color: white;
+    padding: 2%;
+    width: 96%;
+    display: none !important;
+}
+
+  .page-instructional-samples #edit-field-subject-range-value-wrapper,
+  .page-instructional-samples #edit-field-school-district-value-wrapper,
+  .page-instructional-samples #edit-field-subject-range-value-wrapper,
+  .page-instructional-samples #edit-field-school-district-value-wrapper,
+  .page-instructional-samples
+    #edit-field-subject-range-value-wrapper
+    .bef-checkboxes
+    .form-item,
+  .page-instructional-samples .views-column .group-left,
+  .page-taxonomy-term .node-contributed-resource .group-left,
+  .fr .page-instructional-samples .views-column .group-left,
+  .fr .page-taxonomy-term .node-contributed-resource .group-left,
+  .page-instructional-samples .views-column .group-right,
+  .page-taxonomy-term .node-contributed-resource .group-right,
+  .fr .page-instructional-samples .views-column .group-right,
+  .fr .page-taxonomy-term .node-contributed-resource .group-right,
+  .page-taxonomy-term .node-contributed-resource .field-name-body {
+    width: 100%;
+    padding-left: 0;
+    border-left: none;
+    float: none;
+  }
+
+  #edit-field-subject-range-value-wrapper .bef-checkboxes {
+    overflow-x: hidden;
+  }
+
+  .view-contributed-resources .node-teaser {
+    border-bottom: 3px solid rgba(128, 128, 128, 0.34);
+  }
+  .view-contributed-resources .node-teaser:last-of-type {
+    border-bottom: 0;
+  }
+
+  .subject_landing_page_search {
+    min-height: 60px;
+  }
+
+  #subject_landing_get_started > h2,
+  /* reset */ #subject_landing_get_started div + div,
+  #subject_landing_get_started > div {
+    padding-left: 5px;
+  }
+  #subject-bottom-links div,
+  #subject_landing_get_started > div {
+    width: 99%;
+    float: none;
+  }
+
+} /* --- END max-width 768px --- */

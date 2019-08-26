@@ -1,0 +1,785 @@
+<?php
+
+
+
+/*
+Takes two strings, compares either upper case or lower case and returns if it is the same word.
+This also compares french characters case too
+*/
+function mb_strcasecmp($str1, $str2, $encoding = null) {
+    if (null === $encoding) { $encoding = mb_internal_encoding(); }
+    return strcmp(mb_strtoupper($str1, $encoding), mb_strtoupper($str2, $encoding));
+}
+/*
+	Presave hook when curriculum data is saved
+	1. Deletes all nodes of subject and grade
+	2. Will parse through the fields of curriculum data node and create corresponding nodes for big ideas, concepts and curricular competencies 
+*/
+function curriculum_data_entry_node_presave($node) {
+
+	if($node->type == "curriculum_data"){
+			
+		if($node->field_status['und'][0]['value'] == "Do Not Regenerate Nodes" || $node->field_status['und'][0]['value'] == "N/A"){
+			drupal_set_message("Node Saved, but nodes NOT Regenerated.");	
+		}else{
+				drupal_set_message("Node Saved and Nodes Regenerated.");
+				//delete all nodes of subject and grade
+				delete_nodes($node->field_subject['und'][0]['target_id'], $node->field_grade['und'][0]['target_id']);
+				//Creates the curricular competency nodes
+				create_curricular_competencies_nodes($node->field_competencies['en'][0]['value'],$node->field_competencies_fr['und'][0]['value'],$node->field_competencies_elaboration['en'][0]['value'],$node->field_cc_elaborations_fr['und'][0]['value'],$node->field_subject['und'][0]['target_id'], $node->field_grade['und'][0]['target_id']);		
+				//create the content nodes
+				create_content_and_concepts_nodes($node->field_content['en'][0]['value'],$node->field_content_fr['und'][0]['value'],$node->field_content_elaborations['en'][0]['value'],$node->field_content_elaborations_fr['und'][0]['value'],$node->field_subject['und'][0]['target_id'], $node->field_grade['und'][0]['target_id'] );	
+				//create big idea nodes
+				try{	
+					create_big_ideas_nodes($node->field_big_ideas['en'][0]['value'],$node->field_big_ideas_fr['und'][0]['value'],$node->field_big_ideas_elaborations['en'][0]['value'],
+					$node->field_big_ideas_elaborations_fr['und'][0]['value'],$node->field_subject['und'][0]['target_id'], $node->field_grade['und'][0]['target_id']);		
+				}catch(Exception $e){
+					drupal_set_message("Error in big ideas");
+				}
+
+		}
+	}
+
+
+		
+}
+//delete all nodes of subject and grade(){}
+function delete_nodes($subject, $grade){
+	$query = new EntityFieldQuery();
+	$query->entityCondition('entity_type', 'node');
+	$query->entityCondition('bundle', array('big_idea','concept_content','curricular_competency'), 'IN');
+	$query->propertyCondition('status', NODE_PUBLISHED);
+	$query->fieldCondition('field_subject', 'target_id', $subject, "=");	
+	$query->fieldCondition('field_grade', 'target_id', $grade, "=");
+
+	$result = $query->execute();  
+	
+	if (isset($result['node'])) {
+	  $nodes = array_keys($result['node']);
+		foreach($nodes as $n){
+			node_delete($n);
+		}
+	}
+}
+
+//Creates Big Idea nodes from a string $big_ideas and $big_ideas_fr
+function create_big_ideas_nodes($big_ideas, $big_ideas_fr, $elaborations, $elaborations_fr, $curriculum_subject, $curriculum_grade){
+	if($big_ideas_fr == ""){
+		$big_ideas_fr = $big_ideas;	
+	}
+	if($elaborations_fr == ""){
+		$elaborations_fr = $elaborations;
+	}
+	//parse the list items using DOM
+	$dom = new DOMDocument;
+	$dom_fr = new DOMDocument;
+	$dom->loadHTML(clean_str($big_ideas)); 
+	$dom_fr->loadHTML(clean_str($big_ideas_fr));
+
+	/*Array to hold all en and french and english data before building the node.
+	$bi_node_array[en|fr]["big_idea"][$i][node] is the DOM of the node
+	$bi_node_array[en|fr]["big_idea"][$i]["elaboration"][$keyword] is the associative array of the elaboration. A key|value pair is used where $keyword represend the keyword the elaboration is matched with and the data of $bi_node_array[en|fr]["big_idea"][$i]["elaboration"][$keyword] contains the text for the elaboration.
+	
+	*/
+	
+	$bi_node_array = array();
+	//Array for Keywords/Elaborations
+	$elaborations = get_elaborations_keywords($elaborations); //create keyword and elaboration array of for $elaboration["keyword"] where keyword is the bolded text in content 
+	$elaborations_fr = get_elaborations_keywords($elaborations_fr); //create fr keyword and elaboration array of for $elaboration["keyword"] where keyword is the bolded text in content 
+	//dpm($elaborations);
+	//drupal_set_message($elaborations);
+
+	//ENGLISH - PARSE THROUGH Big Ideas
+	$j=0;
+	foreach($dom->getElementsByTagName('p') as $p_node){
+		$bi_node_array["en"]["big_idea"][$j]["node"] = $p_node;
+		//get all of the bolded words that are in the content. We will use this array to match up elaborations
+		$node_keywords = getTextBetweenTags("strong", trim(get_inner_html($bi_node_array["en"]["big_idea"][$j]["node"])));
+		//Add English Elaborations
+		if($node_keywords){ //check if the big idea needs an elaboration
+			$m = 0;
+			foreach($node_keywords as $keyword){
+				$keyword= trim($keyword,chr(0xC2).chr(0xA0));
+				$bi_node_array["en"]["big_idea"][$j]["elaboration"][$keyword] = $elaborations[trim(strtolower($keyword))];							
+				$m++;
+			}
+		}		
+		$j++;
+	}	
+
+	//FRENCH - PARSE THROUGH Big Ideas
+	$j=0;
+	foreach($dom_fr->getElementsByTagName('p') as $p_node){
+		$bi_node_array["fr"]["big_idea"][$j]["node"] = $p_node;
+		//get all of the bolded words that are in the content. We will use this array to match up elaborations
+		$node_keywords = getTextBetweenTags("strong", trim(get_inner_html($bi_node_array["fr"]["big_idea"][$j]["node"])));
+		//add French Elaborations 							
+		if($node_keywords){ //check if the big idea needs an elaboration
+			$m = 0;
+			foreach($node_keywords as $keyword){
+				$keyword= trim($keyword,chr(0xC2).chr(0xA0));
+				$bi_node_array["fr"]["big_idea"][$j]["elaboration"][$keyword] = $elaborations_fr[trim(strtolower($keyword))];							
+				$m++;	
+			}
+		}					
+
+		$j++;
+	}
+	
+	//DEBUG 
+	//dpm($bi_node_array);
+	
+	//START OF BUILDING THE BIG IDEA NODES
+	$big_ideas_count = $j; //saves the number of big ideas
+	for($i = 0; $i < $big_ideas_count; $i++){
+			
+			$clean_str =trim($bi_node_array["en"]["big_idea"][$i]["node"]->nodeValue, chr(0xC2).chr(0xA0)); //removes any special space characters
+			
+			if($clean_str != ""){
+			
+				//Create a Big Ideas node
+				$node = new stdClass();
+				$node->type = 'big_idea';
+				$node->language = 'en';
+				$node->body['en'][0]['format']  = 'full_html';
+				$node->body['fr'][0]['format']  = 'full_html';
+				$node->status = 1;
+				$node->promote = 0;
+				$node->comment = 0;
+				$node->sticky = 0;
+				$node->moderate = 0;
+				$node->title = 'bi';
+				$node->body['und'][0]['value'] = $bi_node_array["en"]["big_idea"][$i];
+				$node->field_big_idea['en'][0]['format']  = 'filtered_html';
+				$node->field_big_idea['en'][0]['value'] = trim(get_inner_html($bi_node_array["en"]["big_idea"][$i]["node"]));
+				$node->field_big_idea['fr'][0]['format']  = 'filtered_html';
+				$node->field_big_idea['fr'][0]['value'] = trim(get_inner_html($bi_node_array["fr"]["big_idea"][$i]["node"]));
+				$node->field_subject['und'][0]['target_id'] = $curriculum_subject;
+				$node->field_grade['und'][0]['target_id'] = $curriculum_grade;	
+				
+			
+				
+				//check if node has elaborations and add them to the node
+				if (isset($bi_node_array["en"]["big_idea"][$i]["elaboration"])){
+					$i_elaboration = 0;
+					//add English Elaborations
+					foreach($bi_node_array["en"]["big_idea"][$i]["elaboration"] as $keyword => $value){
+						$node->field_keywords['en'][$i_elaboration]['format']  = 'filtered_html';
+						$node->field_keywords['en'][$i_elaboration]['value'] = trim($keyword);		
+						$node->field_elaboration['en'][$i_elaboration]['format']  = 'filtered_html';
+						$node->field_elaboration['en'][$i_elaboration]['value'] = $bi_node_array["en"]["big_idea"][$i]["elaboration"][trim($keyword)];
+						$i_elaboration++;
+					}
+					//add French Elaborations
+					$i_elaboration = 0;
+					foreach($bi_node_array["fr"]["big_idea"][$i]["elaboration"] as $keyword => $value){
+						$node->field_keywords['fr'][$i_elaboration]['format']  = 'filtered_html';
+						$node->field_keywords['fr'][$i_elaboration]['value'] = trim($keyword);		
+						$node->field_elaboration['fr'][$i_elaboration]['format']  = 'filtered_html';
+						$node->field_elaboration['fr'][$i_elaboration]['value'] = $bi_node_array["fr"]["big_idea"][$i]["elaboration"][trim($keyword)];						
+						$i_elaboration++;
+					}
+				}
+		
+				
+				node_object_prepare($node);
+				$node = node_submit($node);
+				node_save($node); // Create the node
+				
+				$handler = entity_translation_get_handler('node', $node); // Create a handler from entity translation
+ 
+				// Configuration about what to translate
+				$translation = array(
+				  'translate' => 0,
+				  'status' => 1,
+				  'language' => 'fr',          // here is the language you're translating to
+				  'source' => $node->language, // here is the source language
+				);
+				 
+				$handler->setTranslation($translation);
+				$handler->saveTranslations();
+			} // end if
+	} // end for 
+	//END OF BUILDING BIG IDEA NODES
+	
+	
+}
+
+function create_curricular_competencies_nodes($curricular_competencies, $curricular_competencies_fr, $elaborations, $elaborations_fr, $curriculum_subject, $curriculum_grade){
+	//dpm($elaborations);
+	//print parameters 
+	//drupal_set_message($curricular_competencies . "\n" .  $elaborations . "\n" .  $curriculum_subject  . "\n" .  $curriculum_grade);
+	//dpm($curricular_competencies);
+	//drupal_set_message($curricular_competencies['und'][0]['value']);
+    $elaborations = mb_convert_encoding($elaborations, "HTML-ENTITIES", "UTF-8"); 
+	if($curricular_competencies_fr == ""){
+		$curricular_competencies_fr = $curricular_competencies;
+	}
+	if($elaborations_fr == ""){
+		$elaborations_fr = $elaborations;
+	}else{
+	    $elaborations_fr = mb_convert_encoding($elaborations_fr, "HTML-ENTITIES", "UTF-8"); 	
+	}
+
+	//parse the list items using DOM
+	$dom = new DOMDocument;
+	$dom->loadHTML(clean_str($curricular_competencies));
+	$dom_fr = new DOMDocument;
+	$dom_fr->loadHTML(clean_str($curricular_competencies_fr));	
+    
+	$keywords = get_elaborations_keywords($elaborations); //delete
+    
+	/*Array to hold all en and french and english data before building the node.
+	$competencies_node_array[en|fr]["competencies"][$i]["value"] is the DOM of the node
+	$competencies_node_array[en|fr]["competencies"][$i]["elaboration"][$keyword] is the associative array of the elaboration. A key|value pair is used where $keyword represend the keyword the elaboration is matched with and the data of $competencies_node_array[en|fr]["competencie"][$i]["elaboration"][$keyword] contains the text for the elaboration.
+	
+	*/	
+	$competencies_node_array = array();
+	$elaborations = get_elaborations_keywords($elaborations); //create keyword and elaboration array of for $elaboration["keyword"] where keyword is the bolded text in content 
+	$elaborations_fr = get_elaborations_keywords($elaborations_fr); //create fr keyword and elaboration array of for $elaboration["keyword"] where keyword is the bolded text in content 
+	
+	//ENGLISH - PARSE THROUGH Curricular Competencies and populate array $competencies_node_array["en"]["competencies"]
+	$i =0;
+	foreach($dom->getElementsByTagName('ul') as $node){
+		$curriculum_subject_name = get_subject_name($curriculum_subject);
+		if($curriculum_subject_name == "Applied Design, Skills and Technologies"){
+			$curriculum_subject_name = "Applied Design, Skills, and Technologies";
+		}
+		$ccg = get_ccg_id("ccg-" . $curriculum_subject_name . "-" . $node->previousSibling->nodeValue);
+
+		foreach($node->getElementsByTagName('li') as $li_node){
+			if(trim($li_node->nodeValue) != "" && $li_node->parentNode->parentNode->nodeName != "li"){
+				
+				$li_node_html = trim(get_inner_html($li_node));
+				//remove any extra spaces with <strong></strong> 
+				$li_node_html = str_replace("<strong/>", "", $li_node_html);
+				//remove any extra spaces with <strong> </strong> and combine the words
+				$li_node_html = str_replace("</strong> <strong>", " ", $li_node_html);				
+				
+				$competencies_node_array["en"]["competencies"][$i]["value"] = $li_node_html;
+				//add the curricular competency group id
+				$competencies_node_array["en"]["competencies"][$i]["ccg"] = $ccg;
+
+				//check if node has elaborations and add them to the node
+				$li_node_elaborations = getTextBetweenTags("strong", $li_node_html);			
+				if($li_node_elaborations != ""){
+					$m = 0;
+					foreach($li_node_elaborations as $keyword){
+						if(isset($elaborations[mb_strtolower(trim($keyword),'UTF-8')])){		
+							try{
+							
+								$competencies_node_array["en"]["competencies"][$i]["elaboration"][$keyword] = $elaborations[mb_strtolower(trim($keyword),'UTF-8')];	
+							}catch(Exception $e){
+								drupal_set_message("<strong>Could not find and elaborations for $keyword </strong>");	
+							}
+						}else{
+							$fixed_keyword = elaboration_resolve($elaborations, $keyword, "ENGLISH", "CURRICULAR COMPETENCY");
+							if($fixed_keyword){
+								similar_text($keyword, $fixed_keyword , $percent);
+								drupal_set_message('<ul><li><font color="green">Found a elaboration match: ' . $keyword  . ' = '  . $fixed_keyword . ' at ' . (int)$percent . '%</font></li></ul>');								
+								$competencies_node_array["en"]["competencies"][$i]["elaboration"][$keyword] = $elaborations[$fixed_keyword];	
+							}else{
+								drupal_set_message('<font color="red">Could determine Elaboration</font>');	
+							}	
+						}
+						$m++;
+					}
+				}				
+				$i++;	
+			}
+
+		}
+	}
+
+
+	//FRENCH - PARSE THROUGH Curricular Competencies and populate array $competencies_node_array["fr"]["competencies"]
+	$i =0;
+	foreach($dom_fr->getElementsByTagName('ul') as $node){
+		$ccg = get_ccg_id("ccg-" . get_subject_name($curriculum_subject) . "-" . $node->previousSibling->nodeValue);
+		foreach( $node->getElementsByTagName('li') as $li_node){
+			if(trim($li_node->nodeValue) != "" &&  $li_node->parentNode->parentNode->nodeName != "li"){
+				$li_node_html =  trim(get_inner_html($li_node));
+				//remove any extra spaces with <strong></strong> 
+				$li_node_html = str_replace("<strong/>", "", $li_node_html);
+				//remove any extra spaces with <strong> </strong> and combine the words
+				$li_node_html = str_replace("</strong> <strong>", " ", $li_node_html);					
+				$competencies_node_array["fr"]["competencies"][$i]["value"] = $li_node_html;
+				//add the curricular competency group id
+				$competencies_node_array["fr"]["competencies"][$i]["ccg"] = $ccg;
+
+				//set up elaborations
+				$li_node_elaborations = getTextBetweenTags("strong", $li_node_html);			
+				if($li_node_elaborations != ""){
+					$m = 0;
+					foreach($li_node_elaborations as $keyword){
+						
+						if(isset($elaborations_fr[mb_strtolower(trim($keyword),'UTF-8')])){		
+							//drupal_set_message("1");	
+							try{			
+								$competencies_node_array["fr"]["competencies"][$i]["elaboration"][$keyword] = $elaborations_fr[mb_strtolower(trim($keyword),'UTF-8')];		
+							}catch(Exception $e){
+								//drupal_set_message("<strong>Could not find and elaborations for $keyword </strong>");	
+							}
+						}else{
+							$fixed_keyword = elaboration_resolve($elaborations_fr, $keyword, "ENGLISH", "CURRICULAR COMPETENCY");
+							if($fixed_keyword){
+								similar_text($keyword, $fixed_keyword , $percent);
+								drupal_set_message('<ul><li><font color="green">Found a elaboration match: ' . $keyword  . ' = '  . $fixed_keyword . ' at ' . (int)$percent . '%</font></li></ul>');								
+								$competencies_node_array["fr"]["competencies"][$i]["elaboration"][$keyword] = $elaborations_fr[$fixed_keyword];		
+							}else{
+								drupal_set_message('<font color="red">Could not find a matching elaboration</font>');
+							}
+						}
+						$m++;
+					}
+				}				
+				$i++;
+			}
+				
+		}
+	}
+	//View the Curricular Competency Node
+	//dpm($competencies_node_array);
+	
+	
+	//Create the individual nodes
+	for($i =0; $i< count($competencies_node_array["en"]["competencies"]); $i++){
+
+			//Create a curricualr competency node
+			$node = new stdClass();
+			$node->type = 'curricular_competency';
+			$node->language = 'en';
+			$node->body['en'][0]['format']  = 'full_html';
+			$node->status = 1;
+			$node->promote = 0;
+			$node->comment = 0;
+			$node->sticky = 0;
+			$node->moderate = 0;
+			$node->title = 'cc';
+			$node->body['en'][0]['value'] = "";
+			$node->field_curricular_competency["en"][0]['format']  = 'filtered_html';
+			$node->field_curricular_competency["en"][0]['value'] = $competencies_node_array["en"]["competencies"][$i]["value"];
+			$node->field_curricular_competency["fr"][0]['format']  = 'filtered_html';
+			$node->field_curricular_competency["fr"][0]['value'] = $competencies_node_array["fr"]["competencies"][$i]["value"];
+						
+			$node->field_subject['und'][0]['target_id'] = $curriculum_subject;
+			$node->field_grade['und'][0]['target_id'] = $curriculum_grade;	
+			if($competencies_node_array["en"]["competencies"][$i]["ccg"] != "_none"){
+				$node->field_curricular_competency_grou['und'][0]['target_id'] = $competencies_node_array["en"]["competencies"][$i]["ccg"];
+			}
+			//add elaborations
+		
+			if (isset($competencies_node_array["en"]["competencies"][$i]["elaboration"])){
+				$i_elaboration = 0;
+				//add English Elaborations
+				foreach($competencies_node_array["en"]["competencies"][$i]["elaboration"] as $keyword => $value){
+					$node->field_keywords['en'][$i_elaboration]['format']  = 'filtered_html';
+					$node->field_keywords['en'][$i_elaboration]['value'] = trim($keyword);		
+					$node->field_elaboration['en'][$i_elaboration]['format']  = 'filtered_html';
+					$node->field_elaboration['en'][$i_elaboration]['value'] = $competencies_node_array["en"]["competencies"][$i]["elaboration"][$keyword];						
+					$i_elaboration++;
+				}
+				//add French Elaborations
+				$i_elaboration = 0;
+				foreach($competencies_node_array["fr"]["competencies"][$i]["elaboration"] as $keyword => $value){
+					$node->field_keywords['fr'][$i_elaboration]['format']  = 'filtered_html';
+					$node->field_keywords['fr'][$i_elaboration]['value'] = trim($keyword);		
+					$node->field_elaboration['fr'][$i_elaboration]['format']  = 'filtered_html';
+					$node->field_elaboration['fr'][$i_elaboration]['value'] = $competencies_node_array["fr"]["competencies"][$i]["elaboration"][$keyword];					
+					$i_elaboration++;
+				}
+				
+			}	
+			node_object_prepare($node);
+			$node = node_submit($node);
+			node_save($node);
+			
+			$handler = entity_translation_get_handler('node', $node); // Create a handler from entity translation
+	
+			// Configuration about what to translate
+			$translation = array(
+			  'translate' => 0,
+			  'status' => 1,
+			  'language' => 'fr',          // here is the language you're translating to
+			  'source' => $node->language, // here is the source language
+			);
+			 
+			$handler->setTranslation($translation);
+			$handler->saveTranslations();
+		}	
+}
+
+
+//Creates content nodes from a string $content_concepts and $content_concepts_fr
+function create_content_and_concepts_nodes($content_concepts, $content_concepts_fr, $elaborations, $elaborations_fr, $curriculum_subject, $curriculum_grade){
+	$elaborations = mb_convert_encoding($elaborations, "HTML-ENTITIES", "UTF-8"); 	
+	if($content_concepts_fr == ""){
+		$content_concepts_fr =  $content_concepts;
+	}
+	if($elaborations_fr == ""){
+		$elaborations_fr = $elaborations;
+	}else{
+		$elaborations_fr = mb_convert_encoding($elaborations_fr, "HTML-ENTITIES", "UTF-8"); 	
+	}
+	
+	//parse the list items using DOM
+	$dom = new DOMDocument;
+	$dom->loadHTML(clean_str($content_concepts));
+	$dom_fr = new DOMDocument;
+	$dom_fr->loadHTML(clean_str($content_concepts_fr));	
+	
+	/*Array to hold all en and french and english data before building the node.
+	$content_node_array[en|fr]["content"][$i]["value"] is the DOM of the node
+	$content_node_array[en|fr]["content"][$i]["elaboration"][$keyword] is the associative array of the elaboration. A key|value pair is used where $keyword represend the keyword the elaboration is matched with and the data of $content_node_array[en|fr]["content"][$i]["elaboration"][$keyword] contains the text for the elaboration.
+	*/
+	$content_node_array = array();
+	$elaborations = get_elaborations_keywords($elaborations); //create keyword and elaboration array of for $elaboration["keyword"] where keyword is the bolded text in content 
+	$elaborations_fr = get_elaborations_keywords($elaborations_fr); //create fr keyword and elaboration array of for $elaboration["keyword"] where keyword is the bolded text in content 
+
+
+	//ENGLISH - PARSE THROUGH Curricular Competencies and populate array $content_node_array["en"]["content"]
+	$i =0;
+	foreach($dom->getElementsByTagName('ul')->item(0)->childNodes as $li_node){
+		if(trim($li_node->nodeValue) != ""){
+			$li_node_html =  trim(get_inner_html($li_node));
+			//remove any extra spaces with <strong></strong> 
+			$li_node_html = str_replace("<strong/>", "", $li_node_html);
+			//remove any extra spaces with <strong> </strong> and combine the words
+			$li_node_html = str_replace("</strong> <strong>", " ", $li_node_html);		
+			$content_node_array["en"]["content"][$i]["value"] = $li_node_html;
+
+			//set up elaborations for English
+			$li_node_elaborations = getTextBetweenTags("strong", $li_node_html);			
+			if($li_node_elaborations != ""){
+				$m = 0;
+				foreach($li_node_elaborations as $keyword){
+					if(isset($elaborations[mb_strtolower(trim($keyword),'UTF-8')])){		
+						//found an elaboration
+						try{			
+							$content_node_array["en"]["content"][$i]["elaboration"][$keyword] = $elaborations[mb_strtolower(trim($keyword),'UTF-8')];		
+						}catch(Exception $e){
+							drupal_set_message("<strong>Could not find and elaborations for $keyword </strong>");	
+						}
+					}else{
+						//did not find an elaboration and will try to resolve.
+						$fixed_keyword = elaboration_resolve($elaborations_fr, $keyword, "FRENCH", "CONTENT");
+						if($fixed_keyword){
+							similar_text($keyword, $fixed_keyword , $percent);
+							drupal_set_message('<ul><li><font color="green">Found a elaboration match: ' . $keyword  . ' = '  . $fixed_keyword . ' at ' . (int)$percent . '%</font></li></ul>');								
+							$content_node_array["en"]["content"][$i]["elaboration"][$keyword] = $elaborations[$fixed_keyword];							
+						}else{
+							drupal_set_message('<font color="red">Could not find a matching elaboration</font>');
+						}
+
+					}
+					$m++;
+				}
+			}				
+		}
+		$i++;	
+	}
+	
+	//FRENCH - PARSE THROUGH Curricular Competencies and populate array $content_node_array["fr"]["content"]
+	$i =0;
+	foreach($dom_fr->getElementsByTagName('ul')->item(0)->childNodes as $li_node){
+
+		if(trim($li_node->nodeValue) != ""){
+			$li_node_html =  trim(get_inner_html($li_node));
+			//remove any extra spaces with <strong></strong> 
+			$li_node_html = str_replace("<strong/>", "", $li_node_html);
+			//remove any extra spaces with <strong> </strong> and combine the words
+			$li_node_html = str_replace("</strong> <strong>", " ", $li_node_html);				
+			$content_node_array["fr"]["content"][$i]["value"] = $li_node_html;
+
+			//set up elaborations
+			$li_node_elaborations = getTextBetweenTags("strong", $li_node_html);			
+			if($li_node_elaborations != ""){
+				$m = 0;
+				foreach($li_node_elaborations as $keyword){
+					if(isset($elaborations_fr[mb_strtolower(trim($keyword),'UTF-8')])){		
+						try{			
+							$content_node_array["fr"]["content"][$i]["elaboration"][$keyword] = $elaborations_fr[mb_strtolower(trim($keyword),'UTF-8')];		
+						}catch(Exception $e){
+
+							drupal_set_message("<strong>Could not find any elaborations for $keyword </strong>");	
+						}
+					}else{
+						$fixed_keyword = elaboration_resolve($elaborations_fr, $keyword, "FRENCH", "CONTENT");
+						if($fixed_keyword){
+							similar_text($keyword, $fixed_keyword , $percent);
+							drupal_set_message('<ul><li><font color="green">Elaboration match found: ' . $keyword  . ' = '  . $fixed_keyword . ' at ' . (int)$percent . '%</font></li></ul>');								
+
+							$content_node_array["fr"]["content"][$i]["elaboration"][$keyword] = $elaborations_fr[$fixed_keyword];							
+						}else{
+							drupal_set_message('<font color="red">Could not find a matching elaboration</font>');
+						}
+						
+					}
+					
+					
+					$m++;
+				}
+			}				
+		}
+		$i++;	
+	}
+	
+	
+	//dpm($content_node_array);
+	
+
+	for($i =0; $i < count($content_node_array["en"]['content']); $i++){
+		//Create a content node
+		$node = new stdClass();
+		$node->type = 'concept_content';
+		$node->language = 'en';
+		$node->body['en'][0]['format']  = 'plain_text';				
+		$node->body['fr'][0]['format']  = 'full_html';
+		$node->status = 1;
+		$node->promote = 0;
+		$node->comment = 0;
+		$node->sticky = 0;
+		$node->moderate = 0;
+		$node->title = 'cc';
+		$node->field_concept_content['en'][0]['format']  = 'full_html';
+		$node->field_concept_content['en'][0]['value'] = $content_node_array["en"]["content"][$i]["value"];
+		$node->field_concept_content['fr'][0]['format']  = 'full_html';
+		$node->field_concept_content['fr'][0]['value'] = $content_node_array["fr"]["content"][$i]["value"];			
+		$node->field_subject['und'][0]['target_id'] = $curriculum_subject;
+		$node->field_grade['und'][0]['target_id'] = $curriculum_grade;
+
+
+		
+		//add Elaborations
+		
+		if (isset($content_node_array["en"]["content"][$i]["elaboration"])){
+			$i_elaboration = 0;
+			foreach($content_node_array["en"]["content"][$i]["elaboration"] as $keyword => $value){
+				$node->field_keywords['en'][$i_elaboration]['format']  = 'filtered_html';
+				$node->field_keywords['en'][$i_elaboration]['value'] = trim($keyword);		
+				$node->field_elaboration['en'][$i_elaboration]['format']  = 'filtered_html';
+				$node->field_elaboration['en'][$i_elaboration]['value'] = $content_node_array["en"]["content"][$i]["elaboration"][$keyword];						
+				$i_elaboration++;
+			}
+			
+			$i_elaboration = 0;
+			foreach($content_node_array["fr"]["content"][$i]["elaboration"] as $keyword => $value){
+				$node->field_keywords['fr'][$i_elaboration]['format']  = 'filtered_html';
+				$node->field_keywords['fr'][$i_elaboration]['value'] = trim($keyword);		
+				$node->field_elaboration['fr'][$i_elaboration]['format']  = 'filtered_html';
+					
+				$node->field_elaboration['fr'][$i_elaboration]['value'] = $content_node_array["fr"]["content"][$i]["elaboration"][$keyword];						
+				$i_elaboration++;
+			}
+		}
+	try{
+		node_object_prepare($node);
+		$node = node_submit($node);
+		
+
+			node_save($node);
+		}catch(exception $e){
+			
+			
+		}
+		
+		$handler = entity_translation_get_handler('node', $node); // Create a handler from entity translation
+
+		// Configuration about what to translate
+		$translation = array(
+		  'translate' => 0,
+		  'status' => 1,
+		  'language' => 'fr',          // here is the language you're translating to
+		  'source' => $node->language, // here is the source language
+		);
+			 
+		$handler->setTranslation($translation);
+		$handler->saveTranslations();
+
+		
+	}	
+	
+}
+
+function elaboration_resolve($elab_array, $keyword, $language, $type){
+	
+
+	//try to match the elaboration with keyword.
+	drupal_set_message('<strong>Keyword/Elaboration Mismatch: ' . mb_strtolower(trim($keyword),'UTF-8') .'</strong>');	
+	//dpm($elab_array);	
+	$possible_keyword_match ="";
+	$possible_keyword_match_percentage ="0"; 
+	$similarity_percent = 0;
+	foreach($elab_array as $elaboration_keyword => $value){
+
+		similar_text($keyword, $elaboration_keyword , $simliarity_percent);
+		if($simliarity_percent > 80){
+			if($simliarity_percent > $possible_keyword_match_percentage){ 
+				$possible_keyword_match_percentage = $simliarity_percent;
+				$possible_keyword_match = $elaboration_keyword;
+				drupal_set_message("This is a possible match: " . $keyword  . " = " . $elaboration_keyword . " with " . $possible_keyword_match_percentage);
+			}
+		}
+	}
+	return $possible_keyword_match;
+}
+//passes in text to be parsed and separated into curricular competency content types
+
+
+// Parses the elaborations array for keywords 
+function get_elaborations_keywords($elaborations){
+	if($elaborations != ""){
+		$elaborations = mb_convert_encoding($elaborations, "HTML-ENTITIES", "UTF-8"); 
+		$dom2 = new DOMDocument;
+		$dom2->loadHTML(strip_tags($elaborations,'<ul><li><br><span><em><sup><sub>'));
+		dpm(strip_tags($elaborations,'<ul><li><br><span><em><sup><sub>'));
+		$elaborations_array = "";
+		foreach($dom2->getElementsByTagName('ul')->item(0)->childNodes as $elaboration_li_node){
+			
+			$inner_html = get_inner_html($elaboration_li_node);
+			
+			if($inner_html){
+				
+				if (strpos($inner_html, ':') !== FALSE){
+					//trim the space characters infront at the end of $k and beginning of $e;
+
+					$inner_html = str_replace("&nsbp;"," ", $inner_html);
+
+					
+					list($k, $e) = explode(":", $inner_html,2);
+					//handle exception for elaborations with two semi colons. Normally there should be one as a delimiter
+					if($k != "" || $e != ""){
+						$k = str_replace("\xc2\xa0",'',$k);
+						$elaborations_array[mb_strtolower(trim($k),'UTF-8')] = trim($e, chr(0xC2).chr(0xA0));
+						//drupal_set_message("<strong>Key</strong> " . mb_strtolower(trim($k),'UTF-8') . "<br/><strong>Elaboration</strong> "  . $elaborations_array[mb_strtolower(trim($k),'UTF-8')] );
+
+					}
+				}else{
+					//drupal_set_message("<font color='red'> ERROR -- Elaboration <strong>" . $inner_html . "</strong> may be missing a colon to delimit the keyword and elaboration</font>");	
+				}
+			}
+		}
+		//dpm($elaborations_array);
+		return $elaborations_array;	
+	}else return;
+
+}
+
+//function to clean up strings from word input
+function clean_str($str){
+	$str = str_replace(" </strong>", "</strong> ",$str);
+	$str = str_replace(",</strong>", "</strong>,",$str);
+	$str = str_replace("<strong> ", " <strong>",$str);
+	return $str;
+	
+}
+function get_subject_name($subject_id){
+	//drupal_set_message("subject ID " . $subject_id);
+	$query = new EntityFieldQuery();
+	$query->entityCondition('entity_type', 'node');
+	$query->entityCondition('bundle', 'subject');
+	$query->propertyCondition('nid', $subject_id, "=");	
+	$result = $query->execute();  
+	
+	if (isset($result['node'])) {
+	  $nodes = array_keys($result['node']);
+	  $node = entity_load('node', $nodes);
+	  return str_replace('Français langue Seconde - immerson', 'Français langue Seconde - immersion',$node[$subject_id]->field_subject_range['en'][0]['value']);
+
+	}else return "subject not found";
+}
+//Return id of a curricualar competency group by passing the title.
+function get_ccg_id($ccg_title){
+	//drupal_set_message( "get ccg id: $ccg_title");
+
+	$query = new EntityFieldQuery();
+	$query->entityCondition('entity_type', 'node'); 
+	$query->entityCondition('bundle', 'curricular_competency_group');
+	$query->propertyCondition('title', $ccg_title, "=");
+	
+	$result = $query->execute();  
+	$nids = array();
+	if (isset($result['node'])) {
+	  $nids = array_keys($result['node']);
+	  $items = entity_load('node', $nids);
+	  return $nids[0];
+	}else return "_none";
+}
+
+/* gets the ID of a curricular competency group*/
+function get_ccg_ids(){
+	
+	//querys the datap
+	$query = new EntityFieldQuery();
+	$query->entityCondition('entity_type', 'node'); 	
+	$query->entityCondition('bundle', 'curricular_competency_group');
+	$query->propertyCondition('title', 'ccg-Français langue seconde - immersion-Explorer et réfléchir', "=");
+
+	
+	$result = $query->execute();  
+	$nids = array();
+	if (isset($result['node'])) {
+	  $nids = array_keys($result['node']);
+	  $items = entity_load('node', $nids);
+	  return $nids[0];
+
+	}else return "_none";
+}
+//retruns a string from a of a $tag in an $html string
+function getTextBetweenTags($tag, $html, $strict=0)
+{
+    /*** a new dom object ***/
+    $dom = new domDocument;
+
+    /*** load the html into the object ***/
+    if($strict==1)
+    {
+        $dom->loadXML($html);
+    }
+    else
+    {
+        $dom->loadHTML('<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>' . $html);
+    }
+
+    /*** discard white space ***/
+    $dom->preserveWhiteSpace = true;
+
+    /*** the tag by its tag name ***/
+	
+    $content = $dom->getElementsByTagname($tag);
+
+    /*** the array to return ***/
+    $out = array();
+    foreach ($content as $item)
+    {
+        /*** add node value to the out array ***/
+		$str = $item->nodeValue;
+		//drupal_set_message("unmodified: " . $str);
+		$str = rtrim($str,',');
+		$str = rtrim($str,', ');		
+		$str = rtrim($str,'.');
+		$str = rtrim($str,'. ');
+		$str = rtrim($str,':');	
+		$str = rtrim($str,': ');					
+		//drupal_set_message("modified: " . $str);
+        $out[] = $str;
+    }
+    /*** return the results ***/
+    return $out;
+}
+//gets all children of $node and returns a string of its child nodes
+function get_inner_html( $node ) { 
+    $innerHTML= ''; 
+    $children = $node->childNodes;
+	if($children){
+		foreach ($children as $child) { 
+			$innerHTML .= $child->ownerDocument->saveXML( $child ); 
+		} 
+	}
+	$innerHTML = preg_replace('/\s+/', ' ', $innerHTML);
+
+    
+	return $innerHTML;
+} 

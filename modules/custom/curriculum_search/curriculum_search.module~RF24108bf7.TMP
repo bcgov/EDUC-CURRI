@@ -1,0 +1,51 @@
+<?php
+
+/**
+ * Creates a block for comparing curriculum
+ */
+function curriculum_search_block_info() {
+  $blocks['curriculum_search-blockname'] = array(
+    'info' => t('Curriculum Compare Selection'),
+    'cache' => DRUPAL_NO_CACHE,
+  );
+  return $blocks;
+}
+ 
+/**
+ * Implements hook_block_view().
+ */
+function curriculum_search_block_view($delta = '') {
+  $block = array();
+  
+  
+  
+  
+  switch ($delta) {
+    case 'curriculum_search-blockname':
+      $block['subject'] = t('Block Title');
+      $block['content'] = getSelectListContent();;
+      break;
+  }
+  return $block;
+}
+function getSelectListContent(){
+	$query = new EntityFieldQuery();
+	$query->entityCondition('entity_type', 'node'); 	
+	$query->entityCondition('bundle', 'curriculum_data');
+	$query ->range(0, 10);
+	
+	$result = $query->execute();
+	
+	$nodes = array();
+	
+	if (isset($result['node'])) {
+	 $select_list = "";
+	  $nids = array_keys($result['node']);
+	 $items = entity_load('node', $nids);
+	 foreach($items as $item){
+		 $select_list .= "<option value=" . $item->vid .">" . $item->title . "</option>";
+	 }
+	  return '<form method="GET" action="/curriculum/compare/"><select multiple>' . $select_list . "</select>";
+
+	}
+}

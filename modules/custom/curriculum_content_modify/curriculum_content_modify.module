@@ -1,0 +1,183 @@
+<?php
+
+/**
+ * Add JS files (hacks) to specific pages based on Drupal's arg()
+ * To add a file to a grade/subject page, simply add a new file with the naming 
+ * convention: [subject]_[grade].js into the "jshacks" folder. It will be added
+ * to the correct subject/grade page.
+ */
+function curriculum_content_modify_init() {
+
+  $hacks = array();
+  foreach (glob(__DIR__.'/jshacks/*.js') as $file) {
+    $hacks[] = array(
+      'subject' => strstr(basename($file), '_', TRUE),
+      'grade' => strstr(substr(basename($file), strpos(basename($file), '_') + 1), '.', TRUE)
+    ); 
+  }
+
+  foreach ($hacks as $key => $value) {
+    if (arg(0) == 'curriculum' && arg(1) == $value['subject']) {
+      if (arg(2) == $value['grade']) {
+        // we have a matching JS hack to add to the page
+        // dpm($value['subject']);
+        // dpm($value['grade']);
+        drupal_add_js(drupal_get_path('module', 'curriculum_content_modify').'/jshacks/'.$value['subject'].'_'.$value['grade'].'.js');
+      }
+    }
+  }
+
+  // tres hack! 
+  $url_components = explode('/', request_uri());
+  if (($url_components[1] == 'fr' && $url_components[2] == 'curriculum' && (!isset($url_components[3]) || $url_components[3] == '')) || ($url_components[1] == 'curriculum' && (!isset($url_components[2]) || $url_components[2] == '')) && (!module_exists('curriculum_subject_landing_pages'))) {
+    drupal_add_js('jQuery(document).ready(function () { jQuery(".view-id-curriculum_one_pager .area-of-learning h3 a").contents().unwrap(); });', 'inline'); 
+  }
+
+} // hook init
+
+// Mostly translation stuff *in code*!!! 
+function curriculum_content_modify_form_alter(&$form, &$form_state, $form_id) {
+
+  global $language;
+  $lc = $language->language;
+
+  // modify certain exposed views
+	if ($form_id == 'views_exposed_form' && $form['#action'] == '/curriculum/search') {
+		$form['#action'] = "/curriculum/search#results";
+	}
+	if ($form_id == 'views_exposed_form' && $form['#action'] == '/fr/curriculum/search') {
+		$form['#action'] = "/fr/curriculum/search#results";
+	}	
+	
+
+  if ($lc == 'fr' && $form_id == 'views_exposed_form' && isset($form['field_subject_range_value']) && isset($form['field_grade_range_value'])) {
+
+    // WHY? The translation module doesn't like translating exposed forms apperantly: https://www.drupal.org/node/1564830
+    // and I don't want to apply the patch. So, swap subject lables from English to French on form...
+    $t_subjects = array(
+      'Science' => 'Sciences',
+      'Arts Education' => 'Éducation artistique',
+      'Applied Design, Skills and Technologies' => 'Conception, compétences pratiques et technologies',
+      'Mathematics' => 'Mathématiques',
+      'Social Studies' => 'Sciences humaines',
+      'Physical and Health Education' => 'Éducation physique et santé',
+      'Core French' => 'Français de base',
+      'Career Education' => 'Éducation à la carrière'
+    );
+
+    foreach ($form['field_subject_range_value']['#options'] as $key => $value) {
+      if (array_key_exists($key, $t_subjects)) {
+        $form['field_subject_range_value']['#options'][$key] = $t_subjects[$key];
+      }
+    }
+
+    foreach ($form['field_grade_range_value']['#options'] as $key => $value) {
+      if ($value == 'K') {
+        $form['field_grade_range_value']['#options']['K'] = 'M';
+      }
+    }
+  
+  } // END if Instructional Samples exposed filters form OR the Curric Search Exposed Form
+
+  if ($form_id == 'views_exposed_form' && isset($form['field_subject_range_value'])) {
+    foreach ($form['field_subject_range_value']['#options'] as $key => $value) {
+      if ($form['field_subject_range_value']['#options'][$key] == 'Applied Design, Skills and Technologies') {
+        $form['field_subject_range_value']['#options'][$key] = 'Applied Design, Skills, and Technologies';
+      }
+    }
+  }
+
+  if ($lc == 'fr' && $form_id == 'views_exposed_form' && $form['#id'] == 'views-exposed-form-search-curriculum-page') {
+    
+    // WHY? See comment above. 
+    $t_types = array(
+      'big_idea' => 'Grandes idées',
+      'concept_content' => 'Contenu',
+      'curricular_competency' => 'Compétences disciplinaires'
+    );
+
+    foreach ($form['type']['#options'] as $key => $value) {
+      if (array_key_exists($key, $t_types)) {
+        $form['type']['#options'][$key] = $t_types[$key];
+      }
+    }
+
+    $form['#info']['filter-type']['label'] = 'Types';
+    $form['#info']['filter-field_subject_range_value']['label'] = 'Matières';
+    $form['#info']['filter-field_grade_range_value']['label'] = 'Niveaux';
+    $form['#info']['filter-keys']['label'] = 'Mots-clés';
+    $form['#info']['filter-keys']['description'] = 'Pour faire une recherche dans tous les programmes d\'études, veuillez cocher tous les types, matières et niveaux.';
+    $form['type']['#bef_select_all_none'] = FALSE;
+    $form['submit']['#value'] = 'Recherche dans les programmes d\'études';
+
+  } // END if form ID == views-exposed-form-search-curriculum-page
+
+  // Because I can't get this working... http://drupal.stackexchange.com/a/196496/27174
+  if ($lc == 'fr' && $form_id == 'views_exposed_form' && $form['#id'] == 'views-exposed-form-contributed-resources-page') {
+
+    $form['#info']['filter-field_grade_range_value']['label'] = 'Niveau scolaire';
+    $form['#info']['filter-field_subject_range_value']['label'] = 'Matière';
+    $form['submit']['#value'] = 'Appliquer les filtres';
+    $form['reset']['#value'] = 'Réinitialiser les filtres';
+
+  }
+
+  if ($lc == 'en' && $form_id == 'views_exposed_form' && $form['#id'] == 'views-exposed-form-search-curriculum-page') {
+    if (isset($form['type']['#options']['curricular_competency'])) {
+      $form['type']['#options']['curricular_competency'] = 'Curricular Competencies';
+    }
+  }
+
+} // END curriculum_content_modify_form_alter()
+
+function curriculum_content_modify_views_pre_render(&$view) {
+
+  global $language;
+  $lc = $language->language;
+
+  if ($lc == 'fr' && $view->name == 'curriculum_one_pager' && count($view->result) > 1) {
+    if (arg(1) == 'adst') {
+      $t_cc_groups = array(
+        'Applied Design' => 'Conception appliquée',
+        'Applied Skills' => 'Compétences pratiques',
+        'Applied Technologies' => 'Technologies appliquées'
+      );
+      foreach ($view->result as $key => $value) {
+        if (isset($value->field_field_heading[0]['rendered']['#markup'])) {
+          $n = $value->field_field_heading[0]['rendered']['#markup'];
+          if (array_key_exists($n, $t_cc_groups)) {
+            $value->field_field_heading[0]['rendered']['#markup'] = $t_cc_groups[$n];
+          }
+        }
+      }
+    }
+  }
+
+  if ($lc == 'fr' && ($view->name == 'creative_thinking_illustrations' || $view->name == 'communication_illustrations' || $view->name == 'ppci_illustrations') && count($view->result) > 1) {
+
+    // dpm($view->field);
+
+    $t_table_lable_fields = array(
+      'field_profile' => 'Profil',
+      'title_field' => 'Titre',
+      'body' => 'Contexte',
+      'field_facets' => 'Aspects'
+    );
+
+    foreach($t_table_lable_fields as $field => $value) {
+      if (isset($view->field[$field]->options['label'])) {
+        $view->field[$field]->options['label'] = $t_table_lable_fields[$field];
+      }
+    }
+
+  }
+
+  if ($view->name == 'contributed_resources' && count($view->result) > 1) {
+
+    drupal_add_js("jQuery(document).ready(function () { jQuery('.field-item').each(function() { if (jQuery(this).text() == 'Jardin d\'enfants') { jQuery(this).text('Maternelle').addClass('curriculum_content_modify'); } }); });", array('type' => 'inline'));
+
+  }
+
+	  
+} // END modify_views_pre_render()
+

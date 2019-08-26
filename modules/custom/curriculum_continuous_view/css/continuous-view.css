@@ -1,0 +1,108 @@
+/* CSS Document */
+
+/********Continuous Views Styles***********/
+h4 { color: red; }
+		.continuous-view{
+
+			white-space: nowrap;
+			position: absolute;
+			height: 400px;
+			float: left;
+			overflow: scroll;
+			width:inherit;
+
+		}
+		.continuous-view-all-grades{
+
+			float: left;
+			position: relative;
+			height: 400px;
+			width: 5000px;
+			z-index: 100;
+			background: white;
+		}
+		.continuous-view-all-grades .odd{
+			background-color: #ccc;	
+		}
+		.continuous-view-all-grades .even{
+			background-color: #e2e2e2;	
+		}		
+		.continuous-view-group h4{
+			text-align:center;	
+		}
+		.continuous-view-group{
+		
+			float: left;
+			height: 400px;
+			display: inline-block;
+			width: 400px;
+			padding: 20px;
+			white-space: normal;
+			left: -20%;
+			padding:10px;	
+			font-size: 12pt;
+			font-weight: 400;
+			font-family: "Century Gothic",Helvetica,Arial,sans-serif;	
+			background-color: white;				
+		}
+		.continuous-view-close-btn{
+			position:relative;
+			z-index:10001;
+			color:red;
+		}
+		.continuous-view-btn-toggle{
+			/* initial state hidden*/	
+			display:none;
+		}
+		.modal_lightbox{
+			padding: 1000px 0 1000px;
+			margin: -1000px 0 -1000px;
+			position: relative;
+			background-color: rgba(27,31,40, 0.5);
+			z-index: 10000;
+			float: left;
+			left:0%;
+		}
+		.continuous-view-btn{
+			display:block;
+			position:relative;
+			z-index:9999;
+			color:red;
+		}
+		.ccg_header{
+			position:relative;
+			font-size: 17pt;
+			font-weight: 400;
+			font-family: "Century Gothic",Helvetica,Arial,sans-serif;	
+			background-color: #666;	
+			color:white;
+			
+		}
+		.ajax-changed{
+			display: none;
+		}
+		.modal_lightbox.ajax-changed{
+			display:block;
+		}
+		
+		.continuous-view-btn-close, .continuous-view-button-loaded{
+			display:block;
+			position:relative;
+			z-index:9999;
+			color:red;
+		}
+@media only screen and (min-width: 300px) {
+
+}
+
+@media only screen and (min-width: 480px) { 
+
+}
+
+@media only screen and (min-width: 768px) {  
+
+}
+
+@media only screen and (min-width: 1024px) {
+
+}		

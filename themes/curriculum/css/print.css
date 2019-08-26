@@ -1,0 +1,207 @@
+.noPrint{
+	display:none;	
+}
+#highlighted{
+	display:none;	
+}
+/* ---------- General Layout ---------- */
+
+body,
+input,
+textarea,
+select {
+  color: #000;
+  background: none;
+}
+body.two-sidebars,
+body.sidebar-first,
+body.sidebar-second,
+body {
+  width: 640px;
+}
+#sidebar-first,
+#sidebar-second,
+.navigation,
+#toolbar,
+#footer-wrapper,
+.tabs,
+.add-or-remove-shortcuts {
+  display: none;
+}
+.one-sidebar #content,
+.two-sidebars #content {
+  width: 100%;
+}
+#triptych-wrapper {
+  width: 960px;
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+#triptych-first, #triptych-middle, #triptych-last {
+  width: 250px;
+}
+
+/* ---------- Node Pages ---------- */
+
+#comments .title,
+#comments form,
+.comment_forbidden {
+  display: none;
+}
+.page-curriculum .view-display-id-attachment_3 .view-header{
+	padding-left: 0px !important;		
+}
+.page-curriculum .view-display-id-attachment_2 .view-header{
+	padding-left: 0px !important;	
+}
+
+h2#learning-standards-head{
+	margin-left:-60px !important;
+}
+h3#big-ideas, .big-ideas-attachment .view-content h3.big-ideas{
+	margin-left:-60px !important;
+}
+/*One Pager Styles*/
+#core_competency_subject{
+	display:none;	
+}
+#header{
+	display:none;	
+}
+#curriculum_download{
+	display:none;	
+}
+.view-display-id-attachment_1.big-ideas-attachment{
+	
+}
+.big-idea-item div{
+
+	padding-left:30px !important;
+	float:none !important;
+	height:20px !important;
+	width:100% !important;
+	text-align:left !important;
+}
+.big-idea-item div div{
+	float:none  !important;
+	height: inherit  !important;
+	display:list-item !important;
+	width:100% !important;
+	text-align:left !important;	
+}
+.big-idea-item{
+	float:none !important;
+	height:20px !important;
+	width:100% !important;	
+	background:none !important;
+	padding: none !important;
+	margin-left: none !important;
+	text-align:left !important;	
+	border-bottom: none !important;
+
+}
+.bi .elaboration{
+	display:none !important;	
+}
+.show_all_keyword_elaborations_container{
+	display:none  !important;	
+}
+.view-display-id-attachment_4{
+	display: none;	
+}
+h1.curric_subject{
+	font-size: 3em !important; 
+}
+.views-field-field-alert{
+	display:none !important;	
+}
+h3.big-ideas{
+	margin-left: -30px !important;	
+}
+#learning-standards-head{
+	margin-left: -30px !important;		
+}
+#curric-bottom-links{
+	display:none !important;	
+}
+div.cc, div.concept{
+	display:list-item !important;
+}
+.views-row-1 .cc, .views-row-1 .concept{
+	display: block !important;	
+}
+.messages status, .edit_curriculum{
+	display:none;	
+}
+#grade_picker ul li a{
+	display:none !important;	
+	
+}
+#grade_picker ul li a:before{
+}
+#grade_picker ul li{
+
+}
+#grade_picker.grade_K ul .grade_K a{
+	display: block !important;		
+}
+#grade_picker.grade_1 ul .grade_1 a{
+	display: block !important;	
+}
+#grade_picker.grade_2 ul .grade_2 a{
+	display: block  !important;	
+
+}
+#grade_picker.grade_3 ul .grade_3 a{
+	display: block !important;	
+
+	
+}
+#grade_picker.grade_4 ul .grade_4 a{
+	display: block !important;	
+
+}
+#grade_picker.grade_5 ul .grade_5 a{
+	display: block !important;	
+
+	
+}
+#grade_picker.grade_6 ul .grade_6 a{
+	display: block !important;	
+
+	
+}
+#grade_picker.grade_7 ul .grade_7 a{
+	display: block !important;	
+
+	
+}
+
+#grade_picker.grade_8 ul .grade_8 a{
+	display: block !important;	
+
+	
+}
+#grade_picker.grade_9 ul .grade_9 a{
+	display: block !important;	
+
+	
+}
+#grade_picker.grade_10 ul .grade_10 a{
+	display: block !important;	
+
+	
+}
+#grade_picker.grade_11 ul .grade_11 a{
+	display: block !important;	
+
+	
+}
+#grade_picker.grade_12 ul .grade_12 a{
+	display: block !important;
+}
+.views-field-field-alert{
+	display:none;	
+}
+

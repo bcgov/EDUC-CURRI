@@ -1,0 +1,297 @@
+/* Region Header */
+
+/* ------------------ Header ------------------ */
+
+#skip-link a,#skip-link a:link,#skip-link a:visited {
+    background:#444;
+    background:rgba(0,0,0,0.6);
+    color:#fff;
+    display:block;
+    font-size:.94em;
+    line-height:1.7;
+    padding:1px 10px 2px;
+    text-decoration:none;
+    -khtml-border-radius:0 0 10px 10px;
+    -moz-border-radius:0 0 10px 10px;
+    -webkit-border-top-left-radius:0;
+    -webkit-border-top-right-radius:0;
+    -webkit-border-bottom-left-radius:10px;
+    -webkit-border-bottom-right-radius:10px;
+    border-radius:0 0 10px 10px
+}
+
+#skip-link a:hover,#skip-link a:active,#skip-link a:focus {
+    outline:0
+}
+
+.i18n-fr #logo {
+    background:url(/sites/curriculum.gov.bc.ca/files/gov3_bc_logo_fr.png) no-repeat top left !important;
+	width: 182px;
+}
+
+.i18n-en #logo {
+    background:url(/sites/curriculum.gov.bc.ca/files/gov3_bc_logo.png) no-repeat top left !important;
+}
+
+#logo {
+    width:155px;
+    height:52px;
+    float:left;
+/* LTR */
+    padding:0;
+/* LTR */
+    margin:0;
+    padding-top:0;
+	margin-right:20px;
+}
+
+#logo img {
+    display:none;
+    height:0;
+}
+
+#name-and-slogan {
+    float:left;
+/* LTR */
+    padding-top:34px;
+    margin:0 0 30px 15px
+/* LTR */
+}
+
+
+#site-name {
+    font-size:2em;
+    color:#9d9ba6;
+    color: white;
+    line-height:1em;
+    width: auto;
+    float:left;
+}
+
+h1#site-name {
+    margin-top:10px;
+    margin-bottom:0;
+	font-size: 35px !important;
+	font-weight: 400;
+	font-family: Myriad-Pro, Calibri, Arial, Sans Serif;
+}
+
+#site-name a {
+    font-weight:400
+}
+
+#site-name em {
+    font-style:normal;
+    color:#fff;
+    color: #9d9ba6;
+}
+
+#site-slogan {
+    font-size:.929em;
+    margin-top:7px;
+    word-spacing:.1em;
+    font-style:italic
+}
+
+/* Region navigation blocks. */
+
+.region-navigation #block-superfish-1{
+    z-index: 100;
+    background-color: #CCC;
+    width: 100%;
+    max-width: 1170px;
+    margin: auto;
+
+}
+/* Region header blocks. */
+.region-header{
+	width: 100%;	
+}
+.region-header .block {
+    float:left;
+/* LTR */
+    margin:0;
+    padding:0
+}
+
+.region-header .block .content {
+    margin:0;
+    padding:0
+}
+
+.region-header .block ul {
+    margin:0;
+    padding:0
+}
+
+.region-header .block li {
+    list-style:none;
+    list-style-image:none;
+    padding:0
+}
+
+.region-header .form-text {
+    background:#fefefe;
+    background:rgba(255,255,255,0.7);
+    border-color:#ccc;
+    border-color:rgba(255,255,255,0.3);
+    margin-right:2px;
+/* LTR */
+    width:120px
+}
+
+.region-header .form-text:hover,.region-header .form-text:focus,.region-header .form-text:active {
+    background:#fff;
+    background:rgba(255,255,255,0.8)
+}
+
+.region-header .form-required {
+    color:#eee;
+    color:rgba(255,255,255,0.7)
+}
+
+/* Region header locale switcher */
+.region-header .block.block-locale {
+    position:absolute;
+    top:0;
+    right:0;
+    margin:30px 0 0;
+    font-size:.833em
+}
+
+.region-header .block-locale ul li {
+    display:inline;
+    padding:0 .5em
+}
+
+.region-header .block.block-locale ul li.last {
+    padding-right:0
+}
+
+.region-header .block.block-locale ul li a {
+    color:#D1CFCB
+}
+
+.region-header .block.block-locale ul li.active a {
+    color:#FFF
+}
+
+/* Region header block menus. */
+.region-header .block-menu {
+
+    border:1px solid;
+    border-color:#eee;
+    border-color:rgba(255,255,255,0.2);
+    padding:0;
+    width:208px
+}
+
+.region-header .block-menu li a {
+    display:block;
+    border-bottom:1px solid;
+    border-bottom-color:#eee;
+    border-bottom-color:rgba(255,255,255,0.2);
+    padding:3px 7px
+}
+
+.region-header .block-menu li a:hover,.region-header .block-menu li a:focus,.region-header .block-menu li a:active {
+    text-decoration:none;
+    background:rgba(255,255,255,0.15)
+}
+
+.region-header .block-menu li.last a {
+    border-bottom:0
+}
+
+/* User Login block in the header region */
+.region-header #block-user-login {
+    width:auto
+}
+
+.region-header #block-user-login .content {
+    margin-top:2px
+}
+
+.region-header #block-user-login .form-item {
+    float:left;
+/* LTR */
+    margin:0;
+    padding:0
+}
+
+.region-header #block-user-login div.item-list,.region-header #block-user-login div.description {
+    font-size:.916em;
+    margin:0
+}
+
+.region-header #block-user-login div.item-list {
+    clear:both
+}
+
+.region-header #block-user-login div.description {
+    display:inline
+}
+
+.region-header #block-user-login .item-list ul {
+    padding:0;
+    line-height:1
+}
+
+.region-header #block-user-login .item-list li {
+    list-style:none;
+    float:left;
+/* LTR */
+    padding:3px 0 1px
+}
+
+.region-header #block-user-login .item-list li.last {
+    padding-left:.5em
+/* LTR */
+}
+
+.region-header #block-user-login ul.openid-links li.last {
+    padding-left:0
+/* LTR */
+}
+
+.region-header #user-login-form li.openid-link a,.region-header #user-login li.openid-link a {
+    padding-left:20px
+/* LTR */
+}
+
+.region-header #block-user-login .form-actions {
+    margin:4px 0 0;
+    padding:0;
+    clear:both
+}
+
+.region-header #block-user-login input.form-submit {
+    border:1px solid;
+    border-color:#ccc;
+    border-color:rgba(255,255,255,0.5);
+    background:#eee;
+    background:rgba(255,255,255,0.7);
+    margin:4px 0;
+    padding:3px 8px
+}
+
+.region-header #block-user-login input.form-submit:hover,.region-header #block-user-login input.form-submit:focus {
+    background:#fff;
+    background:rgba(255,255,255,0.9)
+}
+
+/* Search block in region header. */
+.region-header #block-search-form {
+    width:208px
+}
+
+.region-header #block-search-form .form-text {
+    width:154px
+}
+
+/* Language switcher block in region header. */
+.region-header .block-locale ul li {
+    display:inline;
+    padding:0 .5em
+}
+

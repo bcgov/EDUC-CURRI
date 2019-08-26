@@ -1,0 +1,6 @@
+name = Curriculum Subject Landing Pages
+description = Overwrites curriculum "one-pager" view and displays Subject Landing Pages at `/curriculum/[subject-name]`.
+core = 7.x
+version = 7.x-0.1-dev
+package = Curriculum
+dependencies[] = i18n_block

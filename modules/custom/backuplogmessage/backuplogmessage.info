@@ -1,0 +1,7 @@
+name = Backup Log Message
+description = Adds some TODO reminders to the Backup and Migrate module backup form. Custom module for curriculum.gov.bc.ca.
+core = 7.x
+version = 7.x-0.1-dev
+package = Curriculum
+dependencies[] = backup_migrate
+dependencies[] = curriculum_misc

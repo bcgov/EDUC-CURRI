@@ -1,0 +1,337 @@
+<?php
+/**
+ * @file(curriculum_subject_landing_pages.module)
+ */
+
+function curriculum_subject_landing_pages_views_post_render($view, &$output) {
+
+  global $language;
+  $lc = $language->language;
+
+  $language_link = '';
+  if ($lc == 'fr') {
+    $language_link = 'fr/';
+  }
+
+  $selected_subject_landing_pages = null;
+
+  $width_flag = '';
+  $readable_subject = '';
+
+  $url_components = explode('/', request_uri());
+  if ($url_components[1] == 'fr') {
+    array_splice($url_components, 1, 1);
+  }
+
+  // Bail out here if we are on the homepage OR if we are not on a /curriculum page. 
+  if (!isset($url_components[1]) || $url_components[1] !== 'curriculum') { 
+    return; 
+  }
+
+  // We are where we need to be, on a Subject Landing Page.
+  if ((!isset($url_components[3]) || $url_components[3] == '') && isset($url_components[2]) && $url_components[2] !== '' && $view->name == 'curriculum_one_pager') {
+
+    // dpm($view->current_display);
+    // dpm($view->result);
+
+    $subject_url = $url_components[2];
+    
+    // Remove the Big Ideas
+    if ($view->current_display == 'attachment_1') {
+    
+      $output = '';
+     
+      // Add JavaScript
+      drupal_add_js(array('curriculum_subject_landing_pages' => array('language' => $lc)), array('type' => 'setting'));
+      drupal_add_js(drupal_get_path('module', 'curriculum_subject_landing_pages').'/js/curriculum_subject_landing_pages_all.js');
+     
+      if (isset($view->result[0]->field_field_subject[0]['rendered']['#label']) && isset($view->result[0]->_field_data['node_field_data_field_subject_nid']['entity']->title_original)) {
+        
+        // We append a search input to this element with JS
+        $output .= '<div class="subject_landing_page_search"></div>';
+        
+        drupal_add_js(array('curriculum_subject_landing_pages' => array('subject' => $view->result[0]->field_field_subject[0]['rendered']['#label'], 'subject_notranslation' => $view->result[0]->_field_data['node_field_data_field_subject_nid']['entity']->title_original)), array('type' => 'setting')); 
+        
+        drupal_add_js(drupal_get_path('module', 'curriculum_subject_landing_pages').'/js/curriculum_subject_landing_pages.js');
+      
+      }
+
+    } // Big Ideas
+
+    // Remove the courses attachment (the course picker thingy)
+    if ($view->current_display == 'courses_attachment') {
+      $output = '';
+    }
+
+    // If we have a Subject Landing Page content type
+    if (in_array('Subject Landing Page', node_type_get_names())) { 
+
+      // Prepare to inject new content by getting all Subject Landing Pages nodes
+      $query = new EntityFieldQuery();
+
+      $query
+        ->entityCondition('entity_type', 'node')
+        ->entityCondition('bundle', 'subject_landing_page')
+        ->propertyCondition('status', 1);
+
+      $result = $query->execute();
+
+      $nodes = array();
+
+      // We overwrite the 'page' attachment in the view with content retrived from Subject Landing Page nodes
+      if (!empty($result['node']) && $view->current_display == 'page') {
+
+        $nids = array_keys($result['node']);
+        $nodes = node_load_multiple($nids);
+
+        foreach ($nodes as $key => $value) {
+          
+          // Use the title of the node to determine its Subject and parse out
+          // the $subject from the title
+          $subject_title = explode('_', $value->title);
+          $subject_title = strtolower(str_replace(' ', '-', $subject_title[0]));
+          $subject_title = str_replace(',', '', $subject_title);
+
+          // Exceptions for stupid exceptions
+          if ($subject_title == 'applied-design-skills-and-technologies') {
+            $subject_title = 'adst';
+          } 
+          if ($subject_title == 'physical-and-health-education') {
+            $subject_title = 'physical-health-education'; // (remove "and")
+          }
+          if ($subject_title == 'français-langue-première') {
+            $subject_title = 'francais-langue-premiere';
+          } 
+          if ($subject_title == 'français-langue-seconde---immersion') {
+            $subject_title = 'fral';
+          } 
+          
+          // dpm('Subject Title is: '.$subject_title.' Subject URL is: '.$subject_url);
+          
+          // If our subject matches the url subject, append our new content 
+          // using this node's body    
+          if ($subject_title == $subject_url) {
+
+            // dpm($selected_subject_landing_pages);
+
+            $output .= '<div class="subject-landing-page-content">'.$value->body[$lc][0]['value'].'</div>';
+            $width_flag = ' not-needed';
+          } else {
+            if ($width_flag != ' not-needed') {
+              $width_flag = ' full-width'; // for CSS
+            }
+          }
+        
+        } // foreach $nodes
+
+      } // if $view->current_display == 'page'
+    
+    } else { // if we dont have any Subject Landing Pages nodes
+
+      watchdog('curriculum_subject_landing_pages', 'Content Type: Subject Landing Page (\'subject_landing_page\') does not exist. No content is available to add into Subject Landing Pages which subject is: '.$subject_url, NULL, WATCHDOG_ERROR);
+
+    }
+    
+    // Map field "target_id" to subject URL
+    $subjects_mapped = array(
+      'arts-education' => '2447',
+      'english-language-arts' => '8',
+      'core-french' => '5903',
+      'mathematics' => '5',
+      'science' => '6',
+      'adst' => '15150',
+      'career-education' => '14921',
+      'physical-health-education' => '2668',
+      'social-studies' => '7',
+	    'francais-langue-premiere' => '3451',
+	    'fral' => '2958',
+		'additional-offerings' => '83120'
+    );
+
+    // Show random instructional sample of the same Subject, if we have one to show.
+    if (array_key_exists($subject_url, $subjects_mapped)) {
+
+      $query = new EntityFieldQuery();
+
+      $query
+        ->entityCondition('entity_type', 'node')
+        ->entityCondition('bundle', 'contributed_resource')
+        ->fieldCondition('field_subject', 'target_id', $subjects_mapped[$subject_url], '=')
+        ->propertyCondition('status', 1)
+        ->addMetaData('account', user_load(1));
+
+      $result = $query->execute();
+
+      if (!empty($result['node']) && $view->current_display == 'page') {
+
+        $nids = array_keys($result['node']);
+        $nodes = node_load_multiple($nids);
+        $nodes_nids = array_keys($nodes);
+        shuffle($nodes_nids);
+        $chosen_item = $nodes_nids[0];
+
+        if (isset($nodes[$chosen_item]->body[$lc][0]['value'])) {
+
+          //$output .= '<div class="subject-landing-page-random-instructional-sample'.$width_flag.'"><h2 class="example_instructional_sample">'.t('Featured Instructional Sample').'</h2><h3>'.$nodes[$chosen_item]->title.'</h3>'.$nodes[$chosen_item]->body[$lc][0]['value'].' <a href="/node/'.$nodes[$chosen_item]->nid.'">'.t('Continue reading').': <span style="font-style: italic;">'.$nodes[$chosen_item]->title.'</span></a><a style="float: right;" href="/'.$language_link.'instructional-samples">'.t('View all Instructional Samples').'</a></div>';
+
+        }
+        
+      } // if result not empty
+
+    } // if we have any Instructional Samples of the same subject to show
+
+  } // if $view->name == 'curriculum_one_pager'
+
+} // curriculum_subject_landing_pages_views_post_render()
+
+function curriculum_subject_landing_pages_block_view_alter(&$build, $block) {
+
+  /**
+   * Mmmm.... Spaghetti.
+   */
+
+  global $language;
+  $lc = $language->language;
+
+  $language_link = '';
+  if ($lc == 'fr') {
+    $language_link = 'fr/';
+  }
+
+  $url_components = explode('/', request_uri());
+  if ($url_components[1] == 'fr') {
+    array_splice($url_components, 1, 1);
+  }
+
+  // Bail out here if we are on the homepage OR if we are not on a /curriculum page. 
+  if (!isset($url_components[1]) || $url_components[1] !== 'curriculum') { 
+    return; 
+  }
+
+  // We are where we need to be.
+  if ((!isset($url_components[3]) || $url_components[3] == '') && isset($url_components[2]) && $url_components[2] !== '' && $block->bid == 480) {
+
+    $str_pre = strstr($build['content'], '<div id="subject-specific-resources">', TRUE);
+    $str_new = '<div id="subject-specific-resources">';
+
+    $subject_url = $url_components[2];
+
+    // Map field "target_id" to subject URL
+    $subjects_mapped = array(
+      'arts-education' => '2447',
+      'english-language-arts' => '8',
+      'core-french' => '5903',
+      'mathematics' => '5',
+      'science' => '6',
+      'adst' => '15150',
+      'career-education' => '14921',
+      'physical-health-education' => '2668',
+      'social-studies' => '7',
+	  'francais-langue-premiere' => '3451',
+	  'fral' => '2958'
+    );
+
+    if (array_key_exists($subject_url, $subjects_mapped)) {
+
+      $query = new EntityFieldQuery();
+
+      $query
+        ->entityCondition('entity_type', 'node')
+        ->entityCondition('bundle', 'contributed_resource')
+        ->fieldCondition('field_subject', 'target_id', $subjects_mapped[$subject_url], '=')
+        ->propertyCondition('status', 1)
+        ->addMetaData('account', user_load(1));
+
+      $result = $query->execute();
+      if($result['node'] != ""){
+		  $nids = array_keys($result['node']);		  
+		  $nodes = node_load_multiple($nids);
+		  $nodes_nids = array_keys($nodes);
+
+		  if (count($nodes) > 0) {
+			$str_new .= '<h4>'.t('Instructional Samples').'</h4><ul>';
+		  }
+	
+	
+		  if ($lc == 'fr') {
+			$lang_str = '/fr';
+		  } else {
+			$lang_str = '';
+		  }
+	
+		  foreach ($nodes as $node) {
+			if (isset($node->title_field[$lc][0]['value'])) {
+			  $str_new .= '<li><a href="'.$lang_str.'/node/'.$node->nid.'">'.$node->title_field[$lc][0]['value'].'</a></li>';
+			}
+		  }
+	
+		  if (count($nodes) > 0) {
+			$str_new .= '</ul>';
+		  }
+      }
+      
+    } // if we have any Instructional Samples of the same subject to show
+
+    // If we have a Subject Landing Page content type
+    if (in_array('Subject Landing Page', node_type_get_names())) { 
+
+      // Prepare to inject new content by getting all Subject Landing Pages nodes
+      $query = new EntityFieldQuery();
+
+      $query
+        ->entityCondition('entity_type', 'node')
+        ->entityCondition('bundle', 'subject_landing_page')
+        ->propertyCondition('status', 1);
+
+      $result = $query->execute();
+
+      $nodes = array();
+      $nids = array_keys($result['node']);
+      $nodes = node_load_multiple($nids);
+
+      foreach ($nodes as $key => $value) {
+        
+        // Use the title of the node to determine its Subject and parse out
+        // the $subject from the title
+        $subject_title = explode('_', $value->title);
+        $subject_title = strtolower(str_replace(' ', '-', $subject_title[0]));
+        $subject_title = str_replace(',', '', $subject_title);
+
+        // Exceptions for stupid exceptions
+        if ($subject_title == 'applied-design-skills-and-technologies') {
+          $subject_title = 'adst';
+        } 
+        if ($subject_title == 'physical-and-health-education') {
+          $subject_title = 'physical-health-education'; // (remove "and")
+        }
+		
+        if ($subject_title == 'français-langue-première') {
+          $subject_title = 'francais-langue-premiere';
+        } 
+		  
+        if ($subject_title == 'français-langue-seconde---immersion') {
+          $subject_title = 'fral';
+        }
+
+        // If our subject matches the url subject
+        if ($subject_title == $subject_url) {
+
+          if (isset($value->field_slp_footer_resources[$lc][0]['value'])) {
+            $str_new .= $value->field_slp_footer_resources[$lc][0]['value'];
+          }
+
+        } 
+      
+      } // foreach $nodes
+
+    } // If we have a Subject Landing Page content type
+
+    $str_new .= '</div>';
+
+    $str_after = strstr($build['content'], '<div id="general-resources">');
+    
+    $build['content'] = $str_pre.$str_new.$str_after;
+    
+  }
+
+}

@@ -1,0 +1,11 @@
+<?php
+
+/**
+ * Correct URLS for DEV and QA Environments using JS
+ */
+function curriculum_correct_urls_init() {
+	drupal_add_js(drupal_get_path('module', 'curriculum_correct_urls').'/js/curriculum_correct_urls.js');
+} // hook init
+function curriculum_correct_url_node_presave($node) {
+  drupal_set_message($node->nid);
+}

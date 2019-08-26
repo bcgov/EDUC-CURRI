@@ -1,0 +1,360 @@
+<?php
+/**
+ * @file(curriculum_misc.module)
+ */
+
+/**
+ * Implements hook_permission()
+ */
+function curriculum_misc_permission() {
+  return array (
+    'administer_curriculum_misc' => array (
+      'title' => t('Administer the Curriculum Misc module')
+    ),
+  );
+} // curriculum_misc_permission()
+
+/**
+ * Implements hook_menu()
+ */
+function curriculum_misc_menu() {
+  return array (
+    // the admin config page for the module
+    'admin/config/curriculum_misc' => array (
+      'title' => t('Curriculum Misc'),
+      'description' => t('Administer the Curriculum Misc Module'),
+      'access arguments' => array ('administer_curriculum_misc'),
+      'page callback' => 'drupal_get_form',
+      'page arguments' => array ('curriculum_misc_admin_settings_form'),
+    )
+  );
+} // hook_menu()
+
+/**
+ * Implements hook_form()
+ */
+function curriculum_misc_admin_settings_form($node, &$form_state) {
+
+  $form = array();
+
+  $silly_images = array(
+    'http://www.metaltoad.com/sites/default/files/open-source-cms-learning-curve.png',
+    'https://i.ytimg.com/vi/tntOCGkgt98/maxresdefault.jpg'
+  );
+  shuffle($silly_images);
+
+  $form['overview'] = array(
+    '#markup' => '<h3 style="border-bottom: 1px solid #ccc; margin-bottom: 1em;">Configuration Options for the Curriculum Misc Module</h3><img src="'.$silly_images[0].'" style="float: right; width: 410px; border: 0.5em solid white;" /><h4>Curriculum Misc Module Features</h4><ul><li>Press the ESC key to toggle hide/show the admin bar. This is useful for theming.</li><li>Disables the Boost module if not a production enviroment. Enables the Boost module if on the prodcution enviroment.</li><li>Enables the Devel module if not a production enviroment. Disables the Devel module if on the production enviroment.</li><!--<li>Turns off JS aggregation if not a production enviroment.</li>--><li>Changes the main site email address to EDUCWEBS@Victoria1.gov.bc.ca if not a production enviroment and changes the main site email address to educmt@victoria1.gov.bc.ca if this is a production enviroment.</li><li>Crawl /curriculum: The idea is to hit each curriculum page at least once in order to warm the Boost cache on production. Can only be run on a non-production server.</li></ul><hr style="margin: 1rem 0;" /><h4>Crawl curriculum.gov.bc.ca/curriculum</h4>',
+  );
+
+  $form['_rebuild_curric_cache'] = array(
+    '#type' => 'submit',
+    '#value' => t('Crawl Curriculum'),
+    '#submit' => array('_rebuild_curric_cache'),
+  );
+
+  $form['rebuild_desc'] = array(
+    '#markup' => '<p style="margin-top: 0">Rebuilds the production cache of <a target="_blank" href="https://curriculum.gov.bc.ca/curriculum">curriculum.gov.bc.ca/curriculum</a> by crawling it. <strong><span style="color: red;">Highway to the danger zone: This has been known to crash the production site if overused!</span></strong></p><hr style="margin-bottom: 1rem;" /><h4>Set Curriculum Site Production URL</h4>',
+  );
+
+  $form['curriculum_misc_prodURL'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Curriculum production site URL:'),
+    '#default_value' => variable_get('curriculum_misc_prodURL', 'curriculum.gov.bc.ca'),
+    '#description' => 'The URL of the curriculum production server *without* its protocol (<b>example:</b> curriculum.gov.bc.ca).<br>This is used by other modules to determine if they should be enabled or not, depending on which enviroment (<b>example:</b> PROD vs DEV vs QA).',
+    '#required' => TRUE,
+  );
+
+  return system_settings_form($form);
+
+} // curriculum_misc_admin_settings_form()
+
+/**
+ * Validates some of the form values above.
+ */
+function curriculum_misc_admin_settings_form_validate($form, &$form_state) {
+  if (filter_var('http://'.$form_state['values']['curriculum_misc_prodURL'], FILTER_VALIDATE_URL) === FALSE) {
+    form_set_error('curriculum_misc_prodURL', t('Please provide a valid URL without protocols (http: OR https:) or slashes (//).'));
+  }
+}
+
+/*
+ * The helper function that will tell us if we are on the production server or not.
+ */
+function _on_production() {
+  if (strpos($_SERVER['HTTP_HOST'], variable_get('curriculum_misc_prodURL')) !== false) {
+    return TRUE;
+  } else {
+    // drupal_set_message('This is not a production enviroment.');
+    return FALSE;
+  }
+}
+
+/**
+ * Crawls curriculum.gov.bc.ca/curriculum
+ * In order to warm the boost cache after it has been emptied.
+ */
+function _rebuild_curric_cache() {
+
+  if (_on_production()) {
+    drupal_set_message('<strong>You cannot run this procedure on the production server. Go to <a href="https://dev.curriculum.gov.bc.ca/admin/config/curriculum_misc">dev.curriculum.gov.bc.ca/admin/config/curriculum_misc</a> to run the crawler.</strong>', 'error');
+  } else {
+
+    $return_val = '<p>Crawled these pages:<ul>';
+
+    $base_url = 'https://curriculum.gov.bc.ca/curriculum/';
+
+    $subject_slugs = array(
+      'adst',
+      'arts-education',
+      'core-french',
+      'francais-langue-premiere',
+      'fral',
+      'mathematics',
+      'physical-health-education',
+      'science',
+      'social-studies'
+    );
+
+    function get_data_bro($url) {
+      $timeout = 5;
+      $agent = 'Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; .NET CLR 1.0.3705; .NET CLR 1.1.4322)';
+      $ch = curl_init();
+      curl_setopt($ch, CURLOPT_URL, $url);
+      curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+      curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, $timeout);
+      curl_setopt($ch, CURLOPT_USERAGENT, $agent);
+      curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+      $data = curl_exec($ch);
+      curl_close($ch);
+      return $data;
+    }
+
+    $html;
+    $timer = time();
+    $counter = 1;
+
+    foreach ($subject_slugs as $subject_slug) {
+
+      $subject = $subject_slug.'/';
+
+      for ($grade = 0; $grade <= 12; $grade++) {
+
+        if ($grade == 0) {
+          $url = $base_url.$subject.'k';
+        } else {
+          $url = $base_url.$subject.$grade;
+        }
+
+        $html = get_data_bro($url);
+        $return_val .= '<li>'.$counter.' <a href="'.$url.'">'.$url.'</a> ('.time().')</li>';
+
+        // nice little exception for fral
+        if ($subject == 'fral/') {
+          if ($grade == 6 || $grade == 7) {
+            $url = $base_url.$subject.$grade.'T';
+            $html = get_data_bro($url);
+            $return_val .= $counter.' <a href="'.$url.'">'.$url.'</a> ('.time().')</li>';
+          }
+        }
+
+        $counter++;
+
+        // put a little pause in so we don't overload the server.
+        usleep(rand(100000, 250000));
+
+      } // grade level loop
+
+    } // for each
+
+    $return_val .= '</ul></p><p>Procedure took '.(time() - $timer).' seconds.</p>';
+
+    drupal_set_message($return_val);
+
+  } // else is not production server
+
+} // _rebuild_curric_cache()
+
+/**
+ * Adds a message to the Alerts area if we are not on the production server.
+ */
+function _add_not_production_flag($add_or_remove) {
+
+  // query the DB for all of the alerts
+  $query = new EntityFieldQuery();
+  $query->entityCondition('entity_type', 'node')
+  ->entityCondition('bundle', 'alert')
+  ->propertyCondition('status', NODE_PUBLISHED)
+  ->addMetaData('account', user_load(1)); // Run the query as user 1.
+
+  $result = $query->execute();
+
+  // array to hold of the alert titles
+  $alert_titles = array();
+
+  // string to hold the NID of the QA Banner node
+  $qa_banner_nid = '';
+
+  // if we got stuff back from our query...
+  if (isset($result['node'])) {
+    $alert_nids = array_keys($result['node']);
+    $alerts = entity_load('node', $alert_nids);
+    foreach ($alerts as $alert) {
+      // ...we populate the $alert_titles
+      $alert_titles[] = $alert->title;
+      // ...and check if we check if we already have a QA Banner...
+      if ($alert->title == 'QA Banner') {
+        // ...if we do, then we set this variable as a flag for possible deletion
+        $qa_banner_nid = $alert->nid;
+      }
+    }
+  }
+
+  // check if we already have a QA Banner. if we have instruction to add a QA banner, we'll add one now.
+  if (!in_array('QA Banner', $alert_titles) && $add_or_remove == 'add') {
+    $node = new stdClass(); // We create a new node object.
+    $node->type = 'alert';
+    $node->title = 'QA Banner';
+    $node->language = LANGUAGE_NONE; // Or any language code if Locale module is enabled.
+    // $node->path = array('alias' => 'your node path'); // Setting a node path.
+    node_object_prepare($node); // Set default values.
+    $node->uid = 1; // Any id you wish. In this case, admin.
+    $node->field_alert[$node->language][0]['value'] = 'This is a non-production environment. The content you are viewing is not final and is subject to change.';
+    $node->field_alert[$node->language][0]['format'] = 'filtered_html'; // If field has a format, we need to define it. Here we define a default filtered_html format for a body field.
+    $node->field_alert_type[$node->language][0]['value'] = 'Message';
+    $node = node_submit($node); // Prepare the node for a submit.
+    node_save($node); // After this call we'll get a nid returned.
+  }
+
+  // we are probably on the production server and for some reason we already have a QA Banner. possibly from a backup and migrate operation.
+  // we'll remove that via node_delete().
+  if (in_array('QA Banner', $alert_titles) && $add_or_remove == 'remove' && !empty($qa_banner_nid)) {
+    if (node_load($qa_banner_nid)) {
+      node_delete($qa_banner_nid);
+    }
+  }
+
+} // _add_not_production_flag()
+
+/**
+ * Implements hook_init()
+ */
+function curriculum_misc_init() {
+
+  global $user;
+  // CHECK IF THIS IS AN ADMIN VISITING THE SITE
+  if (is_array($user->roles) && in_array('administrator', $user->roles)) { 
+
+    // are we on the production server?
+    if (_on_production()) { // we are!
+
+      // checks if the module is both installed and enabled
+      if (!module_exists('boost')) {
+        module_enable(array('boost', 'boost_crawler'), TRUE);
+        drupal_set_message('The Boost module was not enabled for some reason. It has been enabled it as this is a production environment.', 'warning', FALSE);
+      }
+
+      if (variable_get('site_mail') !== 'educmt@victoria1.gov.bc.ca') {
+        variable_set('site_mail', 'educmt@victoria1.gov.bc.ca');
+        drupal_set_message('The site email address was not set to educmt@victoria1.gov.bc.ca for some reason. It has been set it to educmt@victoria1.gov.bc.ca as this is a production environment.', 'warning', FALSE);
+      }
+
+      // remove the alert that tells users that they are on a non-production environment.
+      // this would display at the top of every page.
+      _add_not_production_flag('remove');
+
+    } else { // we are *NOT* on a production server
+
+      // checks if the module is both installed and enabled
+      if (module_exists('boost')) {
+        module_disable(array('boost_crawler', 'boost'), FALSE);
+        drupal_set_message('The Boost module was enabled for some reason. It has been disabled it as this is a non-production environment.', 'warning', FALSE);
+      }
+
+      if (!module_exists('devel')) {
+        module_enable(array('devel'), TRUE);
+        drupal_set_message('The Devel module was not enabled for some reason. It has been enabled it as this is a non-production environment.', 'warning', FALSE);
+      }
+
+      if (variable_get('site_mail') !== 'EDUCWEBS@Victoria1.gov.bc.ca') {
+        variable_set('site_mail', 'EDUCWEBS@Victoria1.gov.bc.ca');
+        drupal_set_message('The site email address was not set to EDUCWEBS@Victoria1.gov.bc.ca for some reason. It has been set it to the EDUC Web Team email as this is a non-production environment.', 'warning', FALSE);
+      }
+
+      // add the alert that tells users that they are on a non-production environment.
+      // this displays at the top of every page.
+      _add_not_production_flag('add');
+
+    } // not on production server
+
+    if (module_exists('overlay')) {
+      module_disable(array('overlay'), FALSE);
+      drupal_set_message('The Overlay Module is the worst mistake of Drupal 7. Don\'t worry though, it has been disabled.', 'warning', FALSE);
+    }
+
+    // toggle admin bar on ESC keypress
+      drupal_add_css('.hidden { display: none !important; }', array('type' => 'inline'));
+      drupal_add_js('jQuery(document).ready(function () { jQuery(document).keyup(function(e) {
+        if (e.keyCode == 27) {
+          jQuery("#cboxOverlay, #colorbox, #admin-menu, .tabs, .messages, .contextual-links-wrapper").toggleClass("hidden");
+        }
+      }); });',
+        array('type' => 'inline', 'scope' => 'footer', 'weight' => 7)
+      );
+
+  } // IF ADMIN
+
+} // curriculum_misc_init()
+
+/**
+ * Try to fix funky chars in URLs.
+ * https://www.drupal.org/node/1212378
+ */
+function _url_string_replace_some_chars($str) {
+  if (!empty($str)) {
+    // $replacement = array(
+    //   "Č" => "c",
+    //   "č" => "c",
+    //   "Ć" => "c",
+    //   "ć" => "c",
+    //   "ž" => "z",
+    //   "Ž" => "z",
+    //   "š" => "s",
+    //   "Š" => "s",
+    //   "Đ" => "d",
+    //   "đ" => "d",
+    //   // added by JB (below)
+    //   "ç" => "c",
+    //   "è" => "e"
+    // );
+    // foreach ($replacement as $i => $u) {
+    //   $st = mb_ereg_replace($i, $u, $str);
+    // }
+    $normalizeChars = array(
+      'Š'=>'S', 'š'=>'s', 'Ð'=>'Dj','Ž'=>'Z', 'ž'=>'z', 'À'=>'A', 'Á'=>'A', 'Â'=>'A', 'Ã'=>'A', 'Ä'=>'A',
+      'Å'=>'A', 'Æ'=>'A', 'Ç'=>'C', 'È'=>'E', 'É'=>'E', 'Ê'=>'E', 'Ë'=>'E', 'Ì'=>'I', 'Í'=>'I', 'Î'=>'I',
+      'Ï'=>'I', 'Ñ'=>'N', 'Ń'=>'N', 'Ò'=>'O', 'Ó'=>'O', 'Ô'=>'O', 'Õ'=>'O', 'Ö'=>'O', 'Ø'=>'O', 'Ù'=>'U', 'Ú'=>'U',
+      'Û'=>'U', 'Ü'=>'U', 'Ý'=>'Y', 'Þ'=>'B', 'ß'=>'Ss','à'=>'a', 'á'=>'a', 'â'=>'a', 'ã'=>'a', 'ä'=>'a',
+      'å'=>'a', 'æ'=>'a', 'ç'=>'c', 'è'=>'e', 'é'=>'e', 'ê'=>'e', 'ë'=>'e', 'ì'=>'i', 'í'=>'i', 'î'=>'i',
+      'ï'=>'i', 'ð'=>'o', 'ñ'=>'n', 'ń'=>'n', 'ò'=>'o', 'ó'=>'o', 'ô'=>'o', 'õ'=>'o', 'ö'=>'o', 'ø'=>'o', 'ù'=>'u',
+      'ú'=>'u', 'û'=>'u', 'ü'=>'u', 'ý'=>'y', 'ý'=>'y', 'þ'=>'b', 'ÿ'=>'y', 'ƒ'=>'f',
+      'ă'=>'a', 'î'=>'i', 'â'=>'a', 'ș'=>'s', 'ț'=>'t', 'Ă'=>'A', 'Î'=>'I', 'Â'=>'A', 'Ș'=>'S', 'Ț'=>'T',
+    );
+  }
+  return strtr($str, $normalizeChars);;
+}
+
+function curriculum_misc_pathauto_alias_alter(&$alias, array &$context) {
+  $alias = _url_string_replace_some_chars($alias);
+}
+
+// function curriculum_misc_pathauto_punctuation_chars_alter(array &$punctuation) {
+//   $punctuation['cro_char_1'] = array('value' => 'š', 'name' => 'š');
+//   $punctuation['cro_char_2'] = array('value' => 'č', 'name' => 'č');
+//   $punctuation['cro_char_3'] = array('value' => 'ć', 'name' => 'ć');
+//   $punctuation['cro_char_4'] = array('value' => 'đ', 'name' => 'đ');
+//   $punctuation['cro_char_5'] = array('value' => 'ž', 'name' => 'ž');
+//   // added by JB (below)
+//   $punctuation['cro_char_6'] = array('value' => 'ç', 'name' => 'ç');
+//   $punctuation['cro_char_7'] = array('value' => 'è', 'name' => 'è');
+// }

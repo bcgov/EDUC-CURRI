@@ -1,0 +1,250 @@
+/** CSS for curriculum site @ 1170px **/
+@media only screen and (min-width: 1170px){
+
+	#main, #header div.section, #messages div.section, #main, #triptych, #footer-columns, #footer, #featured{
+	
+		min-width:1170px;
+		margin:auto;	
+	}
+	.region-navigation{
+		border-bottom: 1px solid #ccc;	
+	}
+	#featured div.section{
+		width:100%;	
+	}
+	.curric_subject{
+		width: 50%;	
+	}	
+	.i18n-fr h1#site-name {
+		margin-top:10px;
+		margin-bottom:0;
+		font-size: 35px;
+		font-weight: 400;
+		font-family: Myriad-Pro, Calibri, Arial, Sans Serif;
+		margin-top: 15px;
+	
+	/* Homepage Slider Biggest Breakpoint*/
+	}
+.page-home #featured {
+	clear:both;
+}
+
+
+
+.page-home #featured div.section{
+max-width: none !important;
+}
+
+
+
+#block-views-homepage-slideshow-block h2{
+	visibility:hidden;
+	display:none;
+}
+
+.page-home #featured .section {
+	width:100%;
+	max-width: 100%;
+	/*margin:0;*/
+	/*padding:0;*/
+}
+
+#views_slideshow_cycle_teaser_section_homepage_slideshow-block {
+	width:100% !important;
+
+}
+
+
+
+.views-field.views-field-field-slide-image {
+    display: block;
+    visibility: visible;
+}
+
+#views_slideshow_cycle_main_homepage_slideshow-block .views-field-title, #views_slideshow_cycle_main_homepage_slideshow-block .views-field-body{
+
+	
+
+}
+#views_slideshow_cycle_main_homepage_slideshow-block .left-slide .views-field-title, #views_slideshow_cycle_main_homepage_slideshow-block .left-slide .views-field-body{
+	position:relative;
+}
+
+#views_slideshow_cycle_main_homepage_slideshow-block .right-slide .views-field-title, #views_slideshow_cycle_main_homepage_slideshow-block .right-slide .views-field-body{
+	position:relative;
+
+
+}
+
+
+
+#views_slideshow_cycle_main_homepage_slideshow-block .views-field-title .field-content{
+	padding: 20px 20px 0px 20px;
+}
+#views_slideshow_cycle_main_homepage_slideshow-block .views-field-body .field-content{
+	padding: 0px 20px 20px 20px;
+}
+
+#views_slideshow_cycle_main_homepage_slideshow-block .views-field-body .field-content span.languages {
+	font-size:14px;
+	display: block;
+	float: left;
+	margin-top:10px;
+	line-height: 1.8;
+	color: #fff;
+}
+
+#views_slideshow_cycle_main_homepage_slideshow-block .views-field-body .field-content span.languages a {
+		padding: 0px 10px 0px 0px;
+		color: #fff;
+		text-decoration: underline;
+}
+
+#views_slideshow_cycle_main_homepage_slideshow-block .views-field-body .field-content span.languages a:hover {
+	color: rgba(255, 255, 255, 0.8);
+}
+
+#views_slideshow_cycle_main_homepage_slideshow-block .views-field-body .field-content span.languages a + a {
+		border-left: 1px solid #777;
+		padding: 0px 0px 0px 10px;
+
+}
+
+#views_slideshow_cycle_main_homepage_slideshow-block .views-field-body .field-content span.learn-more {
+	font-size:16px;
+	display: block;
+	float: right;
+	margin-top:10px;
+	color: #fff;
+}
+
+#views_slideshow_cycle_main_homepage_slideshow-block .views-field-body .field-content span.learn-more a{
+	color: #fff;
+	text-decoration: underline;
+}
+
+#views_slideshow_cycle_main_homepage_slideshow-block .views-field-body .field-content span.learn-more a:hover{
+	color: rgba(255, 255, 255, 0.8);
+}
+
+.views-slideshow-controls-bottom {
+	width: 100%;
+	margin: 0 auto 0 auto;
+	position: relative;
+	z-index: 12 !important;
+	height: 100px;
+	top: 0;
+	max-width: 1170px;
+	padding-right:0%;
+	
+}
+
+#views_slideshow_controls_text_previous_homepage_slideshow-block a{
+	display:block;
+	background-image: url(/sites/curriculum.gov.bc.ca/themes/curriculum/images/left_slider_arrow.png);
+	width: 0px;
+	height: 0px;
+	padding-left: 26px;
+	padding-top: 51px;
+	overflow: hidden;
+	position: absolute;
+	top: -150px;
+}
+
+#views_slideshow_controls_text_pause_homepage_slideshow-block {
+	display:none;
+	visibility: hidden;
+}
+
+#views_slideshow_controls_text_next_homepage_slideshow-block a{
+	display:block;
+	background-image: url(/sites/curriculum.gov.bc.ca/themes/curriculum/images/right_slider_arrow.png);
+	width: 0px;
+	height: 0px;
+	padding-left: 26px;
+	padding-top: 51px;
+	overflow: hidden;
+	position: absolute;
+	top: -150px;
+}
+#menu-3057-1 .area-of-learning{
+	height:100px;
+	padding: 0 2% !important;
+}
+#views-exposed-form-illustrations-page{
+	width:25%;
+	float:left;
+	background: #fff !important;
+	color: #333;
+	border: 1px solid #ccc;
+}
+.page-search-illustrations #block-system-main{
+	width:73%;
+	float:left;
+	padding-left:10px;
+}	
+.page-competencies-search #block-system-main{
+	width:70%;
+	float:left;
+}
+	/*Illustration Styles*/
+	.group-context{
+		float:left;
+		width:72%;
+		margin-left:3%;
+	}
+	.profiles.count-1 .profile-analysis{
+		width:100%;
+		padding:2%;
+		float: left;
+		display: block;
+		border: 1px solid #ccc;
+
+
+	}
+	.profiles.count-2 .profile-analysis{
+		width:43%;
+		padding:2%;
+		float: left;
+		display: block;
+		border: 1px solid #ccc;
+
+
+	}
+	.profiles.count-3 .profile-analysis,.profiles.count-4 .profile-analysis{
+		width:27%;
+		padding:2%;
+		float: left;
+		display: block;
+		border: 1px solid #ccc;	
+	}
+	.profiles.count-1 .profile-analysis .profile_number{
+		text-align:left;
+	}	
+	/* Illustration Elements*/
+	.node-illustration .group-illustration-elements{
+
+		float: left;
+		border: 1px solid #ccc;
+		width: 22%;
+		margin-top: 19px;
+		padding: 10px;
+	}
+	/* Search Illustrations */
+	#views-exposed-form-illustrations-page{
+		width:25%;
+		float:left;
+		background: #fff !important;
+		color: #333;
+		border: 1px solid #ccc;
+	}
+	.page-search-illustrations #block-system-main{
+		width:73%;
+		float:left;
+		padding-left:10px;
+	}
+	.page-competencies-search #block-system-main{
+		width:70%;
+		float:left;
+	}	
+}

@@ -1,0 +1,323 @@
+<?php
+/* Grade Array */ 
+//grades array will contain a key value pair for the ids of the grade level. This data is static. It will reduce the number of calls to db.
+function get_grades_id_array(){
+$grades = array(
+     "9" => "K",
+    "10" => "1",
+    "11" => "2",
+    "12" => "3",
+    "13" => "4",
+    "14" => "5",
+    "15" => "6",
+    "3770" => "6T",
+    "16" => "7",						
+    "18" => "7T",						
+    "17" => "8",						
+    "18" => "9",						
+    "5904" => "10",						
+    "3890" => "11",
+    "5905" => "12",					
+ );
+ return $grades;
+}
+//subjects array will contain a key value pair for the id of the path reference string. 
+
+function get_subjects_array(){
+	$subjects = "";
+	$query = new EntityFieldQuery();
+	$query->entityCondition('entity_type', 'node'); 
+	$query->entityCondition('bundle', 'subject');
+	$results = $query->execute();  
+	
+	$nodes = node_load_multiple(array_keys($results['node']));
+	foreach($nodes as $node){
+		
+		if($node->field_course_name['en'][0]['value'] == "core"){			
+			$subjects[$node->field_path_reference['und'][0]['value']] = $node->nid;
+		}else{
+			$subjects[$node->field_course_name['en'][0]['value']] = $node->nid;
+		}
+	}
+	return $subjects;
+}
+
+
+function get_ccg_name($nid){
+
+	$query = new EntityFieldQuery();
+	$query->entityCondition('entity_type', 'node'); 
+	$query->entityCondition('bundle', 'curricular_competency_group');
+	$query->propertyCondition('nid', $nid, "=");
+	
+	$result = $query->execute();  
+	
+	$nids = array();
+	if (isset($result['node'])) {
+	  $nids = array_keys($result['node']);
+	  $items = entity_load('node', $nids);
+		foreach($items as $item){
+			return $item->field_heading['en'][0]['value'];
+		}
+	}
+}
+/*
+function get_ccg_id($ccg_title){
+	//drupal_set_message( "get ccg id: $ccg_title");
+
+	$query = new EntityFieldQuery();
+	$query->entityCondition('entity_type', 'node'); 
+	$query->entityCondition('bundle', 'curricular_competency_group');
+	$query->propertyCondition('title', $ccg_title, "=");
+	
+	$result = $query->execute();  
+	$nids = array();
+	if (isset($result['node'])) {
+	  $nids = array_keys($result['node']);
+	  $items = entity_load('node', $nids);
+	  return $nids[0];
+	}else return "_none";
+}
+*/
+function curriculum_continuous_view_page_alter(&$page) {
+// Add a new behavior for the elaboration buttons
+  // Load in our custom JavaScript.
+ drupal_add_js(drupal_get_path('module', 'curriculum_continuous_view') . '/curriculum_continuous_view.js');
+ drupal_add_css(drupal_get_path('module', 'curriculum_continuous_view') . '/css/continuous-view.css', array('group' => CSS_DEFAULT, 'every_page' => TRUE));
+
+  // Load in Drupal core AJAX library.
+  drupal_add_library('system', 'drupal.ajax');
+
+}
+
+/**
+ * Implements hook_menu().
+ */
+ 
+function curriculum_continuous_view_menu() {
+
+  // Returns AJAX commands if the user has JavaScript turned on.
+  $items['curriculum/%/%/%/ccg/%/ajax'] = array(
+    'title' => 'Continuous views ajax callback',
+    'page callback' => 'curriculum_continuous_ccg_view_ajax_callback',
+    'page arguments' => array(1,2,3,5),
+	'access arguments' => array('access content'),
+    'type' => MENU_CALLBACK,
+  );
+  // Returns a Non-JavaScript alternative.
+  $items['curriculum/%/%/%/ccg/%/nojs'] = array(
+    'title' => 'Continuous views non-javascript callback',
+    'page callback' => 'curriculum_continuous_ccg_view_nojs_callback',
+    'access arguments' => array('access content'),
+    'type' => MENU_CALLBACK,
+  );
+    // Returns AJAX commands if the user has JavaScript turned on.
+  $items['curriculum/%/%/%/bi/ajax'] = array(
+    'title' => 'Continuous views ajax callback',
+    'page callback' => 'curriculum_continuous_bi_view_ajax_callback',
+    'page arguments' => array(1,2,3),
+	'access arguments' => array('access content'),
+    'type' => MENU_CALLBACK,
+  );
+  // Returns a Non-JavaScript alternative.
+  $items['curriculum/%/%/%/bi/nojs'] = array(
+    'title' => 'Continuous views non-javascript callback',
+    'page callback' => 'curriculum_continuous_bi_view_nojs_callback',
+    'access arguments' => array('access content'),
+    'type' => MENU_CALLBACK,
+  );
+  
+  return $items;
+  
+}			
+
+
+
+/**
+ * AJAX callback that prints the CCG continuous View
+ */
+function curriculum_continuous_bi_view_ajax_callback($subject, $grade, $course) {
+
+ 	global $language ;
+	$current_language = $language->language;
+	
+	$subjects = get_subjects_array();
+	$grades = get_grades_id_array();
+	$query = new EntityFieldQuery();
+	$query->entityCondition('entity_type', 'node');
+	$query->entityCondition('bundle','big_idea');
+	//check if course is core
+	if($course != "core"){
+		$query->fieldCondition('field_subject', 'target_id', $subjects[$course], '=');		
+	}else{
+		$query->fieldCondition('field_subject', 'target_id', $subjects[$subject], '=');		
+	}
+	$query->propertyCondition('status', 1);
+
+	
+
+	$results = $query->execute();  
+	$nodes = node_load_multiple(array_keys($results['node']));
+
+	//group content by loadingin in to a multidemensional array
+	$bi_group= "";
+	foreach($nodes as $node){
+		//drupal_set_message($grades[$node->field_grade['und'][0]['target_id']] . "\t" . $node->field_curricular_competency[$current_language][0]['value'] . $node->nid);
+		$bi_group[$grades[$node->field_grade['und'][0]['target_id']]] .= "<li>" . $node->field_big_idea[$current_language][0]['value'] . "</li>";	
+	}
+	$output ="";
+	$active_class = "";
+	for($i=0; $i<12; $i++){
+		//add the active class
+		if($i == $grade){
+			$active_class = "cv_default_grade";
+		}else{
+			$active_class = "";	
+		}
+		//add the 
+		if($i == 0 && isset($bi_group["K"])){
+			if($current_language == "en"){
+				$output .= "<div class='continuous-view-group grade-" . $i . " " . $active_class . "'><a name='kindergarten'></a><h4>Kindergarten</h4><ul>" . $bi_group["K"] . "</ul></div>";
+			}else{
+				$output .= "<div class='continuous-view-group grade-" . $i . " " . $active_class. "'><a name='kindergarten'></a><h4>Jardin d'enfants</h4><ul>" . $bi_group["K"] . "</ul></div>";
+			}				
+		}
+		else if(isset($bi_group[$i])){
+
+			$output .= "<div class='continuous-view-group grade-" . $i . " " . $active_class . "'><a name='grade_" . $i . "'></a><h4>Grade " . $i. "</h4><ul>" . $bi_group[$i] . "</ul></div>";	
+
+		}
+		
+	}
+	$output = '<div class="modal_content"><a class="continuous-view-button-loaded">X</a><div class=bi_header"> Big Ideas</div><div class="continuous-view active"><div class="continuous-view-all-grades">' . $output  . '</div></div></div>';
+	
+	//$output = '<div class="modal_content"><div class="continuous-view active"><div class="continuous-view-all-grades">' . $output  . '</div></div></div>';
+
+  // Define a new array to hold our AJAX commands.
+  $ajax_commands = array();
+    
+
+  
+  
+
+	
+   // Create a new AJAX command that replaces the #page text with our own text.
+  	$ajax_commands[] = ajax_command_changed('#big_ideas');
+	$ajax_commands[] = ajax_command_changed('#continuous-view-bi');		
+	$ajax_commands[] = ajax_command_html('#continuous-view-bi', $output );		
+  // Return our commands in JSON.
+  	ajax_deliver(array('#type' => 'ajax', '#commands' => $ajax_commands)); 
+}
+
+	
+/**
+ * Non-JavaScript callback that returns hello world.
+ */
+function curriculum_continuous_bi_view_nojs_callback() {
+  return "NOJS";
+}
+
+
+
+/**
+ * AJAX callback that prints the CCG continuous View
+ */
+function curriculum_continuous_ccg_view_ajax_callback($subject, $grade, $course, $cc_group) {
+
+ 	global $language ;
+	$current_language = $language->language;
+
+	
+	$subjects = get_subjects_array();
+	$grades = get_grades_id_array();
+	$query = new EntityFieldQuery();
+	$query->entityCondition('entity_type', 'node');
+	$query->entityCondition('bundle','curricular_competency');
+	if($cc_group != "no-ccg"){
+		$query->fieldCondition('field_curricular_competency_grou', 'target_id', $cc_group, '=');
+	}
+	
+	//check if course is core
+	if($course != "core"){
+		$query->fieldCondition('field_subject', 'target_id', $subjects[$course], '=');		
+	}else{
+		$query->fieldCondition('field_subject', 'target_id', $subjects[$subject], '=');		
+	}
+	$query->propertyCondition('status', 1);
+
+	
+
+	$results = $query->execute();  
+	$nodes = node_load_multiple(array_keys($results['node']));
+
+	//group content by loadingin in to a multidemensional array
+	$cv_groups= "";
+	foreach($nodes as $node){
+		//drupal_set_message($grades[$node->field_grade['und'][0]['target_id']] . "\t" . $node->field_curricular_competency[$current_language][0]['value'] . $node->nid);
+		$cv_groups[$grades[$node->field_grade['und'][0]['target_id']]] .= "<li>" . $node->field_curricular_competency[$current_language][0]['value'] . "</li>";	
+	}
+	
+	$output ="";
+	$active_class = "";
+	for($i=0; $i<12; $i++){
+		
+		//set the row as odd or even
+		$row_class ="";
+		if(($i%2)==0){
+			$row_class = "even"; 	
+		}else{
+			$row_class="odd"; 
+		}	
+		
+		//add the active class
+		if($i == $grade){
+			$active_class = "cv_default_grade";
+		}else{
+			$active_class = "";	
+		}
+		//add the continuous-view grades
+		if($i == 0 && isset($cv_groups["K"])){
+				if($current_language == "en"){
+					$output .= "<div class='continuous-view-group grade-" . $i . " " . $active_class . " even'><a name='kindergarten'></a><h4>Kindergarten</h4><ul>" . $cv_groups["K"] . "</ul></div>";
+				}else{
+					
+	
+					
+					$output .= "<div class='continuous-view-group grade-" . $i . " " . $active_class. " even'><a name='kindergarten'></a><h4>Jardin d'enfants</h4><ul>" . $cv_groups["K"] . "</ul></div>";
+				}				
+		}
+		// 1-9
+		else if(isset($cv_groups[$i])){
+
+			$output .= "<div class='continuous-view-group grade-" . $i . " " . $active_class . " " . $row_class . "'><a name='grade_" . $i . "'></a><h4>Grade " . $i. "</h4><ul>" . $cv_groups[$i] . "</ul></div>";	
+
+		}
+		
+	}
+	$output = '<div class="modal_content"><a class="continuous-view-button-loaded">X</a><div class="ccg_header">'. get_ccg_name($cc_group) . '</div><div class="continuous-view active"><div class="continuous-view-all-grades">' . $output  . '</div></div></div>';
+	
+	
+	
+	
+	
+  // Define a new array to hold our AJAX commands.
+  $ajax_commands = array();
+	
+   // Create a new AJAX command that replaces the #page text with our own text.
+
+  	$ajax_commands[] = ajax_command_changed('#ccg-id-' . $cc_group);
+	$ajax_commands[] = ajax_command_html('#continuous-view-ccg-id-' . $cc_group, $output );	
+		
+  // Return our commands in JSON.
+  	ajax_deliver(array('#type' => 'ajax', '#commands' => $ajax_commands)); 
+}
+
+	
+/**
+ * Non-JavaScript callback that returns hello world.
+ */
+function curriculum_continuous_cgg_view_nojs_callback() {
+  return "NOJS";
+}
+
+?>

@@ -1,0 +1,5 @@
+<FilesMatch "(registry_rebuild\.php)|(cc\.php)">
+Order Deny,Allow
+Deny from all
+Allow from 142.36.65
+</FilesMatch>

@@ -1,0 +1,18 @@
+(function($) {
+  Drupal.behaviors.curriculum_correct_urls= {
+    attach: function(context, settings) {
+		if(window.location.hostname == "qa.curriculum.gov.bc.ca"){
+
+			$('a').each(function() {
+				('href',link.replace("/\bcurriculum.gov.bc.ca\b/", "/qa.curriculum.gov.bc.ca"));
+			});
+		
+
+			
+		}
+
+		
+		
+	 }
+  };
+})(jQuery);

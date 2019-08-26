@@ -1,0 +1,355 @@
+/* Styles for Pages specified by Node id*/
+
+
+/******************************/
+/******************************/
+/**  SUB PAGE INOFOGRAPHIC   **/
+/******************************/
+/******************************/
+
+/* styles for sub-page infographics */
+/* there is probably a better way to do this... like having the infographics in a different region */
+
+.page-node-32639 {}
+.page-node-32640 {}
+
+.page-node-32641 {}
+.page-node-32642 {}
+
+.page-node-32643 {}
+.page-node-32644 {}
+
+.page-node-31091 #page, .page-node-31091 #main-wrapper, .page-node-31093 #page, .page-node-31093 #main-wrapper, .page-node-31094 #page, .page-node-31094 #main-wrapper, .page-node-31099 #page, .page-node-31099 #main-wrapper, .page-node-32639 #page, .page-node-32639 #main-wrapper, .page-node-32640 #page, .page-node-32640 #main-wrapper, .page-node-32641 #page, .page-node-32641 #main-wrapper, .page-node-32642 #page, .page-node-32642 #main-wrapper, .page-node-32643 #page, .page-node-32643 #main-wrapper, .page-node-32644 #page, .page-node-32644 #main-wrapper {
+background-image:none !important;
+background-color:#1B1F28 !important;
+}
+
+.page-node-31091 #featured, .page-node-31093 #featured, .page-node-31094 #featured, .page-node-31099 #featured, .page-node-32639 #featured, .page-node-32640 #featured, .page-node-32641 #featured, .page-node-32642 #featured, .page-node-32643 #featured, .page-node-32644 #featured {
+	width:100%;
+	margin:0 auto 0 auto;
+	padding:0;
+	text-align: left;
+    font-size: 1.643em;
+    font-weight: normal;
+    line-height: 1.4;
+    background: none;
+    border-bottom: none;
+    text-shadow: none;
+	position:relative;
+	z-index: 1 !important;
+	margin-bottom: -3px;
+}
+
+
+/******* STYLE BLOCK FOR PROD - PAGE NODES NOT THE SAME - because recreated in Drup instead of backup and migrate ******/
+/***********************************************************************************************************************/
+
+
+
+.page-node-31091 #page, .page-node-31091 #main-wrapper, .page-node-31093 #page, .page-node-31093 #main-wrapper, .page-node-31094 #page, .page-node-31094 #main-wrapper, .page-node-31099 #page, .page-node-31099 #main-wrapper, .page-node-31620 #page, .page-node-31620 #main-wrapper, .page-node-31621 #page, .page-node-31621 #main-wrapper, .page-node-31626 #page, .page-node-31626 #main-wrapper, .page-node-31623 #page, .page-node-31623 #main-wrapper, .page-node-31624 #page, .page-node-31624 #main-wrapper, .page-node-31625 #page, .page-node-31625 #main-wrapper, .page-node-36838 #page, .page-node-36839 #page, .page-node-36840 #page, .page-node-36838 #main-wrapper, .page-node-36839 #main-wrapper, .page-node-36840 #main-wrapper, .page-node-31632 #page, .page-node-31631 #page, .page-node-31630 #page, .page-node-31632 #main-wrapper, .page-node-31631 #main-wrapper, .page-node-31630 #main-wrapper {
+background-image:none !important;
+background-color:#1B1F28 !important;
+}
+
+.page-node-31091 #featured, .page-node-31093 #featured, .page-node-31094 #featured, .page-node-31099 #featured, .page-node-31620 #featured, .page-node-31621 #featured, .page-node-31626 #featured, .page-node-31623 #featured, .page-node-31624 #featured, .page-node-31625 #featured, .page-node-36838 #featured, .page-node-36839 #featured, .page-node-36840 #featured, .page-node-31632 #featured, .page-node-31631 #featured, .page-node-31630 #featured  {
+	width:100%;
+	margin:0 auto 0 auto;
+	padding:0;
+	text-align: left;
+    font-size: 1.643em;
+    font-weight: normal;
+    line-height: 1.4;
+    background: none;
+    border-bottom: none;
+    text-shadow: none;
+	position:relative;
+	z-index: 1 !important;
+	margin-bottom: -3px;
+}
+
+.page-node-32639 .story_read_more, .page-node-32640 .story_read_more, .page-node-32641 .story_read_more, .page-node-32642 .story_read_more, .page-node-32643 .story_read_more, .page-node-32644 .story_read_more, .page-node-36838 .story_read_more, .page-node-36839 .story_read_more, .page-node-36840 .story_read_more {
+		text-align:center;
+		padding-bottom: 0 !important;
+}
+
+.page-node-32639 .story_read_more a, .page-node-32640 .story_read_more a, .page-node-32641 .story_read_more a, .page-node-32642 .story_read_more a, .page-node-32643 .story_read_more a, .page-node-32644 .story_read_more a, .page-node-36838 .story_read_more a, .page-node-36839 .story_read_more a, .page-node-36840 .story_read_more a{
+	background: transparent url(/sites/curriculum.gov.bc.ca/themes/curriculum/images/stories/right_swirl_arrow.png) no-repeat 100% 40%;
+	padding: 10px 60px 10px 0px;
+	font-size: 18px;
+
+}
+
+
+.page-node-31091 h1#page-title, .page-node-31093 h1#page-title, .page-node-31094 h1#page-title, .page-node-31099 h1#page-title, .page-node-32639 h1#page-title, .page-node-32640 h1#page-title, .page-node-32641 h1#page-title, .page-node-32642 h1#page-title, .page-node-32643 h1#page-title, .page-node-32644 h1#page-title, .page-node-36838 h1#page-title, .page-node-36839 h1#page-title, .page-node-36840 h1#page-title {
+	display: none;
+	visibility: hidden;
+}
+
+
+
+.page-node-31620 .story_read_more, .page-node-31621 .story_read_more, .page-node-31626 .story_read_more, .page-node-31623 .story_read_more, .page-node-31624 .story_read_more, .page-node-31625 .story_read_more, .page-node-31632 .story_read_more, .page-node-31631 .story_read_more, .page-node-31630 .story_read_more {
+		text-align:center;
+		padding-bottom: 0 !important;
+}
+
+.page-node-31620 .story_read_more a, .page-node-31621 .story_read_more a, .page-node-31626 .story_read_more a, .page-node-31623 .story_read_more a, .page-node-31624 .story_read_more a, .page-node-31625 .story_read_more a, .page-node-31632 .story_read_more a, .page-node-31631 .story_read_more a, .page-node-31630 .story_read_more a{
+	background: transparent url(/sites/curriculum.gov.bc.ca/themes/curriculum/images/stories/right_swirl_arrow.png) no-repeat 100% 40%;
+	padding: 10px 60px 10px 0px;
+	font-size: 18px;
+
+}
+/* Needs to be reviewed and not hidden*/
+.page-node-31091 h1#page-title, .page-node-31093 h1#page-title, .page-node-31094 h1#page-title, .page-node-31099 h1#page-title, .page-node-31620 h1#page-title, .page-node-31621 h1#page-title, .page-node-31626 h1#page-title, .page-node-31623 h1#page-title, .page-node-31624 h1#page-title, .page-node-31625 h1#page-title, .page-node-31632 h1#page-title, .page-node-31631 h1#page-title, .page-node-31630 h1#page-title {
+	display: none;
+	visibility: hidden;
+}
+
+
+
+/**** Curricular Competency Page Styles *****/
+
+/* Communication Competency Page */
+body.page-node-2656 #content #page-title,body.page-node-2656 #content strong,body.page-node-2656 #content a {
+    color:#e48456
+}
+
+body.page-node-2656 #content #block-system-main .content {
+/*background: url('/sites/curriculum.gov.bc.ca/files/pdf/communication_bg.png') no-repeat left top !important;*/
+}
+
+body.page-node-2656 #content p.communication_profiles {
+    background:url(/sites/curriculum.gov.bc.ca/files/pdf/communication_profiles_cover_thumb.png) no-repeat left 30px!important;
+    padding-left:160px!important
+}
+
+body.page-node-2656 #content p.communication_profiles_fr {
+    background:url(/sites/curriculum.gov.bc.ca/files/pdf/communication_profiles_cover_thumb_fr2.png) no-repeat left 0!important;
+    padding-left:160px!important
+}
+
+body.page-node-2656 #content p.communication_profiles strong {
+    margin-left:-160px
+}
+
+body.page-node-2656 #page-title {
+    background:#fff url(/sites/curriculum.gov.bc.ca/files/pdf/core_comp_c_orange_small.png) no-repeat 3% center !important;
+	width: 84% !important;
+	color: #444;
+	padding: 20px 80px !important	
+
+}
+
+body.page-node-2664 #page-title {
+    background:#fff url(/sites/curriculum.gov.bc.ca/files/pdf/core_comp_c_cyan_small.png) no-repeat 3% center !important;
+	width: 84% !important;
+	color: #444;
+	padding: 20px 80px !important	
+}
+
+/* Creative Thinking Competency Page */
+body.page-node-2664 #content #page-title,body.page-node-2664 #content strong,body.page-node-2664 #content a {
+    color:#11a2c6
+}
+
+body.page-node-2664 #content p.thinking_profiles {
+    background:url(/sites/curriculum.gov.bc.ca/files/pdf/creativethinking_profiles_cover_thumb.png) no-repeat left 30px !important;
+    padding-left:160px !important
+}
+
+body.page-node-2664 #content p.thinking_profiles_fr {
+    background:url(/sites/curriculum.gov.bc.ca/files/pdf/creativethinking_profiles_cover_thumb_fr.png) no-repeat left 0!important;
+    padding-left:160px!important
+}
+
+body.page-node-2664 #content p.thinking_profiles strong {
+    margin-left:-160px
+}
+
+/* Critical Thinking Page */
+body.page-node-3864 #content #page-title,body.page-node-3864 #content strong,body.page-node-3864 #content a,body.page-node-3864 #content h2 {
+    color:#006fba
+}
+
+body.page-node-3864 #content p.thinking_profiles {
+    background:url(/sites/curriculum.gov.bc.ca/files/pdf/criticalthinking_profiles_cover_thumb.png) no-repeat left 0!important;
+    padding-left:160px!important
+}
+
+
+body.page-node-3864 #content p.thinking_profiles_fr {
+    background:url(/sites/curriculum.gov.bc.ca/files/pdf/criticalthinking_profiles_cover_thumb_fr.png) no-repeat left 0!important;
+    padding-left:160px!important
+}
+
+body.page-node-3864 #content p.thinking_profiles strong {
+    margin-left:-160px
+}
+
+body.page-node-3864 #page-title {
+    background:#fff url(/sites/curriculum.gov.bc.ca/files/pdf/core_comp_ct_blue_small.png) no-repeat 3% center !important;
+	width: 84% !important;
+	color: #444;
+	padding: 20px 80px !important	
+	
+}
+
+.i18n-fr body.page-node-3864 #page-title {
+    background:#fff url(/sites/curriculum.gov.bc.ca/files/pdf/core_comp_r_blue_small.png) no-repeat .8333em center!important;
+    padding-left:2.137em;
+    width:13.1963em
+}
+
+/* PPCI Competency Page */
+body.page-node-2665 #content #page-title,body.page-node-2665 #content strong,body.page-node-2665 #content a {
+    color:#80ba69
+}
+
+body.page-node-10001 #content #page-title,body.page-node-10001 #content strong,body.page-node-10001 #content a {
+    color:#4AC81E;
+}
+
+body.page-node-10002 #content #page-title,body.page-node-10002 #content strong,body.page-node-10002 #content a {
+    color:#00965c
+}
+
+body.page-node-2665 #content p.personalsocial_profiles {
+    background:url(/sites/curriculum.gov.bc.ca/files/pdf/ppci_profiles_cover_thumb.png) no-repeat left 30px!important;
+    padding-left:160px!important
+}
+
+body.page-node-10001 #content p.personalsocial_profiles {
+    background:url(/sites/curriculum.gov.bc.ca/files/pdf/personal_awareness_responsibility_profiles_cover_thumb.png) no-repeat left 30px !important;
+    padding-left:160px!important
+}
+
+body.page-node-10001 #content p.personalsocial_profiles_fr {
+    background:url(/sites/curriculum.gov.bc.ca/files/pdf/personal_awareness_responsibility_profiles_cover_thumb_fr.png) no-repeat left 30px !important;
+    padding-left:160px!important
+}
+
+body.page-node-10002 #content p.personalsocial_profiles {
+    background:url(/sites/curriculum.gov.bc.ca/files/pdf/social_responsibility_profiles_cover_thumb.png) no-repeat left 30px!important;
+    padding-left:160px!important
+}
+
+body.page-node-10002 #content p.personalsocial_profiles_fr {
+    background:url(/sites/curriculum.gov.bc.ca/files/pdf/social_responsibility_profiles_cover_thumb_fr.png) no-repeat left 30px!important;
+    line-height: 1.5em;
+    margin-left: 3%;
+    width: 90%;
+    padding-left: 5%;
+}
+
+body.page-node-2665 #content p.personalsocial_profiles_fr {
+    background:url(/sites/curriculum.gov.bc.ca/files/pdf/ppci_profiles_cover_thumb_fr.png) no-repeat left 0!important;
+    padding-left:160px!important
+}
+
+p.personalsocial_profiles strong,t p.personalsocial_profiles strong.body.page-node-2665 #content p.personalsocial_profiles strong {
+    margin-left:-160px
+}
+
+body.page-node-2665 #page-title {
+    background: #fff url(/sites/curriculum.gov.bc.ca/files/pdf/core_comp_ps_green_small.png) no-repeat 3% center !important;
+	width: 84% !important;
+	color: #444;
+	padding: 20px 80px !important	
+}
+
+body.page-node-10001 #page-title {
+    background:#fff url(/sites/curriculum.gov.bc.ca/files/pdf/core_comp_par_green_small.png) no-repeat 3% center!important;
+	width: 84% !important;
+	color: #444;
+	padding: 20px 80px !important	
+}
+
+body.page-node-10002 #page-title {
+    background:#fff url(/sites/curriculum.gov.bc.ca/files/pdf/core_comp_sr_green_small.png) no-repeat 3% center!important;
+	width: 84% !important;
+	color: #444;
+	padding: 20px 80px !important	
+
+}
+
+#node-2311 .field-type-image img {
+    width:436px;
+    height:auto;
+}
+
+
+.page-node-done #block-system-main .content .webform-confirmation {
+    background:#fff;
+    padding-left:2.5em
+}
+
+.page-node-done #block-system-main .content .links {
+    background:#fff;
+    padding-left:2.5em;
+    padding-bottom:20px
+}
+
+.page-node #block-system-main .content .node-illustrations .field-type-image img {
+    width:auto
+}
+
+
+
+.page-node #block-system-main .content .node-illustrations .field-name-field-images .field-items .field-item {
+    float:left;
+    margin-left:0;
+    margin-right:10px;
+    width:220px
+}
+
+.page-node #block-system-main .content .node-illustrations .group-profile-summary {
+    clear:both;
+    float:none
+}
+
+body.page-node-2892 li.profile_overview {
+    background:url(/sites/curriculum.gov.bc.ca/files/pdf/communication_profiles_overview_thumb.png) no-repeat left center!important;
+    padding-left:160px
+}
+
+body.page-node-2892 li.profile_diagram {
+    background:url(/sites/curriculum.gov.bc.ca/files/pdf/communication_profiles_diagram_thumb.png) no-repeat left center!important;
+    padding-left:160px;
+    padding-top:90px;
+    padding-bottom:110px
+}
+
+body.page-node-2892 li.profile_profiles {
+    background:url(/sites/curriculum.gov.bc.ca/files/pdf/communication_profiles_profiles_thumb.png) no-repeat left center!important;
+    padding-left:160px;
+    padding-top:50px;
+    padding-bottom:60px
+}
+
+body.page-node-2892 li.profile_illustrations {
+    background:url(/sites/curriculum.gov.bc.ca/files/pdf/communication_profiles_illustrations_thumb.png) no-repeat left center!important;
+    padding-left:160px;
+    padding-top:40px;
+    padding-bottom:40px
+}
+
+body.page-node-2899 ul.connections-profiles {
+    background:url(/sites/curriculum.gov.bc.ca/files/pdf/communication_profiles_profiles_thumb.png) no-repeat left top!important;
+    padding-left:180px
+}
+
+body.page-node-2899 ul.connections-curricular {
+    background:url(/sites/curriculum.gov.bc.ca/files/pdf/curricular_competencies_thumb.png) no-repeat left top!important;
+    padding-left:180px
+}
+.page-node-18734 .content table tr td{
+  width: 50%;
+  padding: 15px;
+  border: 5px solid #FFF;
+  padding-left: 50px;
+}
+.node-type-illustration h2{
+	padding-bottom:5px;
+	border-bottom: 1px solid #ccc;	
+}
+}
+

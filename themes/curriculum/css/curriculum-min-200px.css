@@ -1,0 +1,40 @@
+/** CSS for curriculum site @ 400px**/
+
+@media all and (min-width: 200px) and (max-width:767px) {
+	.language-switcher{
+		top: 26px;
+		left: -70px;
+	}
+
+	h1#site-name{
+		visibility:hidden;
+	}
+	#views-exposed-form-illustrations-page{
+		width: 100%;
+		float:left;
+		background: #fff !important;
+		color: #333;
+		border: 1px solid #ccc;
+	}
+	input.form-submit, a.button{
+		margin-left: 38px;
+	}
+	.illustration-image {
+    	width: 100%;
+	}
+	.illustration-image blockquote {
+		width: 100%;
+		margin-top: none;
+		display: inline-block;
+	}
+	.profile-analysis.communication {
+    	margin-left: 0%;
+	}
+	.node-illustration .group-illustration-elements {
+    	width: 94%;
+	}
+	.node-type-illustration h2 {
+    	width: 97%;
+	}
+
+}

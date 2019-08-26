@@ -1,0 +1,7 @@
+name = Curriculum Continuous View
+description = Adds Functionallity for continous views on the one pager
+package = Curriculum
+version = VERSION
+core = 7.x
+# configure = admin/settings/curriculum_continuous_view
+files[] = curriculum_continuous_view.module

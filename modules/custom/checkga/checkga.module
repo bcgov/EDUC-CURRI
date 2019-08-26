@@ -1,0 +1,162 @@
+<?php
+/**
+ * @file(checkga.module)
+ */
+
+
+/**
+ * Implements hook_permission()
+ */
+function checkga_permission() {
+  return array (
+    'administer_checkga' => array (
+      'title' => t('Administer the Check Google Analytics module')
+    ),
+  );
+} // checkga_permission()
+
+/**
+ * Implements hook_menu()
+ */
+function checkga_menu() {
+  return array (
+    // the admin config page for the module
+    'admin/config/checkga' => array (
+      'title' => t('Check Google Analytics Module'),
+      'description' => t('Administer Check Google Analytics Module'),
+      'access arguments' => array ('administer_checkga'),
+      'page callback' => 'drupal_get_form',
+      'page arguments' => array ('checkga_admin_settings_form'),
+    )
+  );
+} // hook_menu()
+
+/**
+ * Implements hook_form()
+ */
+function checkga_admin_settings_form($node, &$form_state) {
+
+  $form = array();
+
+  $form['overview'] = array(
+    '#markup' => '<h3>Configuration for the Check Google Analytics Module</h3>',
+  );
+
+  $form['checkga_prodURL'] = array(
+    '#type' => 'textfield',
+    '#title' => t('The URL of your production server:'),
+    '#default_value' => variable_get('checkga_prodURL', $_SERVER['HTTP_HOST']),
+    '#description' => 'The URL of your production server *without* its protocol (example: mydomain.com). Google Analytics will be enabled on this domain and dissabled on other (non-production) domains.',
+    '#required' => TRUE,
+  );
+
+  $footertext = variable_get('checkga_footertext') ?: 'This text shows up in the footer.';
+
+  $form['checkga_footertext'] = array(
+    '#type' => 'text_format',
+    '#title' => t('Optional Privacy Notice'),
+    '#description' => 'Optional. A privacy notice that will be attached to the footer on your site.',
+    '#rows' => 10,
+    '#default_value' => $footertext['value'] ?: 'This text shows up in the footer.'
+  );
+
+  return system_settings_form($form);
+
+} // checkga_admin_settings_form()
+
+/**
+ * Validates some of the form values.
+ */
+function checkga_admin_settings_form_validate($form, &$form_state) {
+  if (filter_var('http://'.$form_state['values']['checkga_prodURL'], FILTER_VALIDATE_URL) === FALSE) {
+    form_set_error('checkga_prodURL', t('Please provide a valid URL without protocols (http: OR https:) or slashes (//).'));
+  }
+}
+
+/**
+ * Implements hook_init()
+ */
+function checkga_init() {
+
+  global $user;
+  // CHECK IF THIS IS AN ADMIN 
+  if (is_array($user->roles) && in_array('administrator', $user->roles)) { 
+
+    // check if we are on a production server
+    if (strpos($_SERVER['HTTP_HOST'], variable_get('checkga_prodURL', 'mydomain.com')) !== false) {
+
+      // check if the Google Analytics module is turned on and/or installed
+      if (!module_exists('googleanalytics')) {
+
+        drupal_set_message('Warning: The <a href="/admin/modules">Google Analytics Module</a> was not enabled and/or installed. As this is a production server, the Google Analytics module should be enabled. I\'ll attempt to enable it for you now...', 'warning', FALSE);
+
+        if (module_enable(array('googleanalytics'), FALSE)) {
+          drupal_set_message('Sucess! Google Analytics module has been restored to its healthy self!');
+        } else {
+          drupal_set_message('Error: I was unable to enable the Google Analytics module (or one of its dependancies) for you.', 'error', FALSE);
+        }
+
+        // return here. our work here is done.
+
+      }
+
+    } else { // we are *NOT* on a production server
+
+      // check if the Google Analytics module is turned on for some reason
+      if (module_exists('googleanalytics')) {
+
+        module_disable(array('googleanalytics'), TRUE);
+
+        drupal_set_message('Warning: The <a href="/admin/modules">Google Analytics Module</a> was enabled for some reason. As this is NOT a production server, the Google Analytics module should NOT be enabled. I\'ve disabled it for you, but please <a href="/admin/modules">confirm this</a>. Enabling Google Analytics on a domain other than production is bad.', 'warning', FALSE);
+
+      }
+
+    }
+
+  }
+
+  $footertext = variable_get('checkga_footertext', FALSE);
+  $output = $footertext['value'] ?: '<!-- Check Google Analytics module: There is no text in the optional Privacy Notice textarea. -->';
+
+  drupal_add_region_content('footer', '<div id="checkga_privacynotice">'.$output.'</div>');
+
+} // checkga_init()
+
+// I just used drupal_add_region_content() here. If you wanted to create a block and place it in a region programatically, see below.
+
+/**
+* Implements hook_block_info().
+*/
+// function checkga_block_info() {
+//   $blocks = array();
+//
+//   $blocks['checkga_footer'] = array(
+//     'info' => t('Check Google Analytics module optional Privacy Notice'),
+//   );
+//   $blocks['status'] = TRUE;
+//
+//   return $blocks;
+// }
+
+/**
+* Implements hook_block_view().
+*/
+// function checkga_block_view($delta = '') {
+//   $block = array();
+//
+//   if ($delta == 'checkga_footer') {
+//     // drupal_add_css(drupal_get_path('module', 'checkga') .'/css/thermo.css');
+//     // drupal_add_js(drupal_get_path('module', 'checkga').'/js/countUp.min.js');
+//     // $block['subject'] = 'PECSF Contributions - our goal $'.number_format(variable_get('checkga_pecsfthermometergoal'));
+//     $block['content'] = variable_get('checkga_footertext', '');
+//   }
+//
+//   return $block;
+// }
+
+/**
+ * Implements hook_block_info_alter().
+ */
+// function checkga_block_info_alter(&$blocks, $theme, $code_blocks) {
+//   // http://drupal.stackexchange.com/questions/9667/programmatically-place-blocks
+// }

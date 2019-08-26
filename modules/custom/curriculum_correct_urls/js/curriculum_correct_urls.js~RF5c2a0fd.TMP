@@ -1,0 +1,8 @@
+(function($) {
+  Drupal.behaviors.curriculum_correct_urls= {
+    attach: function(context, settings) {
+
+		
+	 }
+  };
+})(jQuery);

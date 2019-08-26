@@ -1,0 +1,7 @@
+name = Curriculum Content Modify
+description = Adds hacky JS and other modifers to custom pages such as exposed views.
+core = 7.x
+version = 7.x
+package = Curriculum
+project = "drupal"
+dependencies[] = beautytips

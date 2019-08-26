@@ -1,0 +1,6 @@
+name = Curriculum Correct URLS
+description = Corrects PROD URLS for DEV and QA environments
+core = 7.x
+version = 7.x
+package = Curriculum
+project = "drupal"

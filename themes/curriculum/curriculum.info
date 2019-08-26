@@ -1,0 +1,53 @@
+name = Curriculum Theme
+description = Responsive theme for the curriculum subsite.
+version = VERSION
+core = 7.x
+base theme = responsive_bartik
+
+stylesheets[all][] = css/layout.css
+stylesheets[all][] = css/style.css
+stylesheets[all][] = css/colors.css
+stylesheets[all][] = css/curriculum.css
+stylesheets[all][] = css/header.css
+stylesheets[all][] = css/page-curriculum.css
+stylesheets[all][] = css/subject-content-styles.css
+stylesheets[all][] = css/grade-picker.css
+stylesheets[all][] = css/simple-grid.css
+stylesheets[all][] = css/select2.css
+stylesheets[print][] = css/print.css
+stylesheets[all][] = css/curriculum-responsive.css
+stylesheets[all][] = css/curriculum-min-200px.css
+stylesheets[all][] = css/curriculum-min-768px.css
+stylesheets[all][] = css/curriculum-min-1170px.css
+stylesheets[all][] = css/curriculum-max-768px.css
+
+scripts[] = js/collapsible-menu.js
+scripts[] = js/select2.js
+
+regions[header] = Header
+regions[navigation] = Main Navigation
+regions[help] = Help
+regions[page_top] = Page top
+regions[page_bottom] = Page bottom
+regions[highlighted] = Highlighted
+
+regions[homepage_slider] = Homepage Slider
+regions[navigation_drawer] = Navigation Side Drawer
+regions[featured] = Featured
+regions[content] = Content
+regions[sidebar_first] = Sidebar first
+regions[sidebar_second] = Sidebar second
+
+regions[triptych_first] = Triptych first
+regions[triptych_middle] = Triptych middle
+regions[triptych_last] = Triptych last
+
+regions[footer_firstcolumn] = Footer first column
+regions[footer_secondcolumn] = Footer second column
+regions[footer_thirdcolumn] = Footer third column
+regions[footer_fourthcolumn] = Footer fourth column
+regions[footer] = Footer
+
+settings[shortcut_module_link] = 0
+
+

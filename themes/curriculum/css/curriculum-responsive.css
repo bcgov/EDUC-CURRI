@@ -1,0 +1,90 @@
+/* Navigation */
+.region-header {
+	margin: 0px !important;	
+}
+#header section{
+	display:none;	
+}
+
+
+
+
+.no-sidebars.page-curriculum #content, .no-sidebars.front #content, .no-sidebars.node-type-goals-and-rationale #content, .no-sidebars.node-type-introduction #content, .no-sidebars.node-type-what-s-new #content, .view-data {
+	width: 100%;
+}
+.no-sidebars #content{
+	width: 100%;	
+}
+div#core_competency_subject{
+	width:100%;
+	margin-left: 0px;
+}
+div#core_competency_subject ul{
+	width:100%;
+	float:left;
+}
+.big-ideas-attachment .view-footer{
+	width:100%;	
+	overflow:hidden;
+}
+
+
+
+#highlighted .view-content .views-row > div {
+    margin: auto;
+    max-width: 100%;
+}
+.modal {
+  width: 100%;
+}
+.page-home #content {
+    width:100%!important
+}
+.site-header{
+  width: 100%;
+}
+.page-home #featured {
+	width:100%;
+	margin:0;
+	padding:0;
+	text-align: left;
+    font-size: 1.643em;
+    font-weight: normal;
+    line-height: 1.4;
+    background: none;
+    border-bottom: none;
+    text-shadow: none;
+	margin-top: -70px;
+	position:relative;
+	z-index: 1 !important;
+	min-width: 100%;
+}
+
+.view-display-id-attachment_4 .view-content{
+	width: 100%;	
+}
+
+#learning-standards-head{
+	width: auto;	
+}
+div#core_competency_subject h2{
+	width: auto;	
+}
+div#curric-bottom-links ul li:first-child {
+    margin-left: 0;
+    width: 24.75%;
+}
+div#curric-bottom-links ul li{
+	margin-left: 0.33%;	
+	width:24.75%;
+}
+
+
+
+
+div#curric-bottom-links{
+	width:100%;	
+}
+
+
+

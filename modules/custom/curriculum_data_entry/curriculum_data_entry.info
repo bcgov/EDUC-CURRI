@@ -1,0 +1,7 @@
+name = Curriculum Data Entry
+description = Supports the Curriculum data entry process.
+package = Curriculum
+version = VERSION
+core = 7.x
+# configure = admin/settings/curriculum_data_entry
+files[] = curriculm_data_entry.module

@@ -1,0 +1,4 @@
+# ignore all contrib modules. these can just be downloaded from drupal.org
+*
+!.gitignore
+!README.txt
