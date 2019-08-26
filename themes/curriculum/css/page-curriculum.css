@@ -109,9 +109,9 @@ background-color:#1B1F28 !important;
 /**** Curricular Competency Page Styles *****/
 
 /* Communication Competency Page */
-body.page-node-2656 #content #page-title,body.page-node-2656 #content strong,body.page-node-2656 #content a {
+/*body.page-node-2656 #content #page-title,body.page-node-2656 #content strong, body.page-node-2656 #content a {
     color:#e48456
-}
+}*/
 
 body.page-node-2656 #content #block-system-main .content {
 /*background: url('/sites/curriculum.gov.bc.ca/files/pdf/communication_bg.png') no-repeat left top !important;*/
@@ -131,7 +131,7 @@ body.page-node-2656 #content p.communication_profiles strong {
     margin-left:-160px
 }
 
-body.page-node-2656 #page-title {
+body.page-node-2656 #page-title, body.page-node-141902 #page-title, body.page-node-141905 #page-title {
     background:#fff url(/sites/curriculum.gov.bc.ca/files/pdf/core_comp_c_orange_small.png) no-repeat 3% center !important;
 	width: 84% !important;
 	color: #444;
@@ -147,8 +147,16 @@ body.page-node-2664 #page-title {
 }
 
 /* Creative Thinking Competency Page */
-body.page-node-2664 #content #page-title,body.page-node-2664 #content strong,body.page-node-2664 #content a {
+/*body.page-node-2664 #content #page-title,body.page-node-2664 #content strong,body.page-node-2664 #content a {
     color:#11a2c6
+}*/
+
+body.page-node-141954 #page-title, body.page-node-141904 #page-title, body.page-node-141903 #page-title {
+    background:#fff url(/sites/curriculum.gov.bc.ca/files/pdf/core_comp_c_cyan_small.png) no-repeat 3% center !important;
+	width: 84% !important;
+	color: #444;
+	padding: 20px 80px !important	
+
 }
 
 body.page-node-2664 #content p.thinking_profiles {
@@ -165,9 +173,17 @@ body.page-node-2664 #content p.thinking_profiles strong {
     margin-left:-160px
 }
 
-/* Critical Thinking Page */
+/* Critical Thinking Page *//*
 body.page-node-3864 #content #page-title,body.page-node-3864 #content strong,body.page-node-3864 #content a,body.page-node-3864 #content h2 {
     color:#006fba
+}*/
+
+body.page-node-141955 #page-title, body.page-node-141907 #page-title, body.page-node-141908 #page-title, body.page-node-141906 #page-title {
+    background:#fff url(/sites/curriculum.gov.bc.ca/files/pdf/core_comp_ps_green_small.png) no-repeat 3% center !important;
+	width: 84% !important;
+	color: #444;
+	padding: 20px 80px !important	
+
 }
 
 body.page-node-3864 #content p.thinking_profiles {
@@ -200,7 +216,7 @@ body.page-node-3864 #page-title {
 }
 
 /* PPCI Competency Page */
-body.page-node-2665 #content #page-title,body.page-node-2665 #content strong,body.page-node-2665 #content a {
+/*body.page-node-2665 #content #page-title,body.page-node-2665 #content strong,body.page-node-2665 #content a {
     color:#80ba69
 }
 
@@ -210,7 +226,7 @@ body.page-node-10001 #content #page-title,body.page-node-10001 #content strong,b
 
 body.page-node-10002 #content #page-title,body.page-node-10002 #content strong,body.page-node-10002 #content a {
     color:#00965c
-}
+}*/
 
 body.page-node-2665 #content p.personalsocial_profiles {
     background:url(/sites/curriculum.gov.bc.ca/files/pdf/ppci_profiles_cover_thumb.png) no-repeat left 30px!important;

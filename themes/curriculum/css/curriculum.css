@@ -4450,14 +4450,14 @@ a[title="Subscribe to Site Updates"] { float: right; }
 .right-slide .slide-title{
 	font-size:26px;
 	color:white;
-	font-famil: Arial,sans-serif;
+	font-family: Arial,sans-serif;
 	float:left;
 	width: 100%;
 }
 .left-slide .slide-title{
 	font-size:26px;
 	color:white;
-	font-famil: Arial,sans-serif;
+	font-family: Arial,sans-serif;
 	float:left;
 }
 #main-content #page-title{
@@ -7019,7 +7019,7 @@ ul.quicktabs-tabs.quicktabs-style-basic a{
 
 /* Curricular Competency*/
 .page-curriculm-competency .field-name-body li{
-	width:100%;
+	/*width:100%;*/
 	float:left;
 
 }
