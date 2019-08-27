@@ -7020,9 +7020,14 @@ ul.quicktabs-tabs.quicktabs-style-basic a{
 /* Curricular Competency*/
 .page-curriculm-competency .field-name-body li{
 	/*width:100%;*/
-	float:left;
-
+    float:left;
+    
 }
+.node-type-illustration.page-curriculm-competency .field-name-body li{
+    float:none;
+    
+}
+
 .page-curriculm-competency .competency-content{
 	float:left;
 	clear:both;
