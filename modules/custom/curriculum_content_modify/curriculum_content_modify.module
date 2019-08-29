@@ -106,9 +106,9 @@ function curriculum_content_modify_form_alter(&$form, &$form_state, $form_id) {
     $form['#info']['filter-field_subject_range_value']['label'] = 'Matières';
     $form['#info']['filter-field_grade_range_value']['label'] = 'Niveaux';
     $form['#info']['filter-keys']['label'] = 'Mots-clés';
-    $form['#info']['filter-keys']['description'] = 'Pour faire une recherche dans tous les programmes d\'études, veuillez cocher tous les types, matières et niveaux.';
+    $form['#info']['filter-keys']['description'] = 'Pour faire une recherche dans tous les programmes d’études, veuillez cocher tous les types, matières et niveaux.';
     $form['type']['#bef_select_all_none'] = FALSE;
-    $form['submit']['#value'] = 'Recherche dans les programmes d\'études';
+    $form['submit']['#value'] = 'Recherche dans les programmes d’études';
 
   } // END if form ID == views-exposed-form-search-curriculum-page
 
