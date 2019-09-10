@@ -29,6 +29,11 @@ function curriculum_misc_menu() {
     )
   );
 } // hook_menu()
+/**
+* Auto Submit Debounce 
+*/
+
+
 
 /**
  * Implements hook_form()

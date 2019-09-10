@@ -754,6 +754,7 @@ blockquote {
 .illustration-image blockquote{
 	width:inherit;
 	margin-top:-20px;
+	max-width:240px;
 }
 
 blockquote:before {
@@ -7056,6 +7057,32 @@ ul.quicktabs-tabs.quicktabs-style-basic a{
     list-style: circle inside;
 
 }
+/*  Competency Facets*/
+.competency-facets{
+	padding: 20px 2%;
+	margin-top:10px;
+}
+.competency-facets h3{
+	border-bottom: 1px solid #ccc;
+}
+.competency-facets p{
+	padding: 10px 10px;
+	margin:10px 0;
+}
+.competency-connections{
+	padding:2%;
+}
+.competency-profiles{
+	padding: 2%;
+}
+
+.illustration-search-item h2{
+	font-size: 1.5em !important;
+}
+.field-collection-item-field-profile-analysis{
+	width:33%;
+	float:left;
+}
 
 /*.page-curriculm-competency .field-name-body ul li.c {
     background:url(/sites/curriculum.gov.bc.ca/files/pdf/core_comp_c_orange.png) no-repeat center top;
@@ -7099,15 +7126,13 @@ ul.quicktabs-tabs.quicktabs-style-basic a{
     background-color: #036;
     color: #FFF;
     cursor: pointer;
-    padding: 16px;
+    padding: 2%;
     width: 100%;
     border: none;
     text-align: left;
     outline: none;
     font-size: 18px;
     transition: 0.4s;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
     
     /*margin: 5px 0;*/
   }
@@ -7126,6 +7151,7 @@ ul.quicktabs-tabs.quicktabs-style-basic a{
   
   .accordion-container .active:after {
     content: "\2212";
+
   }
   
   .accordion-container .panel {
@@ -7141,7 +7167,10 @@ ul.quicktabs-tabs.quicktabs-style-basic a{
   }
 
   .accordion-container .panel ul {
-        margin: 5px;
+      float:left;
+	  margin: 5px;
+	  padding: 2%;
+	  	
     }
 
     hr { 
@@ -7153,3 +7182,76 @@ ul.quicktabs-tabs.quicktabs-style-basic a{
         border-top: 1px solid #000;
       
       }
+
+
+/* Competency animation*/
+.competency-diagram{
+	float:right;
+	width:400px;
+	height:400px;
+	position:relative;
+}
+.competency-diagram img{
+	
+	position:relative;
+	top:0;
+}
+
+
+/* Pie chart animation for competency diagrams*/
+
+
+.chart {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  top: 200px;
+  left: 200px;
+  margin: -200px 0 0 -200px;
+	float:left;
+	opacity:0.3;
+}
+.pieTip {
+  position: absolute;
+  float: left;
+  min-width: 20px;
+  max-width: 200px;
+  padding: 5px 18px 6px;
+  border-radius: 2px;
+  background: rgba(255,255,255,.97);
+  color: #444;
+  font-size: 10px;
+  text-shadow: 0 1px 0 #fff;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 1.3;
+  letter-spacing: .06em;
+  box-shadow: 0 0 3px rgba(0,0,0,1), 0 1px 2px rgba(0,0,0,1);
+  -webkit-transform: all .3s;
+     -moz-transform: all .3s;
+      -ms-transform: all .3s;
+       -o-transform: all .3s;
+          transform: all .3s;
+  pointer-events: none;
+}
+.pieTip:after {
+      position: absolute;
+      left: 50%;
+      bottom: -6px;
+      content: "";
+      height: 0;
+      margin: 0 0 0 -6px;
+      border-right: 5px solid transparent;
+      border-left: 5px solid transparent;
+      border-top: 6px solid rgba(255,255,255,.95);
+      line-height: 0;
+}
+.chart path { cursor: pointer; }
+.lightPie{
+	opacity: 1 !important;
+	
+}
+h3.communication a{ 
+	 color:#e48456 !important;
+	
+}

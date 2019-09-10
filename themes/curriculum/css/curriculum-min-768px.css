@@ -290,7 +290,7 @@
 		width: 28%;
 		margin-left: 2%;
 		position: relative;
-		z-index: 100;
+		z-index: 99;
 		left: 0;
 		margin-top: 25px;
 	}
