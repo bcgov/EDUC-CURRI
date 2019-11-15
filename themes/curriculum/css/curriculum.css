@@ -4134,7 +4134,7 @@ body.page-node-2890 table ul li {
 #menu-3057-1{
 	display:none;
 }
-.mean-nav li:nth-child(4) {
+.mean-nav li:nth-child(4) .mean-expand {
 	display:none;
 }
 
@@ -5810,6 +5810,9 @@ h2.example_instructional_sample{
 	vertical-align: top;
 }
 
+
+
+
 /*Keyword elaboration styles*/
 
 a.keyword_w_elaboration{
@@ -5821,6 +5824,7 @@ a.keyword_w_elaboration{
 	padding:10px;
 	background-color: #ccc;
 	border-left: 6px solid rgb(108,136,146);
+	display:none;
 
 }
 .bi .elaboration{
@@ -5853,8 +5857,6 @@ a.keyword_w_elaboration{
 .elaboration_controls{
 	text-align:right;
 	display:none;
-
-
 }
 
 .open_elaboration{
@@ -5933,9 +5935,12 @@ input:checked + .slider:before {
 	color: white !important;
 	text-align:right;
 }
-
+#cboxTitle{
+	position: relative !important;
+	top: -120px;
+}
 #cboxLoadedContent{
-	padding:20px;
+	padding:20px 20px 130px 20px;
 }
 #cboxLoadingGraphic{
 	display:none !important;
@@ -6667,6 +6672,11 @@ curriculum-by-subject-k-9{
 }
 div[class~="something"]
 
+
+.view-Curriculum-Search .view-header{
+	padding:2%;	
+} 
+
 /**
     Data export page. CURRIC-471
 */
@@ -6977,7 +6987,7 @@ ul.bef-tree{
 	display: none;
 }
 .page-search-illustrations #block-system-main{
-	width:73%;
+	width:71%;
 	float:left;
 	padding-left:10px;
 }

@@ -46,10 +46,7 @@ $view = views_get_current_view();
 	if(isset($view->args[2])){
 		$course = $view->args[2];
 	}
-	
-	//output the nojs link for ajax as subject/grade/course/nojs
-	$output_print = "<a class='continuous-view-btn-toggle'>o-o-o</a><a class='continuous-view-btn ccg ccg-". $ccg_id . "' href='/curriculum/". $view->args[0] . "/"  . $view->args[1] . "/" . $course . "/ccg/" . $ccg_id . "/nojs'>o-o-o</a><div id='ccg-id-". $ccg_id ."'>
-	<div class=" . $classes . "style='width:100%'>" . $output_print . "</div></div><div id='continuous-view-ccg-id-". $ccg_id ."' class='ccg cv_container modal_lightbox'></div>";
+
 	print $output_print;
 	
 ?>
