@@ -311,13 +311,15 @@ Drupal.behaviors.everyPage = {
 			});			
 
             /** Code to reorder **/
-            $(".page-curriculum-career-education-all .view-grouping-content .course-row").last().insertBefore($(".page-curriculum-career-education-all .view-grouping-content .course-row"));
+            $(".page-curriculum-career-education-all .view-grouping-content .course-row").last().insertBefore($(".page-curriculum-career-education-all .view-grouping-content .course-row:first-child"));
+			
 			
 			/* Reorder French Languages*/
 			$(".i18n-fr.page-curriculum-second-languages-all-courses .view-grouping-content .course-row a:contains(Introduction)").each(function() {
 				var $node_to_insert = $(this).parent().parent().parent().parent().next();
 				$(this).parent().parent().parent().parent().insertAfter($node_to_insert);
 			});
+			
 			
 
 

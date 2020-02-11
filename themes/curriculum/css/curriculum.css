@@ -6538,7 +6538,7 @@ div.sf-megamenu-column{
 .curriculum-finder-block{
 	float:right;
     width: 100%;
-	margin-top:-25px;
+	margin-top:25px;
 	position:relative;
 	color:white;
 	z-index:99;
