@@ -285,7 +285,7 @@
 		float:left;
 		width:70%;
 		position:relative;
-		z-index:10;
+		z-index:100;
 		margin-top: -25px;
 	}
 	.fast-links{
