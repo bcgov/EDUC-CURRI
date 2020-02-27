@@ -4629,7 +4629,7 @@ a[title="Subscribe to Site Updates"] { float: right; }
     float:left;
 	width:100%;
 	position:relative;
-    z-index:100;
+    z-index:99;
     margin-top:-25px;
 }
 
